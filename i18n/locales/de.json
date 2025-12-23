@@ -100,5 +100,29 @@
     "description": "Diese Website verwendet nur technisch notwendige Cookies (z.B. für Spracheinstellungen). Es werden keine Tracking- oder Marketing-Cookies eingesetzt.",
     "accept": "Verstanden",
     "learnMore": "Mehr erfahren"
+  },
+  "company": {
+    "label": "Gründer & Geschäftsführer",
+    "title": "FH SoftDev",
+    "description": "Mit meiner Firma entwickle ich maßgeschneiderte Softwarelösungen für Unternehmen jeder Größe. Von der ersten Idee bis zum fertigen Produkt – ich begleite Projekte mit technischer Expertise und einem Auge fürs Detail.",
+    "services": {
+      "web": "Webentwicklung",
+      "consulting": "IT-Beratung",
+      "architecture": "Software-Architektur"
+    },
+    "cta": "Mehr erfahren"
+  },
+  "employer": {
+    "label": "Aktuell bei",
+    "title": "DADG",
+    "fullName": "Die Auto und Dienstleistungsgesellschaft mbH",
+    "description": "Als Senior Developer bei DADG bin ich nicht nur für die technische Umsetzung zuständig, sondern auch für die Förderung der nächsten Generation.",
+    "roles": {
+      "leader": "Team Lead",
+      "leaderDesc": "4 Junior Developers",
+      "trainer": "Ausbilder",
+      "trainerDesc": "1 Auszubildender"
+    },
+    "cta": "Zur DADG"
   }
 }

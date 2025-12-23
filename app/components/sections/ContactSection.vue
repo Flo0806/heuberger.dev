@@ -26,8 +26,8 @@ const socials = [
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
             <span class="gradient-text">{{ t('contact.title') }}</span>
           </h2>
-          <p class="text-xl text-zinc-400 mb-2">{{ t('contact.subtitle') }}</p>
-          <p class="text-zinc-500">{{ t('contact.description') }}</p>
+          <p class="text-xl text-zinc-600 dark:text-zinc-400 mb-2">{{ t('contact.subtitle') }}</p>
+          <p class="text-zinc-600 dark:text-zinc-500">{{ t('contact.description') }}</p>
         </div>
 
         <!-- Email Button -->
@@ -58,7 +58,7 @@ const socials = [
           :initial="{ opacity: 0 }"
           :visible-once="{ opacity: 1, transition: { duration: 400, delay: 400 } }"
         >
-          <p class="text-sm text-zinc-500 mb-4">{{ t('contact.socials') }}</p>
+          <p class="text-sm text-zinc-600 dark:text-zinc-500 mb-4">{{ t('contact.socials') }}</p>
           <div class="flex items-center justify-center gap-4">
             <a
               v-for="(social, index) in socials"
@@ -74,7 +74,7 @@ const socials = [
             >
               <UIcon
                 :name="social.icon"
-                class="w-6 h-6 text-zinc-400 group-hover:text-orange-400 transition-colors"
+                class="w-6 h-6 text-zinc-600 dark:text-zinc-400 group-hover:text-orange-400 transition-colors"
               />
             </a>
           </div>

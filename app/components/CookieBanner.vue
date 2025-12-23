@@ -52,7 +52,7 @@ const accept = () => {
               </UButton>
               <a
                 href="/privacy"
-                class="text-sm text-zinc-500 hover:text-orange-400 transition-colors"
+                class="text-sm text-zinc-600 dark:text-zinc-500 hover:text-orange-400 transition-colors"
               >
                 {{ t('cookies.learnMore') }}
               </a>

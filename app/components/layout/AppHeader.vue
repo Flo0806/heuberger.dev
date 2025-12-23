@@ -60,7 +60,7 @@ const scrollTo = (href: string) => {
           v-for="item in navItems"
           :key="item.key"
           :href="item.href"
-          class="text-sm text-zinc-400 hover:text-orange-400 transition-colors duration-200"
+          class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-orange-400 transition-colors duration-200"
           @click.prevent="scrollTo(item.href)"
         >
           {{ t(`nav.${item.key}`) }}
@@ -120,7 +120,7 @@ const scrollTo = (href: string) => {
           v-for="item in navItems"
           :key="item.key"
           :href="item.href"
-          class="block py-3 text-zinc-400 hover:text-orange-400 transition-colors"
+          class="block py-3 text-zinc-600 dark:text-zinc-400 hover:text-orange-400 transition-colors"
           @click.prevent="scrollTo(item.href)"
         >
           {{ t(`nav.${item.key}`) }}

@@ -25,7 +25,9 @@ const tools = [
   { name: 'Tailwind', icon: 'i-simple-icons-tailwindcss', color: 'text-cyan-400', link: 'https://tailwindcss.com/' },
   { name: 'PostgreSQL', icon: 'i-simple-icons-postgresql', color: 'text-blue-300', link: 'https://www.postgresql.org/' },
   { name: 'MongoDB', icon: 'i-simple-icons-mongodb', color: 'text-green-500', link: 'https://www.mongodb.com/' },
+  { name: 'Redis', icon: 'i-simple-icons-redis', color: 'text-red-500', link: 'https://redis.io/' },
   { name: 'InfluxDB', icon: 'i-simple-icons-influxdb', color: 'text-purple-400', link: 'https://www.influxdata.com/' },
+  { name: 'RabbitMQ', icon: 'i-simple-icons-rabbitmq', color: 'text-orange-500', link: 'https://www.rabbitmq.com/' },
   { name: 'Linux', icon: 'i-simple-icons-linux', color: 'text-yellow-500', link: 'https://www.linux.org/' },
   { name: 'Windows', icon: 'i-simple-icons-windows', color: 'text-blue-400', link: 'https://www.microsoft.com/windows' },
   { name: 'macOS', icon: 'i-simple-icons-apple', color: 'text-zinc-300', link: 'https://www.apple.com/macos/' }
@@ -50,7 +52,7 @@ const tools = [
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
             <span class="gradient-text">{{ t('skills.title') }}</span>
           </h2>
-          <p class="text-xl text-zinc-400">{{ t('skills.subtitle') }}</p>
+          <p class="text-xl text-zinc-600 dark:text-zinc-400">{{ t('skills.subtitle') }}</p>
         </div>
 
         <!-- Primary Skills -->
@@ -59,7 +61,7 @@ const tools = [
             v-motion
             :initial="{ opacity: 0 }"
             :visible-once="{ opacity: 1, transition: { duration: 400 } }"
-            class="text-lg font-semibold text-zinc-300 mb-6 text-center"
+            class="text-lg font-semibold text-zinc-700 dark:text-zinc-300 mb-6 text-center"
           >
             {{ t('skills.primary') }}
           </h3>
@@ -87,7 +89,7 @@ const tools = [
             v-motion
             :initial="{ opacity: 0 }"
             :visible-once="{ opacity: 1, transition: { duration: 400, delay: 300 } }"
-            class="text-lg font-semibold text-zinc-300 mb-6 text-center"
+            class="text-lg font-semibold text-zinc-700 dark:text-zinc-300 mb-6 text-center"
           >
             {{ t('skills.secondary') }}
           </h3>
@@ -115,7 +117,7 @@ const tools = [
             v-motion
             :initial="{ opacity: 0 }"
             :visible-once="{ opacity: 1, transition: { duration: 400, delay: 500 } }"
-            class="text-lg font-semibold text-zinc-300 mb-6 text-center"
+            class="text-lg font-semibold text-zinc-700 dark:text-zinc-300 mb-6 text-center"
           >
             {{ t('skills.tools') }}
           </h3>
@@ -132,7 +134,7 @@ const tools = [
               class="glass rounded-lg px-4 py-2 flex items-center gap-2 cursor-pointer hover:border-orange-500/50 hover:scale-110 hover:-translate-y-0.5 transition-all duration-200"
             >
               <UIcon :name="tool.icon" :class="[tool.color, 'w-5 h-5']" />
-              <span class="text-sm text-zinc-400 dark:text-zinc-400">{{ tool.name }}</span>
+              <span class="text-sm text-zinc-600 dark:text-zinc-400">{{ tool.name }}</span>
             </a>
           </div>
         </div>

@@ -88,7 +88,7 @@ const projects = computed(() => [
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
             <span class="gradient-text">{{ t('projects.title') }}</span>
           </h2>
-          <p class="text-lg text-zinc-400 max-w-2xl mx-auto">{{ t('projects.subtitle') }}</p>
+          <p class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">{{ t('projects.subtitle') }}</p>
         </div>
 
         <!-- Projects Grid -->
@@ -130,7 +130,7 @@ const projects = computed(() => [
               <h3 class="text-xl font-bold mb-2 group-hover:text-orange-400 transition-colors">
                 {{ t(`projects.items.${project.key}.name`) }}
               </h3>
-              <p class="text-zinc-400 text-sm leading-relaxed line-clamp-3 min-h-[4.5rem]">
+              <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed line-clamp-3 min-h-[4.5rem]">
                 {{ t(`projects.items.${project.key}.description`) }}
               </p>
 
@@ -183,7 +183,7 @@ const projects = computed(() => [
                 :href="project.github"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="ml-auto text-zinc-500 hover:text-zinc-300 transition-colors"
+                class="ml-auto text-zinc-600 dark:text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors"
                 aria-label="GitHub"
               >
                 <UIcon name="i-simple-icons-github" class="w-5 h-5" />

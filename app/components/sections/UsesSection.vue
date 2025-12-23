@@ -61,7 +61,7 @@ const categories = ['editor', 'fonts', 'extensions', 'terminal'] as const
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
             <span class="gradient-text">{{ t('uses.title') }}</span>
           </h2>
-          <p class="text-xl text-zinc-400">{{ t('uses.subtitle') }}</p>
+          <p class="text-xl text-zinc-600 dark:text-zinc-400">{{ t('uses.subtitle') }}</p>
         </div>
 
         <!-- Uses Categories -->
@@ -74,7 +74,7 @@ const categories = ['editor', 'fonts', 'extensions', 'terminal'] as const
             :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, delay: catIndex * 150 } }"
             class="glass rounded-2xl p-6"
           >
-            <h3 class="text-lg font-semibold text-zinc-200 mb-6 flex items-center gap-3">
+            <h3 class="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-6 flex items-center gap-3">
               <div class="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center">
                 <UIcon :name="uses[category].icon" class="w-5 h-5 text-orange-400" />
               </div>
@@ -107,18 +107,18 @@ const categories = ['editor', 'fonts', 'extensions', 'terminal'] as const
                   />
                 </div>
                 <div class="flex-1 min-w-0">
-                  <div class="font-medium text-zinc-200 flex items-center gap-2">
+                  <div class="font-medium text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
                     {{ item.name }}
                     <UBadge v-if="item.highlight" color="primary" variant="subtle" size="xs">
                       {{ t('uses.myExtension') }}
                     </UBadge>
                   </div>
-                  <div class="text-sm text-zinc-500">{{ item.description }}</div>
+                  <div class="text-sm text-zinc-600 dark:text-zinc-500">{{ item.description }}</div>
                 </div>
                 <UIcon
                   v-if="item.link"
                   name="i-heroicons-arrow-top-right-on-square"
-                  class="w-4 h-4 text-zinc-600"
+                  class="w-4 h-4 text-zinc-500 dark:text-zinc-600"
                 />
               </component>
             </div>

@@ -26,7 +26,7 @@ const facts = [
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
             <span class="gradient-text">{{ t('about.title') }}</span>
           </h2>
-          <p class="text-xl text-zinc-400">{{ t('about.intro') }}</p>
+          <p class="text-xl text-zinc-600 dark:text-zinc-400">{{ t('about.intro') }}</p>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -76,7 +76,7 @@ const facts = [
             :initial="{ opacity: 0, x: 50 }"
             :visible-once="{ opacity: 1, x: 0, transition: { duration: 700, delay: 300 } }"
           >
-            <p class="text-lg text-zinc-300 leading-relaxed mb-8">
+            <p class="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-8">
               {{ t('about.description') }}
             </p>
 
@@ -95,7 +95,7 @@ const facts = [
                 <div class="text-3xl font-bold gradient-text mb-1">
                   {{ fact.value }}
                 </div>
-                <div class="text-xs text-zinc-500">
+                <div class="text-xs text-zinc-600 dark:text-zinc-500">
                   {{ t(`about.facts.${fact.key}`) }}
                 </div>
               </div>

@@ -100,5 +100,29 @@
     "description": "This website only uses technically necessary cookies (e.g. for language settings). No tracking or marketing cookies are used.",
     "accept": "Got it",
     "learnMore": "Learn more"
+  },
+  "company": {
+    "label": "Founder & CEO",
+    "title": "FH SoftDev",
+    "description": "Through my company, I develop custom software solutions for businesses of all sizes. From initial concept to final product – I guide projects with technical expertise and attention to detail.",
+    "services": {
+      "web": "Web Development",
+      "consulting": "IT Consulting",
+      "architecture": "Software Architecture"
+    },
+    "cta": "Learn more"
+  },
+  "employer": {
+    "label": "Currently at",
+    "title": "DADG",
+    "fullName": "Die Auto und Dienstleistungsgesellschaft mbH",
+    "description": "As a Senior Developer at DADG, I'm not only responsible for technical implementation but also for nurturing the next generation of developers.",
+    "roles": {
+      "leader": "Team Lead",
+      "leaderDesc": "4 Junior Developers",
+      "trainer": "Trainer",
+      "trainerDesc": "1 Apprentice"
+    },
+    "cta": "Visit DADG"
   }
 }

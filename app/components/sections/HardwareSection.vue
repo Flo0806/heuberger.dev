@@ -44,7 +44,7 @@ const categories = ['servers', 'workstation', 'displays', 'peripherals', 'mobile
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
             <span class="gradient-text">{{ t('hardware.title') }}</span>
           </h2>
-          <p class="text-xl text-zinc-400">{{ t('hardware.subtitle') }}</p>
+          <p class="text-xl text-zinc-600 dark:text-zinc-400">{{ t('hardware.subtitle') }}</p>
         </div>
 
         <!-- Hardware Categories -->
@@ -56,7 +56,7 @@ const categories = ['servers', 'workstation', 'displays', 'peripherals', 'mobile
             :initial="{ opacity: 0, x: -30 }"
             :visible-once="{ opacity: 1, x: 0, transition: { duration: 500, delay: catIndex * 100 } }"
           >
-            <h3 class="text-lg font-semibold text-zinc-300 mb-4 flex items-center gap-2">
+            <h3 class="text-lg font-semibold text-zinc-700 dark:text-zinc-300 mb-4 flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-orange-500" />
               {{ t(`hardware.categories.${category}`) }}
             </h3>
@@ -75,8 +75,8 @@ const categories = ['servers', 'workstation', 'displays', 'peripherals', 'mobile
                   <UIcon :name="item.icon" class="w-6 h-6 text-orange-400" />
                 </div>
                 <div>
-                  <div class="font-medium text-zinc-200">{{ item.name }}</div>
-                  <div class="text-sm text-zinc-500">{{ item.specs }}</div>
+                  <div class="font-medium text-zinc-800 dark:text-zinc-200">{{ item.name }}</div>
+                  <div class="text-sm text-zinc-600 dark:text-zinc-500">{{ item.specs }}</div>
                 </div>
               </div>
             </div>

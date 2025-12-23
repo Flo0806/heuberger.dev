@@ -11,6 +11,8 @@ const scrollTo = (href: string) => {
   <div>
     <SectionsHeroSection @scroll-to="scrollTo" />
     <SectionsAboutSection />
+    <SectionsCompanySection />
+    <SectionsEmployerSection />
     <SectionsSkillsSection />
     <SectionsProjectsSection />
     <SectionsUsesSection />

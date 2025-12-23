@@ -62,6 +62,15 @@ const toggleLocale = () => {
         <div class="bubble bubble-4" />
         <div class="bubble bubble-5" />
       </div>
+
+      <!-- Floating Tech Icons (Vue/Nuxt) -->
+      <div class="tech-icons-bg">
+        <UIcon name="i-simple-icons-vuedotjs" class="tech-icon tech-icon-1" />
+        <UIcon name="i-simple-icons-nuxtdotjs" class="tech-icon tech-icon-2" />
+        <UIcon name="i-simple-icons-vuedotjs" class="tech-icon tech-icon-3" />
+        <UIcon name="i-simple-icons-nuxtdotjs" class="tech-icon tech-icon-4" />
+        <UIcon name="i-simple-icons-vuedotjs" class="tech-icon tech-icon-5" />
+      </div>
     </ClientOnly>
 
     <!-- Header -->

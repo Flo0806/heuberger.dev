@@ -55,7 +55,7 @@ defineEmits<{
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 600 } }"
-          class="text-2xl md:text-3xl lg:text-4xl text-zinc-300 font-light mb-6"
+          class="text-2xl md:text-3xl lg:text-4xl text-zinc-700 dark:text-zinc-300 font-light mb-6"
         >
           {{ t('hero.title') }}
         </h2>
@@ -68,7 +68,7 @@ defineEmits<{
           class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
           <UIcon name="i-simple-icons-nuxtdotjs" class="w-5 h-5 text-green-400" />
-          <span class="text-sm text-zinc-300">{{ t('hero.subtitle') }}</span>
+          <span class="text-sm text-zinc-700 dark:text-zinc-300">{{ t('hero.subtitle') }}</span>
         </div>
 
         <!-- Description -->
@@ -76,7 +76,7 @@ defineEmits<{
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 900 } }"
-          class="text-lg text-zinc-400 max-w-2xl mx-auto mb-10"
+          class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-10"
         >
           {{ t('hero.description') }}
         </p>
@@ -116,7 +116,7 @@ defineEmits<{
       :enter="{ opacity: 1, transition: { delay: 1500 } }"
       class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
     >
-      <UIcon name="i-heroicons-chevron-down" class="w-6 h-6 text-zinc-500" />
+      <UIcon name="i-heroicons-chevron-down" class="w-6 h-6 text-zinc-600 dark:text-zinc-500" />
     </div>
   </section>
 </template>
