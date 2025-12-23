@@ -1,0 +1,127 @@
+<script setup lang="ts">
+const { t } = useI18n()
+
+defineEmits<{
+  scrollTo: [href: string]
+}>()
+</script>
+
+<template>
+  <section
+    id="hero"
+    class="relative min-h-screen flex items-center justify-center section-padding pt-32"
+  >
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div
+        v-motion
+        :initial="{ opacity: 0, scale: 0.5 }"
+        :enter="{ opacity: 1, scale: 1, transition: { duration: 1500 } }"
+        class="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-float"
+      />
+      <div
+        v-motion
+        :initial="{ opacity: 0, scale: 0.5 }"
+        :enter="{ opacity: 1, scale: 1, transition: { duration: 1500, delay: 300 } }"
+        class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl animate-float"
+        style="animation-delay: 1s;"
+      />
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Greeting -->
+        <p
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 200 } }"
+          class="text-orange-400 text-lg md:text-xl mb-4"
+        >
+          {{ t('hero.greeting') }}
+        </p>
+
+        <!-- Name -->
+        <h1
+          v-motion
+          :initial="{ opacity: 0, y: 30 }"
+          :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 400 } }"
+          class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
+        >
+          <span class="gradient-text">{{ t('hero.name') }}</span>
+        </h1>
+
+        <!-- Title -->
+        <h2
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 600 } }"
+          class="text-2xl md:text-3xl lg:text-4xl text-zinc-300 font-light mb-6"
+        >
+          {{ t('hero.title') }}
+        </h2>
+
+        <!-- Nuxt Badge -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, scale: 0.8 }"
+          :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, delay: 800 } }"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+        >
+          <UIcon name="i-simple-icons-nuxtdotjs" class="w-5 h-5 text-green-400" />
+          <span class="text-sm text-zinc-300">{{ t('hero.subtitle') }}</span>
+        </div>
+
+        <!-- Description -->
+        <p
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 900 } }"
+          class="text-lg text-zinc-400 max-w-2xl mx-auto mb-10"
+        >
+          {{ t('hero.description') }}
+        </p>
+
+        <!-- CTAs -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 1100 } }"
+          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <UButton
+            v-motion
+            :hovered="{ scale: 1.05 }"
+            :tapped="{ scale: 0.95 }"
+            size="lg"
+            color="primary"
+            class="animate-pulse-glow"
+            @click="$emit('scrollTo', '#projects')"
+          >
+            {{ t('hero.cta.projects') }}
+          </UButton>
+          <UButton
+            v-motion
+            :hovered="{ scale: 1.05 }"
+            :tapped="{ scale: 0.95 }"
+            size="lg"
+            variant="outline"
+            color="neutral"
+            @click="$emit('scrollTo', '#contact')"
+          >
+            {{ t('hero.cta.contact') }}
+          </UButton>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div
+      v-motion
+      :initial="{ opacity: 0 }"
+      :enter="{ opacity: 1, transition: { delay: 1500 } }"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
+    >
+      <UIcon name="i-heroicons-chevron-down" class="w-6 h-6 text-zinc-500" />
+    </div>
+  </section>
+</template>

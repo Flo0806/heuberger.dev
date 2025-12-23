@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Custom Animations */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.6); }
+}
+
+/* Utility Classes */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Staggered animations */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-orange-400 via-orange-500 to-amber-500 bg-clip-text text-transparent;
+}
+
+/* Gradient background */
+.gradient-bg {
+  @apply bg-gradient-to-br from-orange-500/10 via-transparent to-amber-500/10;
+}
+
+/* Glass effect */
+.glass {
+  @apply backdrop-blur-lg bg-white/60 dark:bg-zinc-900/60 border border-zinc-200/50 dark:border-zinc-800/50;
+}
+
+/* Section styles */
+.section-padding {
+  @apply py-20 md:py-32;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Page transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-zinc-200 dark:bg-zinc-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-orange-500/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-orange-500;
+}

@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Start",
+    "about": "Über mich",
+    "skills": "Skills",
+    "projects": "Projekte",
+    "uses": "Setup",
+    "hardware": "Hardware",
+    "cv": "Lebenslauf",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "greeting": "Hi, ich bin",
+    "name": "Florian Heuberger",
+    "title": "Senior Fullstack Developer",
+    "subtitle": "Nuxt Community Member",
+    "description": "Ich entwickle moderne Webanwendungen mit Vue, Nuxt und TypeScript. Leidenschaftlich für Clean Code, Performance und großartige User Experience.",
+    "cta": {
+      "projects": "Meine Projekte",
+      "contact": "Kontakt aufnehmen"
+    }
+  },
+  "about": {
+    "title": "Über mich",
+    "intro": "Entwickler aus Leidenschaft",
+    "description": "Als Senior Fullstack Developer mit Fokus auf das Vue/Nuxt-Ökosystem bringe ich jahrelange Erfahrung in der Entwicklung skalierbarer Webanwendungen mit. Als Nuxt Community Member trage ich aktiv zur Open-Source-Community bei.",
+    "facts": {
+      "experience": "Jahre Erfahrung",
+      "projects": "Projekte realisiert",
+      "opensource": "Open Source Packages"
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologien",
+    "subtitle": "Mein Tech Stack",
+    "primary": "Primär",
+    "secondary": "Sekundär",
+    "tools": "Tools & Mehr"
+  },
+  "projects": {
+    "title": "Projekte & Packages",
+    "subtitle": "Ich arbeite ständig an neuen Ideen und Side Projects. Hier sind die, die es in die Welt geschafft haben und von der Community genutzt werden.",
+    "viewOn": "Ansehen auf",
+    "stars": "Stars",
+    "downloads": "Downloads/Monat",
+    "items": {
+      "dmHero": {
+        "name": "DM Hero",
+        "description": "Kampagnen-Management für Dungeon Master: NPCs, Orte, Items, Fraktionen, Sessions mit AI-Integration und interaktivem Chaos-Graph."
+      },
+      "vormVue": {
+        "name": "vorm-vue",
+        "description": "Eine flexible und typsichere Form-Validierungs-Bibliothek für Vue 3 mit Schema-basierter Validierung."
+      },
+      "vormNuxt": {
+        "name": "vorm-nuxt",
+        "description": "Nuxt-Modul für vorm-vue mit Auto-Import und optimierter Integration."
+      },
+      "lintmon": {
+        "name": "lintmon",
+        "description": "VS Code Extension für Echtzeit-Linting-Überwachung und -Visualisierung."
+      }
+    }
+  },
+  "hardware": {
+    "title": "Hardware Setup",
+    "subtitle": "Mein Arbeitsplatz",
+    "categories": {
+      "servers": "Server",
+      "workstation": "Workstation",
+      "displays": "Displays",
+      "peripherals": "Peripherie",
+      "mobile": "Mobil"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Lass uns verbinden",
+    "description": "Interesse an einer Zusammenarbeit oder einfach nur Hallo sagen? Ich freue mich von dir zu hören.",
+    "email": "E-Mail senden",
+    "socials": "Social Media"
+  },
+  "uses": {
+    "title": "Tools & Setup",
+    "subtitle": "Was ich täglich nutze",
+    "myExtension": "Meine Extension",
+    "categories": {
+      "editor": "Editor",
+      "fonts": "Schriftarten",
+      "extensions": "Extensions",
+      "terminal": "Terminal"
+    }
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "builtWith": "Gebaut mit"
+  }
+}
