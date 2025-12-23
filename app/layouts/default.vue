@@ -30,5 +30,8 @@ const toggleLocale = () => {
 
     <!-- Footer -->
     <LayoutAppFooter />
+
+    <!-- Cookie Banner -->
+    <CookieBanner />
   </div>
 </template>

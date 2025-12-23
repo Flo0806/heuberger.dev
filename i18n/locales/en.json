@@ -94,5 +94,11 @@
   "footer": {
     "rights": "All rights reserved.",
     "builtWith": "Built with"
+  },
+  "cookies": {
+    "title": "Cookies & Privacy",
+    "description": "This website only uses technically necessary cookies (e.g. for language settings). No tracking or marketing cookies are used.",
+    "accept": "Got it",
+    "learnMore": "Learn more"
   }
 }

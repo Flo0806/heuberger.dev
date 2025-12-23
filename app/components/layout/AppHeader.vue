@@ -18,6 +18,7 @@ const navItems = computed(() => [
 ])
 
 onMounted(() => {
+  handleScroll() // Check initial scroll position
   window.addEventListener('scroll', handleScroll)
 })
 
