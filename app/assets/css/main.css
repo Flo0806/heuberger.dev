@@ -115,53 +115,87 @@
 }
 
 /* Shooting Stars - flying from top-right to bottom-left */
-@keyframes shooting-star {
+@keyframes shooting-star-fast {
   0% {
     transform: translateX(0) translateY(0) rotate(35deg);
     opacity: 0;
   }
-  5% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-400px) translateY(300px) rotate(35deg);
-    opacity: 0;
-  }
-}
-
-@keyframes shooting-star-2 {
-  0% {
-    transform: translateX(0) translateY(0) rotate(40deg);
-    opacity: 0;
-  }
-  8% {
-    opacity: 1;
-  }
-  65% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-500px) translateY(350px) rotate(40deg);
-    opacity: 0;
-  }
-}
-
-@keyframes shooting-star-3 {
-  0% {
-    transform: translateX(0) translateY(0) rotate(30deg);
-    opacity: 0;
-  }
-  6% {
+  3% {
     opacity: 1;
   }
   60% {
     opacity: 1;
   }
   100% {
-    transform: translateX(-450px) translateY(400px) rotate(30deg);
+    transform: translateX(-350px) translateY(250px) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star-long {
+  0% {
+    transform: translateX(0) translateY(0) rotate(40deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-600px) translateY(450px) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star-slow {
+  0% {
+    transform: translateX(0) translateY(0) rotate(32deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-500px) translateY(380px) rotate(32deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star-short {
+  0% {
+    transform: translateX(0) translateY(0) rotate(38deg);
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(-250px) translateY(180px) rotate(38deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star-steep {
+  0% {
+    transform: translateX(0) translateY(0) rotate(50deg);
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(-300px) translateY(400px) rotate(50deg);
     opacity: 0;
   }
 }
@@ -288,23 +322,50 @@
 }
 
 .star-1 {
-  top: 10%;
-  right: 20%;
-  animation: shooting-star 2.5s ease-out infinite;
-  animation-delay: 2s;
+  top: 8%;
+  right: 15%;
+  width: 120px;
+  animation: shooting-star-fast 1.8s ease-out infinite;
+  animation-delay: 3s;
 }
 
 .star-2 {
   top: 5%;
-  right: 50%;
-  animation: shooting-star-2 3s ease-out infinite;
-  animation-delay: 10s;
+  right: 45%;
+  width: 200px;
+  animation: shooting-star-long 4.5s ease-out infinite;
+  animation-delay: 12s;
 }
 
 .star-3 {
-  top: 25%;
-  right: 10%;
-  animation: shooting-star-3 2.8s ease-out infinite;
+  top: 20%;
+  right: 8%;
+  width: 100px;
+  animation: shooting-star-short 1.2s ease-out infinite;
+  animation-delay: 22s;
+}
+
+.star-4 {
+  top: 12%;
+  right: 65%;
+  width: 180px;
+  animation: shooting-star-slow 5s ease-out infinite;
+  animation-delay: 8s;
+}
+
+.star-5 {
+  top: 30%;
+  right: 25%;
+  width: 90px;
+  animation: shooting-star-steep 2s ease-out infinite;
+  animation-delay: 28s;
+}
+
+.star-6 {
+  top: 3%;
+  right: 80%;
+  width: 160px;
+  animation: shooting-star-long 4s ease-out infinite;
   animation-delay: 18s;
 }
 
@@ -377,14 +438,86 @@
   }
 }
 
-@keyframes float-bubble {
+@keyframes float-bubble-1 {
   0%, 100% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.3;
+  }
+  30% {
+    transform: translateY(-20px) translateX(10px) scale(1.05);
+    opacity: 0.5;
+  }
+  70% {
+    transform: translateY(-40px) translateX(-5px) scale(1.1);
     opacity: 0.4;
   }
+}
+
+@keyframes float-bubble-2 {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.35;
+  }
+  25% {
+    transform: translateY(-15px) translateX(-15px) scale(0.95);
+    opacity: 0.55;
+  }
   50% {
-    transform: translateY(-30px) scale(1.1);
+    transform: translateY(-50px) translateX(5px) scale(1.15);
+    opacity: 0.45;
+  }
+  75% {
+    transform: translateY(-35px) translateX(-10px) scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float-bubble-3 {
+  0%, 100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  40% {
+    transform: translateY(-25px) scale(1.08) rotate(5deg);
     opacity: 0.6;
+  }
+  80% {
+    transform: translateY(-60px) scale(0.95) rotate(-3deg);
+    opacity: 0.35;
+  }
+}
+
+@keyframes float-bubble-slow {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.25;
+  }
+  20% {
+    transform: translateY(-10px) translateX(8px) scale(1.02);
+    opacity: 0.4;
+  }
+  60% {
+    transform: translateY(-35px) translateX(-12px) scale(1.1);
+    opacity: 0.5;
+  }
+  85% {
+    transform: translateY(-20px) translateX(5px) scale(1.05);
+    opacity: 0.35;
+  }
+}
+
+@keyframes float-bubble-fast {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.45;
+  }
+  35% {
+    transform: translateY(-45px) scale(1.12);
+    opacity: 0.65;
+  }
+  65% {
+    transform: translateY(-25px) scale(0.98);
+    opacity: 0.5;
   }
 }
 
@@ -434,14 +567,70 @@
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(249, 115, 22, 0.1));
   border: 1px solid rgba(249, 115, 22, 0.1);
-  animation: float-bubble 8s ease-in-out infinite;
 }
 
-.bubble-1 { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
-.bubble-2 { width: 50px; height: 50px; top: 60%; left: 80%; animation-delay: 2s; }
-.bubble-3 { width: 65px; height: 65px; top: 40%; left: 50%; animation-delay: 4s; }
-.bubble-4 { width: 40px; height: 40px; top: 75%; left: 25%; animation-delay: 1s; }
-.bubble-5 { width: 55px; height: 55px; top: 15%; left: 70%; animation-delay: 3s; }
+.bubble-1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  animation: float-bubble-slow 12s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.bubble-2 {
+  width: 50px;
+  height: 50px;
+  top: 60%;
+  left: 80%;
+  animation: float-bubble-fast 6s ease-in-out infinite;
+  animation-delay: 3.2s;
+}
+
+.bubble-3 {
+  width: 65px;
+  height: 65px;
+  top: 40%;
+  left: 50%;
+  animation: float-bubble-1 9s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.bubble-4 {
+  width: 40px;
+  height: 40px;
+  top: 75%;
+  left: 25%;
+  animation: float-bubble-2 7.5s ease-in-out infinite;
+  animation-delay: 4.8s;
+}
+
+.bubble-5 {
+  width: 55px;
+  height: 55px;
+  top: 15%;
+  left: 70%;
+  animation: float-bubble-3 11s ease-in-out infinite;
+  animation-delay: 2.3s;
+}
+
+.bubble-6 {
+  width: 35px;
+  height: 35px;
+  top: 85%;
+  left: 60%;
+  animation: float-bubble-fast 5.5s ease-in-out infinite;
+  animation-delay: 6.1s;
+}
+
+.bubble-7 {
+  width: 70px;
+  height: 70px;
+  top: 50%;
+  left: 5%;
+  animation: float-bubble-slow 14s ease-in-out infinite;
+  animation-delay: 0s;
+}
 
 /* Hide light mode effects in dark mode */
 .dark .light-bg-effects {

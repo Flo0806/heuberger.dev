@@ -33,6 +33,9 @@ const toggleLocale = () => {
         <div class="shooting-star star-1" />
         <div class="shooting-star star-2" />
         <div class="shooting-star star-3" />
+        <div class="shooting-star star-4" />
+        <div class="shooting-star star-5" />
+        <div class="shooting-star star-6" />
       </div>
 
       <!-- Twinkling Stars (Dark Mode) -->
@@ -61,6 +64,8 @@ const toggleLocale = () => {
         <div class="bubble bubble-3" />
         <div class="bubble bubble-4" />
         <div class="bubble bubble-5" />
+        <div class="bubble bubble-6" />
+        <div class="bubble bubble-7" />
       </div>
 
       <!-- Floating Tech Icons (Vue/Nuxt) -->
