@@ -60,15 +60,21 @@ defineEmits<{
           {{ t('hero.title') }}
         </h2>
 
-        <!-- Nuxt Badge -->
+        <!-- Nuxt Community Badge -->
         <div
           v-motion
           :initial="{ opacity: 0, scale: 0.8 }"
           :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, delay: 800 } }"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+          class="nuxt-badge-wrapper mb-8"
         >
-          <UIcon name="i-simple-icons-nuxtdotjs" class="w-5 h-5 text-green-400" />
-          <span class="text-sm text-zinc-700 dark:text-zinc-300">{{ t('hero.subtitle') }}</span>
+          <div class="nuxt-badge">
+            <div class="nuxt-badge-glow" />
+            <div class="nuxt-badge-content">
+              <UIcon name="i-simple-icons-nuxtdotjs" class="w-6 h-6 text-[#00DC82]" />
+              <span class="text-base font-medium text-zinc-800 dark:text-white">{{ t('hero.subtitle') }}</span>
+              <div class="nuxt-badge-sparkle" />
+            </div>
+          </div>
         </div>
 
         <!-- Description -->

@@ -116,10 +116,10 @@
 
 /* Shooting Stars / Comets - verschiedene Richtungen und Geschwindigkeiten */
 
-/* Diagonal links-unten - verschwindet früh */
-@keyframes comet-diagonal-left {
+/* Diagonal links-unten (38°) - verschwindet früh */
+@keyframes comet-1 {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) rotate(38deg);
     opacity: 0;
   }
   5% {
@@ -132,15 +132,15 @@
     opacity: 0;
   }
   100% {
-    transform: translateX(-450px) translateY(350px);
+    transform: translateX(-450px) translateY(350px) rotate(38deg);
     opacity: 0;
   }
 }
 
-/* Diagonal rechts-unten - bleibt lange sichtbar */
-@keyframes comet-diagonal-right {
+/* Diagonal rechts-unten (-35°) - bleibt lange sichtbar */
+@keyframes comet-2 {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) rotate(-35deg);
     opacity: 0;
   }
   8% {
@@ -150,15 +150,15 @@
     opacity: 0.6;
   }
   100% {
-    transform: translateX(400px) translateY(300px);
+    transform: translateX(400px) translateY(300px) rotate(-35deg);
     opacity: 0;
   }
 }
 
-/* Steiler Winkel nach unten - mittlere Dauer */
-@keyframes comet-steep-down {
+/* Steiler Winkel nach unten (70°) - mittlere Dauer */
+@keyframes comet-3 {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) rotate(70deg);
     opacity: 0;
   }
   6% {
@@ -171,15 +171,15 @@
     opacity: 0;
   }
   100% {
-    transform: translateX(-150px) translateY(500px);
+    transform: translateX(-150px) translateY(500px) rotate(70deg);
     opacity: 0;
   }
 }
 
-/* Flacher Winkel - lang sichtbar */
-@keyframes comet-shallow {
+/* Flacher Winkel (15°) - lang sichtbar */
+@keyframes comet-4 {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) rotate(15deg);
     opacity: 0;
   }
   10% {
@@ -189,15 +189,15 @@
     opacity: 0.4;
   }
   100% {
-    transform: translateX(-600px) translateY(150px);
+    transform: translateX(-600px) translateY(150px) rotate(15deg);
     opacity: 0;
   }
 }
 
-/* Fast horizontal - verschwindet schnell */
-@keyframes comet-horizontal {
+/* Fast horizontal (10°) - verschwindet schnell */
+@keyframes comet-5 {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) rotate(10deg);
     opacity: 0;
   }
   4% {
@@ -210,15 +210,15 @@
     opacity: 0;
   }
   100% {
-    transform: translateX(-500px) translateY(80px);
+    transform: translateX(-500px) translateY(80px) rotate(10deg);
     opacity: 0;
   }
 }
 
-/* Sehr steil - bleibt mittellang */
-@keyframes comet-very-steep {
+/* Sehr steil (78°) - bleibt mittellang */
+@keyframes comet-6 {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) rotate(78deg);
     opacity: 0;
   }
   7% {
@@ -231,15 +231,15 @@
     opacity: 0;
   }
   100% {
-    transform: translateX(-100px) translateY(450px);
+    transform: translateX(-100px) translateY(450px) rotate(78deg);
     opacity: 0;
   }
 }
 
-/* Nach links oben - ungewöhnlich */
-@keyframes comet-up-left {
+/* Nach links (-30°) - ungewöhnlich */
+@keyframes comet-7 {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) rotate(-30deg);
     opacity: 0;
   }
   5% {
@@ -252,7 +252,7 @@
     opacity: 0;
   }
   100% {
-    transform: translateX(-350px) translateY(-200px);
+    transform: translateX(-350px) translateY(-200px) rotate(-30deg);
     opacity: 0;
   }
 }
@@ -444,8 +444,7 @@
   top: 8%;
   right: 15%;
   width: 140px;
-  transform: rotate(38deg);
-  animation: comet-diagonal-left 8s ease-out infinite;
+  animation: comet-1 8s ease-out infinite;
   animation-delay: 5s;
 }
 
@@ -453,8 +452,7 @@
   top: 5%;
   left: 30%;
   width: 180px;
-  transform: rotate(-35deg);
-  animation: comet-diagonal-right 12s ease-out infinite;
+  animation: comet-2 12s ease-out infinite;
   animation-delay: 20s;
 }
 
@@ -462,8 +460,7 @@
   top: 15%;
   right: 40%;
   width: 100px;
-  transform: rotate(70deg);
-  animation: comet-steep-down 7s ease-out infinite;
+  animation: comet-3 7s ease-out infinite;
   animation-delay: 35s;
 }
 
@@ -471,8 +468,7 @@
   top: 3%;
   right: 60%;
   width: 200px;
-  transform: rotate(15deg);
-  animation: comet-shallow 15s ease-out infinite;
+  animation: comet-4 15s ease-out infinite;
   animation-delay: 12s;
 }
 
@@ -480,8 +476,7 @@
   top: 25%;
   right: 5%;
   width: 160px;
-  transform: rotate(10deg);
-  animation: comet-horizontal 6s ease-out infinite;
+  animation: comet-5 6s ease-out infinite;
   animation-delay: 45s;
 }
 
@@ -489,8 +484,7 @@
   top: 10%;
   right: 75%;
   width: 120px;
-  transform: rotate(78deg);
-  animation: comet-very-steep 9s ease-out infinite;
+  animation: comet-6 9s ease-out infinite;
   animation-delay: 28s;
 }
 
@@ -498,8 +492,7 @@
   top: 40%;
   right: 10%;
   width: 130px;
-  transform: rotate(-30deg);
-  animation: comet-up-left 10s ease-out infinite;
+  animation: comet-7 10s ease-out infinite;
   animation-delay: 55s;
 }
 
@@ -993,4 +986,121 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-orange-500;
+}
+
+/* Nuxt Community Badge */
+@keyframes badge-glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes badge-sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+@keyframes badge-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.nuxt-badge-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.nuxt-badge {
+  position: relative;
+  display: inline-flex;
+  border-radius: 9999px;
+  padding: 2px;
+  background: linear-gradient(135deg, #00DC82 0%, #00DC82 50%, #36E4DA 100%);
+}
+
+.nuxt-badge-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(0, 220, 130, 0.5) 0%, transparent 70%);
+  filter: blur(12px);
+  animation: badge-glow-pulse 3s ease-in-out infinite;
+  z-index: -1;
+}
+
+.nuxt-badge-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .nuxt-badge-content {
+  background: linear-gradient(135deg, rgba(24,24,27,0.95) 0%, rgba(39,39,42,0.9) 100%);
+}
+
+.nuxt-badge-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 220, 130, 0.15) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: badge-shimmer 3s ease-in-out infinite;
+}
+
+.nuxt-badge-sparkle {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: #00DC82;
+  border-radius: 50%;
+  animation: badge-sparkle 2s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.nuxt-badge-sparkle::before,
+.nuxt-badge-sparkle::after {
+  content: '';
+  position: absolute;
+  background: #00DC82;
+}
+
+.nuxt-badge-sparkle::before {
+  width: 2px;
+  height: 8px;
+  left: 3px;
+  top: 0;
+}
+
+.nuxt-badge-sparkle::after {
+  width: 8px;
+  height: 2px;
+  left: 0;
+  top: 3px;
 }
