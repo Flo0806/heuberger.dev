@@ -72,7 +72,6 @@ defineEmits<{
             <div class="nuxt-badge-content">
               <UIcon name="i-simple-icons-nuxtdotjs" class="w-6 h-6 text-[#00DC82]" />
               <span class="text-base font-medium text-zinc-800 dark:text-white">{{ t('hero.subtitle') }}</span>
-              <div class="nuxt-badge-sparkle" />
             </div>
           </div>
         </div>
