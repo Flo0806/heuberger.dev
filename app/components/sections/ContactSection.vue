@@ -42,12 +42,9 @@ const socials = [
             class="inline-block"
           >
             <UButton
-              v-motion
-              :hovered="{ scale: 1.05 }"
-              :tapped="{ scale: 0.95 }"
               size="xl"
               color="primary"
-              class="animate-pulse-glow"
+              class="animate-pulse-glow hover:scale-105 active:scale-95 transition-transform"
             >
               <UIcon name="i-heroicons-envelope" class="w-5 h-5 mr-2" />
               {{ t('contact.email') }}
@@ -69,11 +66,10 @@ const socials = [
               v-motion
               :initial="{ opacity: 0, y: 20 }"
               :visible-once="{ opacity: 1, y: 0, transition: { duration: 300, delay: 500 + index * 100 } }"
-              :hovered="{ scale: 1.15, y: -3, transition: { duration: 150 } }"
               :href="social.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="group glass w-14 h-14 rounded-xl flex items-center justify-center hover:border-orange-500/50 transition-colors duration-300"
+              class="group glass w-14 h-14 rounded-xl flex items-center justify-center hover:border-orange-500/50 hover:scale-110 hover:-translate-y-1 transition-all duration-200"
               :aria-label="social.name"
             >
               <UIcon

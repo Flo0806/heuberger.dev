@@ -89,23 +89,18 @@ defineEmits<{
           class="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <UButton
-            v-motion
-            :hovered="{ scale: 1.05 }"
-            :tapped="{ scale: 0.95 }"
             size="lg"
             color="primary"
-            class="animate-pulse-glow"
+            class="animate-pulse-glow hover:scale-105 active:scale-95 transition-transform"
             @click="$emit('scrollTo', '#projects')"
           >
             {{ t('hero.cta.projects') }}
           </UButton>
           <UButton
-            v-motion
-            :hovered="{ scale: 1.05 }"
-            :tapped="{ scale: 0.95 }"
             size="lg"
             variant="outline"
             color="neutral"
+            class="hover:scale-105 active:scale-95 transition-transform"
             @click="$emit('scrollTo', '#contact')"
           >
             {{ t('hero.cta.contact') }}
