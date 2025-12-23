@@ -260,40 +260,40 @@
 /* Milchstraßen-Nebel der durchgleitet */
 @keyframes nebula-drift {
   0% {
-    transform: translateX(-100%) translateY(20%) rotate(-15deg);
+    transform: translateX(-100%) rotate(-12deg);
     opacity: 0;
   }
-  10% {
-    opacity: 0.15;
+  15% {
+    opacity: 0.6;
   }
   50% {
-    opacity: 0.25;
+    opacity: 0.8;
   }
-  90% {
-    opacity: 0.1;
+  85% {
+    opacity: 0.5;
   }
   100% {
-    transform: translateX(100vw) translateY(-10%) rotate(-15deg);
+    transform: translateX(100vw) rotate(-12deg);
     opacity: 0;
   }
 }
 
 @keyframes nebula-drift-2 {
   0% {
-    transform: translateX(100vw) translateY(-20%) rotate(10deg);
+    transform: translateX(100vw) rotate(8deg);
     opacity: 0;
   }
   15% {
-    opacity: 0.12;
+    opacity: 0.5;
   }
   50% {
-    opacity: 0.2;
+    opacity: 0.7;
   }
   85% {
-    opacity: 0.08;
+    opacity: 0.4;
   }
   100% {
-    transform: translateX(-100%) translateY(30%) rotate(10deg);
+    transform: translateX(-100%) rotate(8deg);
     opacity: 0;
   }
 }
@@ -490,30 +490,226 @@
   position: absolute;
   width: 600px;
   height: 200px;
-  border-radius: 50%;
-  filter: blur(60px);
   opacity: 0;
 }
 
+.nebula-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+/* Funken die wegfliegen und verglühen */
+@keyframes spark-fly-1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-30px, -20px) scale(1.3);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-80px, -50px) scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-150px, -80px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes spark-fly-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-40px, 30px) scale(1.2);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translate(-100px, 60px) scale(0.6);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-180px, 90px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes spark-fly-3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(-25px, -40px) scale(1.4);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-70px, -70px) scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-160px, -120px) scale(0.15);
+    opacity: 0;
+  }
+}
+
+@keyframes spark-fly-4 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  35% {
+    transform: translate(-50px, 10px) scale(1.1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-200px, 30px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes spark-fly-5 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(-35px, -35px) scale(1.2);
+    opacity: 0.8;
+  }
+  80% {
+    transform: translate(-120px, -90px) scale(0.4);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-170px, -130px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes spark-fly-6 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-20px, 45px) scale(1.3);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translate(-90px, 100px) scale(0.5);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-160px, 140px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+.nebula-trail {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+}
+
+.nebula-trail span {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+}
+
+.nebula-trail span:nth-child(1) {
+  width: 10px;
+  height: 10px;
+  right: 0;
+  top: 0;
+  box-shadow: 0 0 20px 8px rgba(249, 115, 22, 0.9), 0 0 40px 15px rgba(249, 115, 22, 0.4);
+  animation: spark-fly-1 3s ease-out infinite;
+}
+
+.nebula-trail span:nth-child(2) {
+  width: 8px;
+  height: 8px;
+  right: 10px;
+  top: 15px;
+  box-shadow: 0 0 15px 6px rgba(147, 51, 234, 0.9), 0 0 30px 12px rgba(147, 51, 234, 0.4);
+  animation: spark-fly-2 3.5s ease-out infinite;
+  animation-delay: 0.5s;
+}
+
+.nebula-trail span:nth-child(3) {
+  width: 6px;
+  height: 6px;
+  right: 5px;
+  top: -10px;
+  box-shadow: 0 0 12px 5px rgba(59, 130, 246, 0.9), 0 0 25px 10px rgba(59, 130, 246, 0.4);
+  animation: spark-fly-3 2.8s ease-out infinite;
+  animation-delay: 1s;
+}
+
+.nebula-trail span:nth-child(4) {
+  width: 7px;
+  height: 7px;
+  right: 15px;
+  top: 5px;
+  box-shadow: 0 0 18px 7px rgba(249, 115, 22, 0.8), 0 0 35px 14px rgba(249, 115, 22, 0.3);
+  animation: spark-fly-4 4s ease-out infinite;
+  animation-delay: 1.5s;
+}
+
+.nebula-trail span:nth-child(5) {
+  width: 5px;
+  height: 5px;
+  right: 0;
+  top: -5px;
+  box-shadow: 0 0 10px 4px rgba(147, 51, 234, 0.8), 0 0 20px 8px rgba(147, 51, 234, 0.3);
+  animation: spark-fly-5 3.2s ease-out infinite;
+  animation-delay: 2s;
+}
+
+.nebula-trail span:nth-child(6) {
+  width: 4px;
+  height: 4px;
+  right: 8px;
+  top: 10px;
+  box-shadow: 0 0 8px 3px rgba(59, 130, 246, 0.7), 0 0 16px 6px rgba(59, 130, 246, 0.3);
+  animation: spark-fly-6 3.8s ease-out infinite;
+  animation-delay: 0.8s;
+}
+
 .nebula-1 {
-  top: 20%;
+  top: 30%;
+  animation: nebula-drift 20s linear infinite;
+  animation-delay: 2s;
+}
+
+.nebula-1 .nebula-bg {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(147, 51, 234, 0.2) 20%,
-    rgba(249, 115, 22, 0.15) 40%,
-    rgba(59, 130, 246, 0.18) 60%,
-    rgba(147, 51, 234, 0.12) 80%,
+    rgba(147, 51, 234, 0.4) 20%,
+    rgba(249, 115, 22, 0.3) 40%,
+    rgba(59, 130, 246, 0.35) 60%,
+    rgba(147, 51, 234, 0.25) 80%,
     transparent 100%
   );
-  animation: nebula-drift 120s linear infinite;
-  animation-delay: 10s;
 }
 
 .nebula-2 {
   top: 55%;
   width: 500px;
   height: 150px;
+  animation: nebula-drift-2 150s linear infinite;
+  animation-delay: 60s;
+}
+
+.nebula-2 .nebula-bg {
   background: linear-gradient(
     90deg,
     transparent 0%,
@@ -522,13 +718,58 @@
     rgba(249, 115, 22, 0.1) 75%,
     transparent 100%
   );
-  animation: nebula-drift-2 150s linear infinite;
-  animation-delay: 60s;
 }
 
-/* Hide nebula in light mode */
-:root:not(.dark) .nebula-container {
-  display: none;
+/* Light mode nebula - andere Farben */
+:root:not(.dark) .nebula-1 .nebula-bg {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(249, 115, 22, 0.25) 20%,
+    rgba(251, 191, 36, 0.2) 40%,
+    rgba(249, 115, 22, 0.22) 60%,
+    rgba(245, 158, 11, 0.15) 80%,
+    transparent 100%
+  );
+}
+
+:root:not(.dark) .nebula-2 .nebula-bg {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 158, 11, 0.2) 25%,
+    rgba(249, 115, 22, 0.25) 50%,
+    rgba(251, 191, 36, 0.15) 75%,
+    transparent 100%
+  );
+}
+
+:root:not(.dark) .nebula-trail span {
+  background: rgba(249, 115, 22, 0.9);
+}
+
+:root:not(.dark) .nebula-trail span:nth-child(1) {
+  box-shadow: 0 0 20px 8px rgba(249, 115, 22, 0.7), 0 0 40px 15px rgba(249, 115, 22, 0.3);
+}
+
+:root:not(.dark) .nebula-trail span:nth-child(2) {
+  box-shadow: 0 0 15px 6px rgba(245, 158, 11, 0.7), 0 0 30px 12px rgba(245, 158, 11, 0.3);
+}
+
+:root:not(.dark) .nebula-trail span:nth-child(3) {
+  box-shadow: 0 0 12px 5px rgba(251, 191, 36, 0.7), 0 0 25px 10px rgba(251, 191, 36, 0.3);
+}
+
+:root:not(.dark) .nebula-trail span:nth-child(4) {
+  box-shadow: 0 0 18px 7px rgba(249, 115, 22, 0.6), 0 0 35px 14px rgba(249, 115, 22, 0.25);
+}
+
+:root:not(.dark) .nebula-trail span:nth-child(5) {
+  box-shadow: 0 0 10px 4px rgba(245, 158, 11, 0.6), 0 0 20px 8px rgba(245, 158, 11, 0.25);
+}
+
+:root:not(.dark) .nebula-trail span:nth-child(6) {
+  box-shadow: 0 0 8px 3px rgba(251, 191, 36, 0.5), 0 0 16px 6px rgba(251, 191, 36, 0.2);
 }
 
 /* Static twinkling stars */

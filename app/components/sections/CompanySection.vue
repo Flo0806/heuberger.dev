@@ -41,11 +41,16 @@ const services = [
                   rel="noopener noreferrer"
                   class="block hover:scale-105 transition-transform duration-300"
                 >
-                  <img
-                    :src="colorMode.value === 'dark' ? '/img/Imagotype_WhiteFH.png' : '/img/Imagotype_BlackFH.png'"
-                    alt="FH SoftDev"
-                    class="h-20 md:h-24 w-auto"
-                  >
+                  <ClientOnly>
+                    <img
+                      :src="colorMode.value === 'dark' ? '/img/Imagotype_WhiteFH.png' : '/img/Imagotype_BlackFH.png'"
+                      alt="FH SoftDev"
+                      class="h-20 md:h-24 w-auto"
+                    >
+                    <template #fallback>
+                      <div class="h-20 md:h-24 w-32" />
+                    </template>
+                  </ClientOnly>
                 </a>
               </div>
 

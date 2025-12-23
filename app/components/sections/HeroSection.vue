@@ -71,7 +71,9 @@ defineEmits<{
             <div class="nuxt-badge-glow" />
             <div class="nuxt-badge-content">
               <UIcon name="i-simple-icons-nuxtdotjs" class="w-6 h-6 text-[#00DC82]" />
-              <span class="text-base font-medium text-zinc-800 dark:text-white">{{ t('hero.subtitle') }}</span>
+              <span class="text-base text-zinc-800 dark:text-white">
+                Nuxt Community <span class="font-bold text-[#00DC82]">Member</span>
+              </span>
             </div>
           </div>
         </div>

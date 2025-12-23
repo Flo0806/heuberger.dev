@@ -41,8 +41,18 @@ const toggleLocale = () => {
 
       <!-- Milchstraßen-Nebel (selten) -->
       <div class="nebula-container">
-        <div class="nebula nebula-1" />
-        <div class="nebula nebula-2" />
+        <div class="nebula nebula-1">
+          <div class="nebula-bg" />
+          <div class="nebula-trail">
+            <span /><span /><span /><span /><span /><span />
+          </div>
+        </div>
+        <div class="nebula nebula-2">
+          <div class="nebula-bg" />
+          <div class="nebula-trail">
+            <span /><span /><span /><span /><span /><span />
+          </div>
+        </div>
       </div>
 
       <!-- Twinkling Stars (Dark Mode) -->
