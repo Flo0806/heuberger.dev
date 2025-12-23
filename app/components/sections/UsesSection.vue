@@ -1,7 +1,22 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-const uses = {
+interface UseItem {
+  name: string
+  description: string
+  icon: string
+  link?: string
+  highlight?: boolean
+}
+
+interface UseCategory {
+  icon: string
+  items: UseItem[]
+}
+
+type CategoryKey = 'editor' | 'fonts' | 'extensions' | 'terminal'
+
+const uses: Record<CategoryKey, UseCategory> = {
   editor: {
     icon: 'i-simple-icons-visualstudiocode',
     items: [
@@ -41,7 +56,7 @@ const uses = {
   }
 }
 
-const categories = ['editor', 'fonts', 'extensions', 'terminal'] as const
+const categories: CategoryKey[] = ['editor', 'fonts', 'extensions', 'terminal']
 </script>
 
 <template>

@@ -120,7 +120,7 @@ const projects = computed(() => [
                   :src="project.customIcon"
                   :alt="t(`projects.items.${project.key}.name`)"
                   class="w-10 h-10 object-contain"
-                />
+                >
                 <UIcon v-else :name="project.icon" :class="[project.color, 'w-8 h-8']" />
               </div>
             </div>

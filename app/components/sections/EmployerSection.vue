@@ -22,8 +22,8 @@ const roles = [
           class="glass rounded-3xl p-8 md:p-12 relative overflow-hidden"
         >
           <!-- Background Accent -->
-          <div class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-sky-500/10 to-transparent rounded-full blur-3xl" />
-          <div class="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-tl from-blue-500/10 to-transparent rounded-full blur-3xl" />
+          <div class="absolute top-0 left-0 w-64 h-64 bg-linear-to-br from-sky-500/10 to-transparent rounded-full blur-3xl" />
+          <div class="absolute bottom-0 right-0 w-48 h-48 bg-linear-to-tl from-blue-500/10 to-transparent rounded-full blur-3xl" />
 
           <div class="relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
@@ -45,7 +45,7 @@ const roles = [
                       src="/img/dadg.webp"
                       alt="DADG"
                       class="w-full h-full object-contain"
-                    />
+                    >
                   </div>
                 </a>
               </div>
@@ -66,7 +66,7 @@ const roles = [
                   :visible-once="{ opacity: 1, y: 0, transition: { delay: 400 } }"
                   class="text-2xl md:text-3xl font-bold mb-2"
                 >
-                  <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">{{ t('employer.title') }}</span>
+                  <span class="text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-blue-500">{{ t('employer.title') }}</span>
                 </h2>
                 <p
                   v-motion
@@ -97,7 +97,7 @@ const roles = [
                     :key="role.key"
                     class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-zinc-200/50 dark:bg-zinc-800/50 border border-zinc-300/50 dark:border-zinc-700/50"
                   >
-                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-sky-500/20 to-blue-500/20 flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-lg bg-linear-to-br from-sky-500/20 to-blue-500/20 flex items-center justify-center">
                       <UIcon :name="role.icon" class="w-5 h-5 text-sky-400" />
                     </div>
                     <div>

@@ -2,7 +2,7 @@
 const { t } = useI18n()
 
 const facts = [
-  { key: 'experience', value: '8+', icon: 'i-heroicons-clock' },
+  { key: 'experience', value: '24+', icon: 'i-heroicons-clock' },
   { key: 'projects', value: '50+', icon: 'i-heroicons-rocket-launch' },
   { key: 'opensource', value: '4', icon: 'i-heroicons-code-bracket' }
 ]
@@ -44,14 +44,14 @@ const facts = [
                 class="relative aspect-square max-w-sm mx-auto"
               >
                 <!-- Glow effect behind image -->
-                <div class="absolute inset-4 rounded-full bg-gradient-to-br from-orange-500/40 to-amber-500/40 blur-3xl" />
+                <div class="absolute inset-4 rounded-full bg-linear-to-br from-orange-500/40 to-amber-500/40 blur-3xl" />
                 <!-- Image container -->
                 <div class="relative rounded-full overflow-hidden border-4 border-orange-500/20 shadow-2xl shadow-orange-500/20">
                   <img
                     src="/img/profile.jpeg"
                     alt="Florian Heuberger"
                     class="w-full h-full object-cover"
-                  />
+                  >
                 </div>
               </div>
               <!-- Decorative rectangles -->

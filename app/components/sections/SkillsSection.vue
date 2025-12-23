@@ -69,12 +69,12 @@ const tools = [
             <a
               v-for="(skill, index) in primarySkills"
               :key="skill.name"
-              :href="skill.link"
-              target="_blank"
-              rel="noopener noreferrer"
               v-motion
               :initial="{ opacity: 0, scale: 0.8 }"
               :visible-once="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, delay: index * 100 } }"
+              :href="skill.link"
+              target="_blank"
+              rel="noopener noreferrer"
               class="glass rounded-xl px-6 py-4 flex items-center gap-3 cursor-pointer hover:border-orange-500/50 hover:scale-105 transition-all duration-200"
             >
               <UIcon :name="skill.icon" :class="[skill.color, 'w-8 h-8']" />
@@ -97,12 +97,12 @@ const tools = [
             <a
               v-for="(skill, index) in secondarySkills"
               :key="skill.name"
-              :href="skill.link"
-              target="_blank"
-              rel="noopener noreferrer"
               v-motion
               :initial="{ opacity: 0, x: -20 }"
               :visible-once="{ opacity: 1, x: 0, transition: { duration: 400, delay: 400 + index * 80 } }"
+              :href="skill.link"
+              target="_blank"
+              rel="noopener noreferrer"
               class="glass rounded-xl px-5 py-3 flex items-center gap-3 cursor-pointer hover:border-orange-500/50 hover:scale-105 transition-all duration-200"
             >
               <UIcon :name="skill.icon" :class="[skill.color, 'w-6 h-6']" />
@@ -125,12 +125,12 @@ const tools = [
             <a
               v-for="(tool, index) in tools"
               :key="tool.name"
-              :href="tool.link"
-              target="_blank"
-              rel="noopener noreferrer"
               v-motion
               :initial="{ opacity: 0, y: 15 }"
               :visible-once="{ opacity: 1, y: 0, transition: { duration: 300, delay: 600 + index * 50 } }"
+              :href="tool.link"
+              target="_blank"
+              rel="noopener noreferrer"
               class="glass rounded-lg px-4 py-2 flex items-center gap-2 cursor-pointer hover:border-orange-500/50 hover:scale-110 hover:-translate-y-0.5 transition-all duration-200"
             >
               <UIcon :name="tool.icon" :class="[tool.color, 'w-5 h-5']" />

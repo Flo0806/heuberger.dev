@@ -24,7 +24,7 @@ const services = [
           class="glass rounded-3xl p-8 md:p-12 relative overflow-hidden"
         >
           <!-- Background Accent -->
-          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-orange-500/10 to-transparent rounded-full blur-3xl" />
+          <div class="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-orange-500/10 to-transparent rounded-full blur-3xl" />
 
           <div class="relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
@@ -45,7 +45,7 @@ const services = [
                     :src="colorMode.value === 'dark' ? '/img/Imagotype_WhiteFH.png' : '/img/Imagotype_BlackFH.png'"
                     alt="FH SoftDev"
                     class="h-20 md:h-24 w-auto"
-                  />
+                  >
                 </a>
               </div>
 

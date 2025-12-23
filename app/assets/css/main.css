@@ -55,12 +55,12 @@
 
 /* Gradient text */
 .gradient-text {
-  @apply bg-gradient-to-r from-orange-400 via-orange-500 to-amber-500 bg-clip-text text-transparent;
+  @apply bg-linear-to-r from-orange-400 via-orange-500 to-amber-500 bg-clip-text text-transparent;
 }
 
 /* Gradient background */
 .gradient-bg {
-  @apply bg-gradient-to-br from-orange-500/10 via-transparent to-amber-500/10;
+  @apply bg-linear-to-br from-orange-500/10 via-transparent to-amber-500/10;
 }
 
 /* Floating Orbs */
