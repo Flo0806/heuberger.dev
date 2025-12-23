@@ -32,24 +32,33 @@ const currentYear = new Date().getFullYear()
 
           <!-- Social Links -->
           <div class="flex items-center gap-3">
-          <a
-            :href="appConfig.site.socials.github"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-zinc-600 dark:text-zinc-500 hover:text-orange-400 transition-colors"
-            aria-label="GitHub"
-          >
-            <UIcon name="i-simple-icons-github" class="w-5 h-5" />
-          </a>
-          <a
-            :href="appConfig.site.socials.linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-zinc-600 dark:text-zinc-500 hover:text-orange-400 transition-colors"
-            aria-label="LinkedIn"
-          >
-            <UIcon name="i-simple-icons-linkedin" class="w-5 h-5" />
-          </a>
+            <a
+              :href="appConfig.site.socials.github"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-zinc-600 dark:text-zinc-500 hover:text-orange-400 transition-colors"
+              aria-label="GitHub"
+            >
+              <UIcon name="i-simple-icons-github" class="w-5 h-5" />
+            </a>
+            <a
+              :href="appConfig.site.socials.linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-zinc-600 dark:text-zinc-500 hover:text-orange-400 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <UIcon name="i-simple-icons-linkedin" class="w-5 h-5" />
+            </a>
+            <a
+              href="https://discord.com/users/loewnzaan"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-zinc-600 dark:text-zinc-500 hover:text-orange-400 transition-colors"
+              aria-label="Discord"
+            >
+              <UIcon name="i-simple-icons-discord" class="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>

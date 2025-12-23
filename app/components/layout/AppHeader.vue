@@ -78,9 +78,10 @@ const scrollTo = (href: string) => {
           class="w-9 h-9"
           @click="emit('toggleLocale')"
         >
-          <span class="text-xs font-medium uppercase">
-            {{ locale === 'de' ? 'EN' : 'DE' }}
-          </span>
+          <UIcon
+            :name="locale === 'de' ? 'i-circle-flags-uk' : 'i-circle-flags-de'"
+            class="w-5 h-5"
+          />
         </UButton>
 
         <!-- Color Mode Toggle -->
