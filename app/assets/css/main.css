@@ -298,25 +298,6 @@
   }
 }
 
-@keyframes nebula-drift-3 {
-  0% {
-    transform: translateX(-50%) translateY(100%) rotate(-25deg);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.1;
-  }
-  60% {
-    opacity: 0.18;
-  }
-  90% {
-    opacity: 0.05;
-  }
-  100% {
-    transform: translateX(80%) translateY(-50%) rotate(-25deg);
-    opacity: 0;
-  }
-}
 
 /* Twinkle effect for stars */
 @keyframes twinkle {
@@ -519,45 +500,30 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(147, 51, 234, 0.15) 20%,
-    rgba(249, 115, 22, 0.1) 40%,
-    rgba(59, 130, 246, 0.12) 60%,
-    rgba(147, 51, 234, 0.1) 80%,
+    rgba(147, 51, 234, 0.12) 20%,
+    rgba(249, 115, 22, 0.08) 40%,
+    rgba(59, 130, 246, 0.1) 60%,
+    rgba(147, 51, 234, 0.08) 80%,
     transparent 100%
   );
-  animation: nebula-drift 90s linear infinite;
-  animation-delay: 10s;
+  animation: nebula-drift 180s linear infinite;
+  animation-delay: 30s;
 }
 
 .nebula-2 {
-  top: 50%;
+  top: 45%;
   width: 500px;
   height: 150px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(59, 130, 246, 0.12) 25%,
-    rgba(168, 85, 247, 0.15) 50%,
-    rgba(249, 115, 22, 0.08) 75%,
+    rgba(59, 130, 246, 0.1) 25%,
+    rgba(168, 85, 247, 0.12) 50%,
+    rgba(249, 115, 22, 0.06) 75%,
     transparent 100%
   );
-  animation: nebula-drift-2 120s linear infinite;
-  animation-delay: 45s;
-}
-
-.nebula-3 {
-  top: 70%;
-  width: 450px;
-  height: 180px;
-  background: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(249, 115, 22, 0.1) 30%,
-    rgba(147, 51, 234, 0.12) 60%,
-    transparent 100%
-  );
-  animation: nebula-drift-3 100s linear infinite;
-  animation-delay: 70s;
+  animation: nebula-drift-2 240s linear infinite;
+  animation-delay: 120s;
 }
 
 /* Hide nebula in light mode */

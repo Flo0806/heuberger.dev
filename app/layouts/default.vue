@@ -39,11 +39,10 @@ const toggleLocale = () => {
         <div class="shooting-star comet-7" />
       </div>
 
-      <!-- Milchstraßen-Nebel -->
+      <!-- Milchstraßen-Nebel (selten) -->
       <div class="nebula-container">
         <div class="nebula nebula-1" />
         <div class="nebula nebula-2" />
-        <div class="nebula nebula-3" />
       </div>
 
       <!-- Twinkling Stars (Dark Mode) -->
