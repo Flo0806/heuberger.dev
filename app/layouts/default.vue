@@ -28,14 +28,22 @@ const toggleLocale = () => {
         <div class="orb orb-5" />
       </div>
 
-      <!-- Shooting Stars -->
+      <!-- Kometen (verschiedene Richtungen) -->
       <div class="shooting-stars">
-        <div class="shooting-star star-1" />
-        <div class="shooting-star star-2" />
-        <div class="shooting-star star-3" />
-        <div class="shooting-star star-4" />
-        <div class="shooting-star star-5" />
-        <div class="shooting-star star-6" />
+        <div class="shooting-star comet-1" />
+        <div class="shooting-star comet-2" />
+        <div class="shooting-star comet-3" />
+        <div class="shooting-star comet-4" />
+        <div class="shooting-star comet-5" />
+        <div class="shooting-star comet-6" />
+        <div class="shooting-star comet-7" />
+      </div>
+
+      <!-- Milchstraßen-Nebel -->
+      <div class="nebula-container">
+        <div class="nebula nebula-1" />
+        <div class="nebula nebula-2" />
+        <div class="nebula nebula-3" />
       </div>
 
       <!-- Twinkling Stars (Dark Mode) -->

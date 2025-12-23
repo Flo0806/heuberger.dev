@@ -114,44 +114,33 @@
   }
 }
 
-/* Shooting Stars - flying from top-right to bottom-left */
-@keyframes shooting-star-fast {
-  0% {
-    transform: translateX(0) translateY(0) rotate(35deg);
-    opacity: 0;
-  }
-  3% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-350px) translateY(250px) rotate(35deg);
-    opacity: 0;
-  }
-}
+/* Shooting Stars / Comets - verschiedene Richtungen und Geschwindigkeiten */
 
-@keyframes shooting-star-long {
+/* Diagonal links-unten - verschwindet früh */
+@keyframes comet-diagonal-left {
   0% {
-    transform: translateX(0) translateY(0) rotate(40deg);
+    transform: translateX(0) translateY(0);
     opacity: 0;
   }
   5% {
-    opacity: 1;
+    opacity: 0.9;
   }
-  80% {
-    opacity: 0.8;
+  40% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0;
   }
   100% {
-    transform: translateX(-600px) translateY(450px) rotate(40deg);
+    transform: translateX(-450px) translateY(350px);
     opacity: 0;
   }
 }
 
-@keyframes shooting-star-slow {
+/* Diagonal rechts-unten - bleibt lange sichtbar */
+@keyframes comet-diagonal-right {
   0% {
-    transform: translateX(0) translateY(0) rotate(32deg);
+    transform: translateX(0) translateY(0);
     opacity: 0;
   }
   8% {
@@ -161,41 +150,170 @@
     opacity: 0.6;
   }
   100% {
-    transform: translateX(-500px) translateY(380px) rotate(32deg);
+    transform: translateX(400px) translateY(300px);
     opacity: 0;
   }
 }
 
-@keyframes shooting-star-short {
+/* Steiler Winkel nach unten - mittlere Dauer */
+@keyframes comet-steep-down {
   0% {
-    transform: translateX(0) translateY(0) rotate(38deg);
-    opacity: 0;
-  }
-  4% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateX(-250px) translateY(180px) rotate(38deg);
-    opacity: 0;
-  }
-}
-
-@keyframes shooting-star-steep {
-  0% {
-    transform: translateX(0) translateY(0) rotate(50deg);
+    transform: translateX(0) translateY(0);
     opacity: 0;
   }
   6% {
-    opacity: 1;
+    opacity: 0.85;
   }
-  70% {
-    opacity: 0.7;
+  55% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0;
   }
   100% {
-    transform: translateX(-300px) translateY(400px) rotate(50deg);
+    transform: translateX(-150px) translateY(500px);
+    opacity: 0;
+  }
+}
+
+/* Flacher Winkel - lang sichtbar */
+@keyframes comet-shallow {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(-600px) translateY(150px);
+    opacity: 0;
+  }
+}
+
+/* Fast horizontal - verschwindet schnell */
+@keyframes comet-horizontal {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  4% {
+    opacity: 0.8;
+  }
+  35% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-500px) translateY(80px);
+    opacity: 0;
+  }
+}
+
+/* Sehr steil - bleibt mittellang */
+@keyframes comet-very-steep {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  7% {
+    opacity: 0.9;
+  }
+  65% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-100px) translateY(450px);
+    opacity: 0;
+  }
+}
+
+/* Nach links oben - ungewöhnlich */
+@keyframes comet-up-left {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-350px) translateY(-200px);
+    opacity: 0;
+  }
+}
+
+/* Milchstraßen-Nebel der durchgleitet */
+@keyframes nebula-drift {
+  0% {
+    transform: translateX(-100%) translateY(20%) rotate(-15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-10%) rotate(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes nebula-drift-2 {
+  0% {
+    transform: translateX(100vw) translateY(-20%) rotate(10deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.12;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  85% {
+    opacity: 0.08;
+  }
+  100% {
+    transform: translateX(-100%) translateY(30%) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+@keyframes nebula-drift-3 {
+  0% {
+    transform: translateX(-50%) translateY(100%) rotate(-25deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 0.18;
+  }
+  90% {
+    opacity: 0.05;
+  }
+  100% {
+    transform: translateX(80%) translateY(-50%) rotate(-25deg);
     opacity: 0;
   }
 }
@@ -321,52 +439,137 @@
   right: 0;
 }
 
-.star-1 {
+/* Kometen mit verschiedenen Richtungen */
+.comet-1 {
   top: 8%;
   right: 15%;
-  width: 120px;
-  animation: shooting-star-fast 1.8s ease-out infinite;
-  animation-delay: 3s;
+  width: 140px;
+  transform: rotate(38deg);
+  animation: comet-diagonal-left 8s ease-out infinite;
+  animation-delay: 5s;
 }
 
-.star-2 {
+.comet-2 {
   top: 5%;
-  right: 45%;
+  left: 30%;
+  width: 180px;
+  transform: rotate(-35deg);
+  animation: comet-diagonal-right 12s ease-out infinite;
+  animation-delay: 20s;
+}
+
+.comet-3 {
+  top: 15%;
+  right: 40%;
+  width: 100px;
+  transform: rotate(70deg);
+  animation: comet-steep-down 7s ease-out infinite;
+  animation-delay: 35s;
+}
+
+.comet-4 {
+  top: 3%;
+  right: 60%;
   width: 200px;
-  animation: shooting-star-long 4.5s ease-out infinite;
+  transform: rotate(15deg);
+  animation: comet-shallow 15s ease-out infinite;
   animation-delay: 12s;
 }
 
-.star-3 {
-  top: 20%;
-  right: 8%;
-  width: 100px;
-  animation: shooting-star-short 1.2s ease-out infinite;
-  animation-delay: 22s;
+.comet-5 {
+  top: 25%;
+  right: 5%;
+  width: 160px;
+  transform: rotate(10deg);
+  animation: comet-horizontal 6s ease-out infinite;
+  animation-delay: 45s;
 }
 
-.star-4 {
-  top: 12%;
-  right: 65%;
-  width: 180px;
-  animation: shooting-star-slow 5s ease-out infinite;
-  animation-delay: 8s;
-}
-
-.star-5 {
-  top: 30%;
-  right: 25%;
-  width: 90px;
-  animation: shooting-star-steep 2s ease-out infinite;
+.comet-6 {
+  top: 10%;
+  right: 75%;
+  width: 120px;
+  transform: rotate(78deg);
+  animation: comet-very-steep 9s ease-out infinite;
   animation-delay: 28s;
 }
 
-.star-6 {
-  top: 3%;
-  right: 80%;
-  width: 160px;
-  animation: shooting-star-long 4s ease-out infinite;
-  animation-delay: 18s;
+.comet-7 {
+  top: 40%;
+  right: 10%;
+  width: 130px;
+  transform: rotate(-30deg);
+  animation: comet-up-left 10s ease-out infinite;
+  animation-delay: 55s;
+}
+
+/* Milchstraßen-Nebel */
+.nebula-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nebula {
+  position: absolute;
+  width: 600px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0;
+}
+
+.nebula-1 {
+  top: 20%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(147, 51, 234, 0.15) 20%,
+    rgba(249, 115, 22, 0.1) 40%,
+    rgba(59, 130, 246, 0.12) 60%,
+    rgba(147, 51, 234, 0.1) 80%,
+    transparent 100%
+  );
+  animation: nebula-drift 90s linear infinite;
+  animation-delay: 10s;
+}
+
+.nebula-2 {
+  top: 50%;
+  width: 500px;
+  height: 150px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(59, 130, 246, 0.12) 25%,
+    rgba(168, 85, 247, 0.15) 50%,
+    rgba(249, 115, 22, 0.08) 75%,
+    transparent 100%
+  );
+  animation: nebula-drift-2 120s linear infinite;
+  animation-delay: 45s;
+}
+
+.nebula-3 {
+  top: 70%;
+  width: 450px;
+  height: 180px;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(249, 115, 22, 0.1) 30%,
+    rgba(147, 51, 234, 0.12) 60%,
+    transparent 100%
+  );
+  animation: nebula-drift-3 100s linear infinite;
+  animation-delay: 70s;
+}
+
+/* Hide nebula in light mode */
+:root:not(.dark) .nebula-container {
+  display: none;
 }
 
 /* Static twinkling stars */
