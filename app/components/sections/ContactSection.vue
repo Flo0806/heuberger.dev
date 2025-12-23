@@ -4,7 +4,8 @@ const appConfig = useAppConfig()
 
 const socials = [
   { name: 'GitHub', icon: 'i-simple-icons-github', url: appConfig.site.socials.github },
-  { name: 'LinkedIn', icon: 'i-simple-icons-linkedin', url: appConfig.site.socials.linkedin }
+  { name: 'LinkedIn', icon: 'i-simple-icons-linkedin', url: appConfig.site.socials.linkedin },
+  { name: 'Discord', icon: 'i-simple-icons-discord', url: 'https://discord.com/users/loewnzaan', username: '@loewnzaan' }
 ]
 </script>
 

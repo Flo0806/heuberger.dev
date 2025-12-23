@@ -8,7 +8,7 @@ const hardware = {
   ],
   workstation: [
     { name: 'Intel Core i5-13400', specs: '16 Threads', icon: 'i-heroicons-cpu-chip' },
-    { name: '32GB DDR4 RAM', specs: 'System Memory', icon: 'i-heroicons-circle-stack' },
+    { name: '32GB DDR5 RAM', specs: 'System Memory', icon: 'i-heroicons-circle-stack' },
     { name: 'MEDION Erazer', specs: 'Desktop PC', icon: 'i-heroicons-computer-desktop' }
   ],
   displays: [
