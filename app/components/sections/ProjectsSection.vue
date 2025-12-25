@@ -65,6 +65,7 @@ const projects = computed(() => [
     bgColor: 'bg-blue-500/10',
     link: 'https://marketplace.visualstudio.com/items?itemName=FHSoftDev.lintmon',
     linkType: 'vscode',
+     github: 'https://github.com/Flo0806/lintmon',
     stars: null,
     downloads: null
   }

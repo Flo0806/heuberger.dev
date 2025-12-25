@@ -16,7 +16,9 @@ const hardware = {
     { name: 'Lenovo 4K', specs: 'Secondary Display', icon: 'i-heroicons-tv' }
   ],
   peripherals: [
-    { name: 'Keychron Q1 QMK', specs: 'Mechanical Keyboard', icon: 'i-heroicons-command-line' }
+    { name: 'Keychron Q1 QMK', specs: 'Mechanical Keyboard', icon: 'i-heroicons-command-line' },
+    { name: 'Logitech C922', specs: 'HD Webcam', icon: 'i-heroicons-video-camera' },
+    { name: 'Logitech Astro A50 5th Gen', specs: 'Wireless Headset', icon: 'i-heroicons-speaker-wave' }
   ],
   mobile: [
     { name: 'MacBook Pro M1', specs: 'Apple Silicon', icon: 'i-simple-icons-apple' },
