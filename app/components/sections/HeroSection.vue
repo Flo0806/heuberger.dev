@@ -35,7 +35,7 @@ defineEmits<{
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 200 } }"
-          class="text-orange-400 text-lg md:text-xl mb-4"
+          class="text-orange-400 text-lg md:text-xl mb-4 opacity-0"
         >
           {{ t('hero.greeting') }}
         </p>
@@ -45,7 +45,7 @@ defineEmits<{
           v-motion
           :initial="{ opacity: 0, y: 30 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: 400 } }"
-          class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
+          class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 opacity-0"
         >
           <span class="gradient-text">{{ t('hero.name') }}</span>
         </h1>
@@ -55,7 +55,7 @@ defineEmits<{
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 600 } }"
-          class="text-2xl md:text-3xl lg:text-4xl text-zinc-700 dark:text-zinc-300 font-light mb-6"
+          class="text-2xl md:text-3xl lg:text-4xl text-zinc-700 dark:text-zinc-300 font-light mb-6 opacity-0"
         >
           {{ t('hero.title') }}
         </h2>
@@ -65,7 +65,7 @@ defineEmits<{
           v-motion
           :initial="{ opacity: 0, scale: 0.8 }"
           :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, delay: 800 } }"
-          class="nuxt-badge-wrapper mb-8"
+          class="nuxt-badge-wrapper mb-8 opacity-0"
         >
           <div class="nuxt-badge">
             <div class="nuxt-badge-glow" />
@@ -83,7 +83,7 @@ defineEmits<{
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 900 } }"
-          class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-10"
+          class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-10 opacity-0"
         >
           {{ t('hero.description') }}
         </p>
@@ -93,7 +93,7 @@ defineEmits<{
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 1100 } }"
-          class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0"
         >
           <UButton
             size="lg"

@@ -131,12 +131,12 @@ const projects = computed(() => [
               <h3 class="text-xl font-bold mb-2 group-hover:text-orange-400 transition-colors">
                 {{ t(`projects.items.${project.key}.name`) }}
               </h3>
-              <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed line-clamp-3 min-h-[4.5rem]">
+              <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed line-clamp-3 min-h-18">
                 {{ t(`projects.items.${project.key}.description`) }}
               </p>
 
               <!-- Stats Badges - always show container for consistent height -->
-              <div class="mt-auto pt-4 border-t border-zinc-800/30 min-h-[44px] flex items-center">
+              <div class="mt-auto pt-4 border-t border-zinc-800/30 min-h-11 flex items-center">
                 <div v-if="project.stars !== null" class="flex items-center gap-2">
                   <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20">
                     <UIcon name="i-heroicons-star-solid" class="w-3.5 h-3.5 text-yellow-400" />
