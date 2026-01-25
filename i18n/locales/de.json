@@ -59,6 +59,10 @@
       "lintmon": {
         "name": "lintmon",
         "description": "VS Code Extension für Echtzeit-Linting-Überwachung und -Visualisierung."
+      },
+      "nuxtCare": {
+        "name": "nuxt.care",
+        "description": "Audit-Tool für Nuxt-Module. Analysiere Modul-Gesundheit, Abhängigkeiten und Best Practices mit einer einfachen Web-Oberfläche."
       }
     }
   },
@@ -88,7 +92,8 @@
       "editor": "Editor",
       "fonts": "Schriftarten",
       "extensions": "Extensions",
-      "terminal": "Terminal"
+      "terminal": "Terminal",
+      "devtools": "Dev Tools"
     }
   },
   "footer": {

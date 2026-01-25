@@ -14,7 +14,7 @@ interface UseCategory {
   items: UseItem[]
 }
 
-type CategoryKey = 'editor' | 'fonts' | 'extensions' | 'terminal'
+type CategoryKey = 'editor' | 'fonts' | 'extensions' | 'terminal' | 'devtools'
 
 const uses: Record<CategoryKey, UseCategory> = {
   editor: {
@@ -53,10 +53,19 @@ const uses: Record<CategoryKey, UseCategory> = {
       { name: 'Oh My Zsh', description: 'Shell Framework', icon: 'i-simple-icons-zsh', link: 'https://ohmyz.sh/' },
       { name: 'pnpm', description: 'Package Manager', icon: 'i-simple-icons-pnpm', link: 'https://pnpm.io/' }
     ]
+  },
+  devtools: {
+    icon: 'i-heroicons-wrench-screwdriver',
+    items: [
+      { name: 'Docker', description: 'Containerization', icon: 'i-simple-icons-docker', link: 'https://www.docker.com/' },
+      { name: 'Postman', description: 'API Testing', icon: 'i-simple-icons-postman', link: 'https://www.postman.com/' },
+      { name: 'MobaXterm', description: 'SSH Client', icon: 'i-heroicons-server', link: 'https://mobaxterm.mobatek.net/' },
+      { name: 'Zen Browser', description: 'Primary Browser', icon: 'i-simple-icons-zen', link: 'https://zen-browser.app/' }
+    ]
   }
 }
 
-const categories: CategoryKey[] = ['editor', 'fonts', 'extensions', 'terminal']
+const categories: CategoryKey[] = ['editor', 'fonts', 'extensions', 'terminal', 'devtools']
 </script>
 
 <template>

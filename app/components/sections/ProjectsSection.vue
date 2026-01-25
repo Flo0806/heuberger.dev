@@ -50,13 +50,26 @@ const projects = computed(() => [
   {
     key: 'vormNuxt',
     icon: 'i-simple-icons-nuxtdotjs',
-    color: 'text-green-500',
+    color: 'text-green-600',
     bgColor: 'bg-green-500/10',
-    link: 'https://www.npmjs.com/package/vorm-nuxt',
+    link: 'https://nuxt.care/',
     linkType: 'npm',
     github: 'https://github.com/Flo0806/vorm',
     stars: githubData.value?.stargazers_count || 0,
     downloads: npmNuxtData.value?.downloads || 0
+  },
+   {
+    key: 'nuxtCare',
+    icon: null,
+    customIcon: '/img/nuxt.care-logo.svg',
+    color: 'text-green-400',
+    bgColor: 'bg-green-500/10',
+    link: 'https://nuxt.care',
+    linkType: 'website',
+    github: null,
+    stars: null,
+    downloads: null,
+    isWebApp: true
   },
   {
     key: 'lintmon',
@@ -155,6 +168,16 @@ const projects = computed(() => [
                   <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20">
                     <UIcon name="i-simple-icons-electron" class="w-3.5 h-3.5 text-purple-400" />
                     <span class="text-xs font-medium text-purple-400">Electron</span>
+                  </div>
+                </div>
+                <div v-else-if="project.isWebApp" class="flex items-center gap-2">
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/10 border border-green-500/20">
+                    <UIcon name="i-heroicons-globe-alt" class="w-3.5 h-3.5 text-green-400" />
+                    <span class="text-xs font-medium text-green-400">Web App</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                    <UIcon name="i-simple-icons-nuxtdotjs" class="w-3.5 h-3.5 text-emerald-400" />
+                    <span class="text-xs font-medium text-emerald-400">Nuxt</span>
                   </div>
                 </div>
                 <div v-else class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">

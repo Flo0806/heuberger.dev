@@ -28,6 +28,8 @@ const tools = [
   { name: 'Redis', icon: 'i-simple-icons-redis', color: 'text-red-500', link: 'https://redis.io/' },
   { name: 'InfluxDB', icon: 'i-simple-icons-influxdb', color: 'text-purple-400', link: 'https://www.influxdata.com/' },
   { name: 'RabbitMQ', icon: 'i-simple-icons-rabbitmq', color: 'text-orange-500', link: 'https://www.rabbitmq.com/' },
+  { name: 'Postman', icon: 'i-simple-icons-postman', color: 'text-orange-500', link: 'https://www.postman.com/' },
+  { name: 'MobaXterm', icon: 'i-heroicons-command-line', color: 'text-cyan-400', link: 'https://mobaxterm.mobatek.net/' },
   { name: 'Linux', icon: 'i-simple-icons-linux', color: 'text-yellow-500', link: 'https://www.linux.org/' },
   { name: 'Windows', icon: 'i-simple-icons-windows', color: 'text-blue-400', link: 'https://www.microsoft.com/windows' },
   { name: 'macOS', icon: 'i-simple-icons-apple', color: 'text-zinc-300', link: 'https://www.apple.com/macos/' }
