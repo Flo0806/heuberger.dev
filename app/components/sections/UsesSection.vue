@@ -60,7 +60,7 @@ const uses: Record<CategoryKey, UseCategory> = {
       { name: 'Docker', description: 'Containerization', icon: 'i-simple-icons-docker', link: 'https://www.docker.com/' },
       { name: 'Postman', description: 'API Testing', icon: 'i-simple-icons-postman', link: 'https://www.postman.com/' },
       { name: 'MobaXterm', description: 'SSH Client', icon: 'i-heroicons-server', link: 'https://mobaxterm.mobatek.net/' },
-      { name: 'Zen Browser', description: 'Primary Browser', icon: 'i-simple-icons-zen', link: 'https://zen-browser.app/' }
+      { name: 'Zen Browser', description: 'Primary Browser', icon: 'i-heroicons-globe-alt', link: 'https://zen-browser.app/' }
     ]
   }
 }
