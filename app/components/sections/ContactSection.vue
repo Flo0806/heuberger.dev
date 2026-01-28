@@ -5,6 +5,7 @@ const appConfig = useAppConfig()
 const socials = [
   { name: 'GitHub', icon: 'i-simple-icons-github', url: appConfig.site.socials.github },
   { name: 'LinkedIn', icon: 'i-simple-icons-linkedin', url: appConfig.site.socials.linkedin },
+  { name: 'Bluesky', icon: 'i-simple-icons-bluesky', url: 'https://bsky.app/profile/flo-heuberger.bsky.social' },
   { name: 'Discord', icon: 'i-simple-icons-discord', url: 'https://discord.com/users/loewnzaan', username: '@loewnzaan' }
 ]
 </script>

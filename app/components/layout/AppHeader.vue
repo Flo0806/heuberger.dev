@@ -69,6 +69,38 @@ const scrollTo = (href: string) => {
 
       <!-- Actions -->
       <div class="flex items-center gap-2">
+        <!-- Bluesky -->
+        <UButton
+          to="https://bsky.app/profile/flo-heuberger.bsky.social"
+          target="_blank"
+          variant="ghost"
+          color="neutral"
+          size="sm"
+          :padded="false"
+          class="w-9 h-9"
+        >
+          <UIcon
+            name="i-simple-icons-bluesky"
+            class="w-5 h-5"
+          />
+        </UButton>
+
+        <!-- LinkedIn -->
+        <UButton
+          to="https://www.linkedin.com/in/florian-heuberger-93700b166/"
+          target="_blank"
+          variant="ghost"
+          color="neutral"
+          size="sm"
+          :padded="false"
+          class="w-9 h-9"
+        >
+          <UIcon
+            name="i-simple-icons-linkedin"
+            class="w-5 h-5"
+          />
+        </UButton>
+
         <!-- Language Toggle -->
         <UButton
           variant="ghost"

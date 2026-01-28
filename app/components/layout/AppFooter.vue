@@ -51,6 +51,15 @@ const currentYear = new Date().getFullYear()
               <UIcon name="i-simple-icons-linkedin" class="w-5 h-5" />
             </a>
             <a
+              href="https://bsky.app/profile/flo-heuberger.bsky.social"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-zinc-600 dark:text-zinc-500 hover:text-orange-400 transition-colors"
+              aria-label="Bluesky"
+            >
+              <UIcon name="i-simple-icons-bluesky" class="w-5 h-5" />
+            </a>
+            <a
               href="https://discord.com/users/loewnzaan"
               target="_blank"
               rel="noopener noreferrer"
