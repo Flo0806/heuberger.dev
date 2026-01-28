@@ -13,7 +13,7 @@
     "greeting": "Hi, I'm",
     "name": "Florian Heuberger",
     "title": "Senior Fullstack Developer",
-    "subtitle": "Nuxt Community Member",
+    "subtitle": "Nuxt Ecosystem Member",
     "description": "I build modern web applications with Vue, Nuxt and TypeScript. Passionate about clean code, performance and great user experience.",
     "cta": {
       "projects": "View Projects",
@@ -23,7 +23,7 @@
   "about": {
     "title": "About Me",
     "intro": "Developer by Passion",
-    "description": "As a Senior Fullstack Developer focused on the Vue/Nuxt ecosystem, I bring years of experience building scalable web applications. As a Nuxt Community Member, I actively contribute to the open-source community.",
+    "description": "As a Senior Fullstack Developer focused on the Vue/Nuxt ecosystem, I bring years of experience building scalable web applications. As a Nuxt Ecosystem Member, I actively contribute to the open-source community.",
     "facts": {
       "experience": "Years Experience",
       "projects": "Projects Delivered",
@@ -94,6 +94,16 @@
       "extensions": "Extensions",
       "terminal": "Terminal",
       "devtools": "Dev Tools"
+    }
+  },
+  "github": {
+    "title": "Open Source Contributions",
+    "stars": "Stars",
+    "repos": {
+      "vorm": "Type-safe form validation for Vue & Nuxt",
+      "heuberger-dev": "My personal portfolio website",
+      "dm-hero": "Campaign management for Dungeon Masters",
+      "nuxt-care": "Audit tool for Nuxt modules"
     }
   },
   "footer": {

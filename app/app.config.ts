@@ -9,7 +9,7 @@ export default defineAppConfig({
   site: {
     name: 'Florian Heuberger',
     title: 'Senior Fullstack Developer',
-    description: 'Senior Fullstack Developer & Nuxt Community Member',
+    description: 'Senior Fullstack Developer & Nuxt Ecosystem Member',
     socials: {
       github: 'https://github.com/Flo0806',
       linkedin: 'https://www.linkedin.com/in/florian-heuberger-93700b166/'

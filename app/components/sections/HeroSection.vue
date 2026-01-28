@@ -60,7 +60,7 @@ defineEmits<{
           {{ t('hero.title') }}
         </h2>
 
-        <!-- Nuxt Community Badge -->
+        <!-- Nuxt Ecosystem Badge -->
         <div
           v-motion
           :initial="{ opacity: 0, scale: 0.8 }"
@@ -72,7 +72,7 @@ defineEmits<{
             <div class="nuxt-badge-content">
               <UIcon name="i-simple-icons-nuxtdotjs" class="w-6 h-6 text-[#00DC82]" />
               <span class="text-base text-zinc-800 dark:text-white">
-                Nuxt Community <span class="font-bold text-[#00DC82]">Member</span>
+                Nuxt Ecosystem <span class="font-bold text-[#00DC82]">Member</span>
               </span>
             </div>
           </div>
@@ -93,7 +93,7 @@ defineEmits<{
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 1100 } }"
-          class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0"
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 opacity-0"
         >
           <UButton
             size="lg"
@@ -112,6 +112,16 @@ defineEmits<{
           >
             {{ t('hero.cta.contact') }}
           </UButton>
+        </div>
+
+        <!-- GitHub Stats -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: 1300 } }"
+          class="opacity-0"
+        >
+          <GitHubStats />
         </div>
       </div>
     </div>

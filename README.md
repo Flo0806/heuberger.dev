@@ -1,6 +1,6 @@
 # heuberger.dev
 
-Personal portfolio website of **Florian Heuberger** - Senior Fullstack Developer & Nuxt Community Member.
+Personal portfolio website of **Florian Heuberger** - Senior Fullstack Developer & Nuxt Ecosystem Member.
 
 [![Live Site](https://img.shields.io/badge/Live-heuberger.dev-orange?style=flat-square)](https://heuberger.dev)
 [![Nuxt](https://img.shields.io/badge/Nuxt-4-00DC82?style=flat-square&logo=nuxt.js)](https://nuxt.com)
@@ -10,7 +10,7 @@ Personal portfolio website of **Florian Heuberger** - Senior Fullstack Developer
 
 ## About Me
 
-I'm a Senior Fullstack Developer with a passion for Vue.js and the Nuxt ecosystem. As a **Nuxt Community Member**, I contribute to the open-source community and build tools that help other developers.
+I'm a Senior Fullstack Developer with a passion for Vue.js and the Nuxt ecosystem. As a **Nuxt Ecosystem Member**, I contribute to the open-source community and build tools that help other developers.
 
 ### Tech Stack
 

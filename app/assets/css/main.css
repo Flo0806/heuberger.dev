@@ -1195,7 +1195,7 @@ html {
   @apply bg-orange-500;
 }
 
-/* Nuxt Community Badge */
+/* Nuxt Ecosystem Badge */
 @keyframes badge-glow-pulse {
   0%, 100% {
     opacity: 0.4;

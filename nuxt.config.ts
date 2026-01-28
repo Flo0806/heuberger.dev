@@ -30,15 +30,27 @@ export default defineNuxtConfig({
     }
   },
 
+  runtimeConfig: {
+    githubToken: ''
+  },
+
+  nitro: {
+    storage: {
+      data: {
+        driver: 'fsLite',
+        base: './.data/counter'
+      }
+    }
+  },
+
   app: {
     head: {
       title: 'Florian Heuberger - Senior Fullstack Developer',
       meta: [
-        { name: 'description', content: 'Senior Fullstack Developer & Nuxt Community Member' },
+        { name: 'description', content: 'Senior Fullstack Developer & Nuxt Ecosystem Member' },
         { name: 'theme-color', content: '#f97316' }
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     },
