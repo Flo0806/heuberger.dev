@@ -1,0 +1,11 @@
+services:
+  heuberger-dev:
+    image: ghcr.io/flo0806/heuberger.dev:latest
+    container_name: heuberger-dev
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NUXT_GITHUB_TOKEN=${NUXT_GITHUB_TOKEN}
+    volumes:
+      - ./data/counter:/app/.data/counter
