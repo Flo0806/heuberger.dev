@@ -48,10 +48,17 @@ const scrollTo = (href: string) => {
       <!-- Logo -->
       <a
         href="#"
-        class="text-xl font-bold gradient-text"
+        class="inline-flex flex-row items-center gap-2"
         @click.prevent="scrollTo('#hero')"
       >
-        FH
+        <img
+          src="/img/logo.png"
+          alt="Florian Heuberger"
+          class="h-8 w-auto shrink-0"
+        >
+        <span class="hidden lg:flex text-lg font-semibold whitespace-nowrap">
+          <span class="text-white">heuberger</span><span class="text-[#00DC82]">.dev</span>
+        </span>
       </a>
 
       <!-- Desktop Navigation -->
