@@ -1,7 +1,31 @@
+// Common bot patterns
+const BOT_PATTERNS = [
+  /bot/i, /crawl/i, /spider/i, /slurp/i, /feed/i,
+  /googlebot/i, /bingbot/i, /yandex/i, /baidu/i,
+  /facebookexternalhit/i, /twitterbot/i, /linkedinbot/i,
+  /whatsapp/i, /telegrambot/i, /discordbot/i,
+  /applebot/i, /duckduckbot/i, /semrush/i, /ahrefs/i,
+  /mj12bot/i, /dotbot/i, /petalbot/i, /bytespider/i,
+  /gptbot/i, /claudebot/i, /anthropic/i, /chatgpt/i,
+  /headless/i, /phantom/i, /selenium/i, /puppeteer/i,
+  /lighthouse/i, /pagespeed/i, /pingdom/i, /uptimerobot/i
+]
+
+function isBot(userAgent: string | undefined): boolean {
+  if (!userAgent) return true // No UA = likely bot
+  return BOT_PATTERNS.some(pattern => pattern.test(userAgent))
+}
+
 export default defineEventHandler(async (event) => {
   // Only count page requests, not API calls or assets
-  const path = getRequestPath(event)
+  const path = getRequestURL(event).pathname
   if (path.startsWith('/api/') || path.startsWith('/_') || path.includes('.')) {
+    return
+  }
+
+  // Ignore bots
+  const userAgent = getHeader(event, 'user-agent')
+  if (isBot(userAgent)) {
     return
   }
 
