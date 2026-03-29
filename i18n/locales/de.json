@@ -23,7 +23,7 @@
   "about": {
     "title": "Über mich",
     "intro": "Entwickler aus Leidenschaft",
-    "description": "Als Senior Fullstack Developer mit Fokus auf das Vue/Nuxt-Ökosystem bringe ich jahrelange Erfahrung in der Entwicklung skalierbarer Webanwendungen mit. Als Nuxt Ecosystem Member trage ich aktiv zur Open-Source-Community bei.",
+    "description": "Als Senior Fullstack Developer mit Fokus auf das Vue/Nuxt-Ökosystem bringe ich jahrelange Erfahrung in der Entwicklung skalierbarer Webanwendungen mit. Als Nuxt Ecosystem Member trage ich aktiv zur Open-Source-Community bei. Aktuell baue ich jano, einen modernen Terminal-Editor komplett in JavaScript.",
     "facts": {
       "experience": "Jahre Erfahrung",
       "projects": "Projekte realisiert",
@@ -63,6 +63,18 @@
       "nuxtCare": {
         "name": "nuxt.care",
         "description": "Audit-Tool für Nuxt-Module. Analysiere Modul-Gesundheit, Abhängigkeiten und Best Practices mit einer einfachen Web-Oberfläche."
+      },
+      "jano": {
+        "name": "jano",
+        "description": "Ein moderner Terminal-Editor mit Plugin-Unterstützung. Bekannte Shortcuts, Syntax-Highlighting, Formatierung, Multi-Cursor. 100% JavaScript, 59KB."
+      },
+      "flumen": {
+        "name": "flumen",
+        "description": "Open-Source GitHub Dashboard für Maintainer. Issues, PRs und Aktivitäten aller Repos auf einen Blick."
+      },
+      "nuxtFreeform": {
+        "name": "nuxt-freeform",
+        "description": "Flexibler Form-Builder für Nuxt. Schema-basiert, typsicher, mit eingebauter Validierung und anpassbaren Komponenten."
       }
     }
   },
@@ -100,10 +112,14 @@
     "title": "Open Source Beiträge",
     "stars": "Stars",
     "repos": {
-      "vorm": "Typsichere Formular-Validierung für Vue & Nuxt",
-      "heuberger-dev": "Meine persönliche Portfolio-Website",
+      "jano": "Moderner Terminal-Editor mit Plugin-Unterstützung",
       "dm-hero": "Kampagnen-Management für Dungeon Master",
-      "nuxt-care": "Audit-Tool für Nuxt-Module"
+      "flumen-dev": "GitHub Dashboard für Maintainer",
+      "nuxt-freeform": "Flexibler Form-Builder für Nuxt",
+      "vorm": "Typsichere Formular-Validierung für Vue & Nuxt",
+      "nuxt-care": "Audit-Tool für Nuxt-Module",
+      "lintmon": "VS Code Lint-Monitoring Extension",
+      "heuberger-dev": "Meine persönliche Portfolio-Website"
     }
   },
   "footer": {

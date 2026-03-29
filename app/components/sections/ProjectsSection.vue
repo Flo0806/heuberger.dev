@@ -1,10 +1,34 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-// Fetch GitHub stars for vorm repo
-const { data: githubData } = await useFetch<{ stargazers_count: number }>(
+// Fetch GitHub stars
+const { data: githubVorm } = await useFetch<{ stargazers_count: number }>(
   'https://api.github.com/repos/Flo0806/vorm',
   { key: 'github-vorm', server: false, default: () => ({ stargazers_count: 0 }) }
+)
+const { data: githubJano } = await useFetch<{ stargazers_count: number }>(
+  'https://api.github.com/repos/jano-editor/jano',
+  { key: 'github-jano', server: false, default: () => ({ stargazers_count: 0 }) }
+)
+const { data: githubFreeform } = await useFetch<{ stargazers_count: number }>(
+  'https://api.github.com/repos/Flo0806/nuxt-freeform',
+  { key: 'github-freeform', server: false, default: () => ({ stargazers_count: 0 }) }
+)
+const { data: githubDmHero } = await useFetch<{ stargazers_count: number }>(
+  'https://api.github.com/repos/Flo0806/dm-hero',
+  { key: 'github-dmhero', server: false, default: () => ({ stargazers_count: 0 }) }
+)
+const { data: githubFlumen } = await useFetch<{ stargazers_count: number }>(
+  'https://api.github.com/repos/flumen-dev/flumen.dev',
+  { key: 'github-flumen', server: false, default: () => ({ stargazers_count: 0 }) }
+)
+const { data: githubNuxtCare } = await useFetch<{ stargazers_count: number }>(
+  'https://api.github.com/repos/Flo0806/nuxt.care',
+  { key: 'github-nuxtcare', server: false, default: () => ({ stargazers_count: 0 }) }
+)
+const { data: githubLintmon } = await useFetch<{ stargazers_count: number }>(
+  'https://api.github.com/repos/Flo0806/lintmon',
+  { key: 'github-lintmon', server: false, default: () => ({ stargazers_count: 0 }) }
 )
 
 // Fetch NPM downloads
@@ -16,6 +40,14 @@ const { data: npmNuxtData } = await useFetch<{ downloads: number }>(
   'https://api.npmjs.org/downloads/point/last-month/vorm-nuxt',
   { key: 'npm-vorm-nuxt', server: false, default: () => ({ downloads: 0 }) }
 )
+const { data: npmJanoData } = await useFetch<{ downloads: number }>(
+  'https://api.npmjs.org/downloads/point/last-month/@jano-editor/editor',
+  { key: 'npm-jano', server: false, default: () => ({ downloads: 0 }) }
+)
+const { data: npmFreeformData } = await useFetch<{ downloads: number }>(
+  'https://api.npmjs.org/downloads/point/last-month/nuxt-freeform',
+  { key: 'npm-freeform', server: false, default: () => ({ downloads: 0 }) }
+)
 
 const formatNumber = (num: number) => {
   if (num >= 1000) return `${(num / 1000).toFixed(1)}k`
@@ -23,6 +55,22 @@ const formatNumber = (num: number) => {
 }
 
 const projects = computed(() => [
+  {
+    key: 'jano',
+    icon: null,
+    customIcon: '/img/jano-logo.png',
+    color: 'text-purple-400',
+    bgColor: 'bg-purple-500/10',
+    link: 'https://janoeditor.dev',
+    linkType: 'website',
+    github: 'https://github.com/jano-editor/jano',
+    stars: githubJano.value?.stargazers_count || 0,
+    downloads: npmJanoData.value?.downloads || 0,
+    badges: [
+      { label: 'Terminal Editor', icon: 'i-heroicons-command-line', bg: 'bg-purple-500/10', border: 'border-purple-500/20', text: 'text-purple-400' },
+      { label: 'Node.js', icon: 'i-simple-icons-nodedotjs', bg: 'bg-green-500/10', border: 'border-green-500/20', text: 'text-green-400' },
+    ]
+  },
   {
     key: 'dmHero',
     icon: null,
@@ -32,33 +80,68 @@ const projects = computed(() => [
     link: 'https://dm-hero.com',
     linkType: 'website',
     github: 'https://github.com/Flo0806/dm-hero',
-    stars: null,
+    stars: githubDmHero.value?.stargazers_count || 0,
     downloads: null,
-    featured: true
+    badges: [
+      { label: 'Desktop App', icon: 'i-heroicons-fire', bg: 'bg-orange-500/10', border: 'border-orange-500/20', text: 'text-orange-400' },
+      { label: 'Electron', icon: 'i-simple-icons-electron', bg: 'bg-purple-500/10', border: 'border-purple-500/20', text: 'text-purple-400' },
+      { label: 'Nuxt', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
+    ]
+  },
+  {
+    key: 'flumen',
+    icon: null,
+    customIcon: '/img/flumen-logo.png',
+    color: 'text-sky-400',
+    bgColor: 'bg-sky-500/10',
+    link: 'https://flumen.dev',
+    linkType: 'website',
+    github: 'https://github.com/flumen-dev/flumen.dev',
+    stars: githubFlumen.value?.stargazers_count || 0,
+    downloads: null,
+    badges: [
+      { label: 'Web App', icon: 'i-heroicons-globe-alt', bg: 'bg-green-500/10', border: 'border-green-500/20', text: 'text-green-400' },
+      { label: 'Nuxt', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
+    ]
+  },
+  {
+    key: 'nuxtFreeform',
+    icon: null,
+    customIcon: '/img/nuxt-freeform-logo.png',
+    color: 'text-green-400',
+    bgColor: 'bg-green-500/10',
+    link: 'https://npmx.dev/package/nuxt-freeform',
+    linkType: 'npm',
+    github: 'https://github.com/Flo0806/nuxt-freeform',
+    stars: githubFreeform.value?.stargazers_count || 0,
+    downloads: npmFreeformData.value?.downloads || 0,
+    badges: []
   },
   {
     key: 'vormVue',
     icon: 'i-simple-icons-vuedotjs',
     color: 'text-green-400',
     bgColor: 'bg-green-500/10',
-    link: 'https://www.npmjs.com/package/vorm-vue',
+    link: 'https://npmx.dev/package/vorm-vue',
     linkType: 'npm',
     github: 'https://github.com/Flo0806/vorm',
-    stars: githubData.value?.stargazers_count || 0,
-    downloads: npmVueData.value?.downloads || 0
+    stars: githubVorm.value?.stargazers_count || 0,
+    downloads: npmVueData.value?.downloads || 0,
+    badges: []
   },
   {
     key: 'vormNuxt',
     icon: 'i-simple-icons-nuxtdotjs',
     color: 'text-green-600',
     bgColor: 'bg-green-500/10',
-    link: 'https://nuxt.care/',
+    link: 'https://npmx.dev/package/vorm-nuxt',
     linkType: 'npm',
     github: 'https://github.com/Flo0806/vorm',
-    stars: githubData.value?.stargazers_count || 0,
-    downloads: npmNuxtData.value?.downloads || 0
+    stars: githubVorm.value?.stargazers_count || 0,
+    downloads: npmNuxtData.value?.downloads || 0,
+    badges: []
   },
-   {
+  {
     key: 'nuxtCare',
     icon: null,
     customIcon: '/img/nuxt.care-logo.svg',
@@ -66,10 +149,13 @@ const projects = computed(() => [
     bgColor: 'bg-green-500/10',
     link: 'https://nuxt.care',
     linkType: 'website',
-    github: null,
-    stars: null,
+    github: 'https://github.com/Flo0806/nuxt.care',
+    stars: githubNuxtCare.value?.stargazers_count || 0,
     downloads: null,
-    isWebApp: true
+    badges: [
+      { label: 'Web App', icon: 'i-heroicons-globe-alt', bg: 'bg-green-500/10', border: 'border-green-500/20', text: 'text-green-400' },
+      { label: 'Nuxt', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
+    ]
   },
   {
     key: 'lintmon',
@@ -78,9 +164,12 @@ const projects = computed(() => [
     bgColor: 'bg-blue-500/10',
     link: 'https://marketplace.visualstudio.com/items?itemName=FHSoftDev.lintmon',
     linkType: 'vscode',
-     github: 'https://github.com/Flo0806/lintmon',
-    stars: null,
-    downloads: null
+    github: 'https://github.com/Flo0806/lintmon',
+    stars: githubLintmon.value?.stargazers_count || 0,
+    downloads: null,
+    badges: [
+      { label: 'VS Code Extension', icon: 'i-simple-icons-visualstudiocode', bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-blue-400' },
+    ]
   }
 ])
 </script>
@@ -148,10 +237,10 @@ const projects = computed(() => [
                 {{ t(`projects.items.${project.key}.description`) }}
               </p>
 
-              <!-- Stats Badges - always show container for consistent height -->
+              <!-- Stats Badges -->
               <div class="mt-auto pt-4 border-t border-zinc-800/30 min-h-11 flex items-center">
-                <div v-if="project.stars !== null" class="flex items-center gap-2">
-                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <div v-if="project.stars !== null" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20">
                     <UIcon name="i-heroicons-star-solid" class="w-3.5 h-3.5 text-yellow-400" />
                     <span class="text-xs font-medium text-yellow-400">{{ formatNumber(project.stars) }}</span>
                   </div>
@@ -159,30 +248,15 @@ const projects = computed(() => [
                     <UIcon name="i-heroicons-arrow-down-tray" class="w-3.5 h-3.5 text-green-400" />
                     <span class="text-xs font-medium text-green-400">{{ formatNumber(project.downloads) }}</span>
                   </div>
-                </div>
-                <div v-else-if="project.featured" class="flex items-center gap-2">
-                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-orange-500/10 border border-orange-500/20">
-                    <UIcon name="i-heroicons-fire" class="w-3.5 h-3.5 text-orange-400" />
-                    <span class="text-xs font-medium text-orange-400">Desktop App</span>
+                  <div
+                    v-for="badge in project.badges"
+                    :key="badge.label"
+                    class="flex items-center gap-1.5 px-2.5 py-1 rounded-full border"
+                    :class="[badge.bg, badge.border]"
+                  >
+                    <UIcon :name="badge.icon" class="w-3.5 h-3.5" :class="badge.text" />
+                    <span class="text-xs font-medium" :class="badge.text">{{ badge.label }}</span>
                   </div>
-                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20">
-                    <UIcon name="i-simple-icons-electron" class="w-3.5 h-3.5 text-purple-400" />
-                    <span class="text-xs font-medium text-purple-400">Electron</span>
-                  </div>
-                </div>
-                <div v-else-if="project.isWebApp" class="flex items-center gap-2">
-                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/10 border border-green-500/20">
-                    <UIcon name="i-heroicons-globe-alt" class="w-3.5 h-3.5 text-green-400" />
-                    <span class="text-xs font-medium text-green-400">Web App</span>
-                  </div>
-                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-                    <UIcon name="i-simple-icons-nuxtdotjs" class="w-3.5 h-3.5 text-emerald-400" />
-                    <span class="text-xs font-medium text-emerald-400">Nuxt</span>
-                  </div>
-                </div>
-                <div v-else class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
-                  <UIcon name="i-simple-icons-visualstudiocode" class="w-3.5 h-3.5 text-blue-400" />
-                  <span class="text-xs font-medium text-blue-400">VS Code Extension</span>
                 </div>
               </div>
             </div>
@@ -195,11 +269,24 @@ const projects = computed(() => [
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors"
               >
+                <img
+                  v-if="project.linkType === 'npm'"
+                  src="/img/npmx-logo-mark.svg"
+                  alt="npmx"
+                  class="w-4 h-4 dark:block hidden"
+                />
+                <img
+                  v-if="project.linkType === 'npm'"
+                  src="/img/npmx-logo-mark-light.svg"
+                  alt="npmx"
+                  class="w-4 h-4 dark:hidden block"
+                />
                 <UIcon
-                  :name="project.linkType === 'npm' ? 'i-simple-icons-npm' : project.linkType === 'website' ? 'i-heroicons-globe-alt' : 'i-simple-icons-visualstudiocode'"
+                  v-if="project.linkType !== 'npm'"
+                  :name="project.linkType === 'website' ? 'i-heroicons-globe-alt' : 'i-simple-icons-visualstudiocode'"
                   class="w-4 h-4"
                 />
-                <span>{{ project.linkType === 'npm' ? 'NPM' : project.linkType === 'website' ? 'Website' : 'Marketplace' }}</span>
+                <span>{{ project.linkType === 'npm' ? 'npmx.dev' : project.linkType === 'website' ? 'Website' : 'Marketplace' }}</span>
                 <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-3 h-3" />
               </a>
               <a

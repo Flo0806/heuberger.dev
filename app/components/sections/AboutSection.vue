@@ -4,7 +4,7 @@ const { t } = useI18n()
 const facts = [
   { key: 'experience', value: '24+', icon: 'i-heroicons-clock' },
   { key: 'projects', value: '50+', icon: 'i-heroicons-rocket-launch' },
-  { key: 'opensource', value: '4', icon: 'i-heroicons-code-bracket' }
+  { key: 'opensource', value: '8', icon: 'i-heroicons-code-bracket' }
 ]
 
 </script>

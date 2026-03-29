@@ -11,7 +11,7 @@ const getRepoKey = (name: string) => name.replace(/\./g, '-')
     v-motion
     :initial="{ opacity: 0, y: 20 }"
     :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
-    class="glass rounded-2xl p-6 max-w-2xl mx-auto"
+    class="glass rounded-2xl p-6 max-w-4xl mx-auto"
   >
     <!-- Total Stars -->
     <a

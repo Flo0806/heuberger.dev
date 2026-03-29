@@ -51,7 +51,8 @@ const uses: Record<CategoryKey, UseCategory> = {
       { name: 'Windows Terminal', description: 'Terminal Emulator', icon: 'i-simple-icons-windowsterminal', link: 'https://github.com/microsoft/terminal' },
       { name: 'WSL 2 (Ubuntu)', description: 'Dev Environment', icon: 'i-simple-icons-ubuntu', link: 'https://ubuntu.com/desktop/wsl' },
       { name: 'Oh My Zsh', description: 'Shell Framework', icon: 'i-simple-icons-zsh', link: 'https://ohmyz.sh/' },
-      { name: 'pnpm', description: 'Package Manager', icon: 'i-simple-icons-pnpm', link: 'https://pnpm.io/' }
+      { name: 'pnpm', description: 'Package Manager', icon: 'i-simple-icons-pnpm', link: 'https://pnpm.io/' },
+      { name: 'jano', description: 'My Terminal Editor', icon: 'i-heroicons-code-bracket', link: 'https://janoeditor.dev', highlight: true }
     ]
   },
   devtools: {
@@ -60,7 +61,8 @@ const uses: Record<CategoryKey, UseCategory> = {
       { name: 'Docker', description: 'Containerization', icon: 'i-simple-icons-docker', link: 'https://www.docker.com/' },
       { name: 'Postman', description: 'API Testing', icon: 'i-simple-icons-postman', link: 'https://www.postman.com/' },
       { name: 'MobaXterm', description: 'SSH Client', icon: 'i-heroicons-server', link: 'https://mobaxterm.mobatek.net/' },
-      { name: 'Zen Browser', description: 'Primary Browser', icon: 'i-heroicons-globe-alt', link: 'https://zen-browser.app/' }
+      { name: 'Zen Browser', description: 'Primary Browser', icon: 'i-heroicons-globe-alt', link: 'https://zen-browser.app/' },
+      { name: 'Claude Code', description: 'AI Coding Agent', icon: 'i-simple-icons-anthropic', link: 'https://claude.ai/code' }
     ]
   }
 }

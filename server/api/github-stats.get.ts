@@ -7,23 +7,24 @@ interface GitHubRepo {
   language: string | null
 }
 
-const GITHUB_USERNAME = 'Flo0806'
-
-// Configure which repos to show
+// Configure which repos to show (owner/repo format)
 const FEATURED_REPOS = [
-  'vorm',
-  'heuberger.dev',
-  'dm-hero',
-  'nuxt.care'
+  'jano-editor/jano',
+  'Flo0806/dm-hero',
+  'flumen-dev/flumen.dev',
+  'Flo0806/nuxt-freeform',
+  'Flo0806/vorm',
+  'Flo0806/nuxt.care',
+  'Flo0806/lintmon',
+  'Flo0806/heuberger.dev',
 ]
 
 export default defineCachedEventHandler(async () => {
   const config = useRuntimeConfig()
 
-  // Fetch only the configured repos
   const repoPromises = FEATURED_REPOS.map(repo =>
     $fetch<GitHubRepo>(
-      `https://api.github.com/repos/${GITHUB_USERNAME}/${repo}`,
+      `https://api.github.com/repos/${repo}`,
       {
         headers: {
           Authorization: `Bearer ${config.githubToken}`,
