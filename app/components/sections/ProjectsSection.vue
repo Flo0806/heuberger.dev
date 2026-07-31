@@ -1,53 +1,43 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-// Fetch GitHub stars
-const { data: githubVorm } = await useFetch<{ stargazers_count: number }>(
-  'https://api.github.com/repos/Flo0806/vorm',
-  { key: 'github-vorm', server: false, default: () => ({ stargazers_count: 0 }) }
-)
-const { data: githubJano } = await useFetch<{ stargazers_count: number }>(
-  'https://api.github.com/repos/jano-editor/jano',
-  { key: 'github-jano', server: false, default: () => ({ stargazers_count: 0 }) }
-)
-const { data: githubFreeform } = await useFetch<{ stargazers_count: number }>(
-  'https://api.github.com/repos/Flo0806/nuxt-freeform',
-  { key: 'github-freeform', server: false, default: () => ({ stargazers_count: 0 }) }
-)
-const { data: githubDmHero } = await useFetch<{ stargazers_count: number }>(
-  'https://api.github.com/repos/Flo0806/dm-hero',
-  { key: 'github-dmhero', server: false, default: () => ({ stargazers_count: 0 }) }
-)
-const { data: githubFlumen } = await useFetch<{ stargazers_count: number }>(
-  'https://api.github.com/repos/flumen-dev/flumen.dev',
-  { key: 'github-flumen', server: false, default: () => ({ stargazers_count: 0 }) }
-)
-const { data: githubNuxtCare } = await useFetch<{ stargazers_count: number }>(
-  'https://api.github.com/repos/Flo0806/nuxt.care',
-  { key: 'github-nuxtcare', server: false, default: () => ({ stargazers_count: 0 }) }
-)
-const { data: githubLintmon } = await useFetch<{ stargazers_count: number }>(
-  'https://api.github.com/repos/Flo0806/lintmon',
-  { key: 'github-lintmon', server: false, default: () => ({ stargazers_count: 0 }) }
-)
+// Stars come from our own cached endpoint, never from api.github.com — see
+// useGithubStats(). Not awaited: the payload is already resolved during SSR,
+// so there is nothing to block setup for.
+const { data: githubStats } = useGithubStats()
 
-// Fetch NPM downloads
-const { data: npmVueData } = await useFetch<{ downloads: number }>(
+const starsOf = (fullName: string) =>
+  githubStats.value?.repos.find(repo => repo.fullName === fullName)?.stars ?? 0
+
+// NPM downloads. Lazy and unawaited: these are decoration, and awaiting them
+// in setup made the eleven requests run one after another and held up the
+// whole page until the last one landed. Now they all fly at once and fill in.
+const npmVueData = useLazyFetch<{ downloads: number }>(
   'https://api.npmjs.org/downloads/point/last-month/vorm-vue',
   { key: 'npm-vorm-vue', server: false, default: () => ({ downloads: 0 }) }
-)
-const { data: npmNuxtData } = await useFetch<{ downloads: number }>(
+).data
+const npmNuxtData = useLazyFetch<{ downloads: number }>(
   'https://api.npmjs.org/downloads/point/last-month/vorm-nuxt',
   { key: 'npm-vorm-nuxt', server: false, default: () => ({ downloads: 0 }) }
-)
-const { data: npmJanoData } = await useFetch<{ downloads: number }>(
+).data
+const npmJanoData = useLazyFetch<{ downloads: number }>(
   'https://api.npmjs.org/downloads/point/last-month/@jano-editor/editor',
   { key: 'npm-jano', server: false, default: () => ({ downloads: 0 }) }
-)
-const { data: npmFreeformData } = await useFetch<{ downloads: number }>(
+).data
+const npmFreeformData = useLazyFetch<{ downloads: number }>(
   'https://api.npmjs.org/downloads/point/last-month/nuxt-freeform',
   { key: 'npm-freeform', server: false, default: () => ({ downloads: 0 }) }
-)
+).data
+const npmSpyglassData = useLazyFetch<{ downloads: number }>(
+  'https://api.npmjs.org/downloads/point/last-month/nuxt-spyglass',
+  { key: 'npm-spyglass', server: false, default: () => ({ downloads: 0 }) }
+).data
+// The monorepo publishes five scoped packages; @jasy/pdf is the flagship and
+// stands in for the project's reach on the card.
+const npmJasyData = useLazyFetch<{ downloads: number }>(
+  'https://api.npmjs.org/downloads/point/last-month/@jasy/pdf',
+  { key: 'npm-jasy-pdf', server: false, default: () => ({ downloads: 0 }) }
+).data
 
 const formatNumber = (num: number) => {
   if (num >= 1000) return `${(num / 1000).toFixed(1)}k`
@@ -64,7 +54,7 @@ const projects = computed(() => [
     link: 'https://janoeditor.dev',
     linkType: 'website',
     github: 'https://github.com/jano-editor/jano',
-    stars: githubJano.value?.stargazers_count || 0,
+    stars: starsOf('jano-editor/jano'),
     downloads: npmJanoData.value?.downloads || 0,
     badges: [
       { label: 'Terminal Editor', icon: 'i-heroicons-command-line', bg: 'bg-purple-500/10', border: 'border-purple-500/20', text: 'text-purple-400' },
@@ -80,7 +70,7 @@ const projects = computed(() => [
     link: 'https://dm-hero.com',
     linkType: 'website',
     github: 'https://github.com/Flo0806/dm-hero',
-    stars: githubDmHero.value?.stargazers_count || 0,
+    stars: starsOf('Flo0806/dm-hero'),
     downloads: null,
     badges: [
       { label: 'Desktop App', icon: 'i-heroicons-fire', bg: 'bg-orange-500/10', border: 'border-orange-500/20', text: 'text-orange-400' },
@@ -89,19 +79,19 @@ const projects = computed(() => [
     ]
   },
   {
-    key: 'flumen',
-    icon: null,
-    customIcon: '/img/flumen-logo.png',
-    color: 'text-sky-400',
-    bgColor: 'bg-sky-500/10',
-    link: 'https://flumen.dev',
+    key: 'jasy',
+    icon: 'i-heroicons-document-text',
+    color: 'text-rose-400',
+    bgColor: 'bg-rose-500/10',
+    link: 'https://jasy.dev',
     linkType: 'website',
-    github: 'https://github.com/flumen-dev/flumen.dev',
-    stars: githubFlumen.value?.stargazers_count || 0,
-    downloads: null,
+    github: 'https://github.com/jasy-pdf/jasy',
+    stars: starsOf('jasy-pdf/jasy'),
+    downloads: npmJasyData.value?.downloads || 0,
     badges: [
-      { label: 'Web App', icon: 'i-heroicons-globe-alt', bg: 'bg-green-500/10', border: 'border-green-500/20', text: 'text-green-400' },
-      { label: 'Nuxt', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
+      { label: 'ZUGFeRD / XRechnung', icon: 'i-heroicons-document-check', bg: 'bg-rose-500/10', border: 'border-rose-500/20', text: 'text-rose-400' },
+      { label: 'CLI', icon: 'i-heroicons-command-line', bg: 'bg-zinc-500/10', border: 'border-zinc-500/20', text: 'text-zinc-400' },
+      { label: 'TypeScript', icon: 'i-simple-icons-typescript', bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-blue-400' },
     ]
   },
   {
@@ -113,9 +103,25 @@ const projects = computed(() => [
     link: 'https://npmx.dev/package/nuxt-freeform',
     linkType: 'npm',
     github: 'https://github.com/Flo0806/nuxt-freeform',
-    stars: githubFreeform.value?.stargazers_count || 0,
+    stars: starsOf('Flo0806/nuxt-freeform'),
     downloads: npmFreeformData.value?.downloads || 0,
     badges: []
+  },
+  {
+    key: 'nuxtSpyglass',
+    icon: 'i-heroicons-magnifying-glass',
+    color: 'text-cyan-400',
+    bgColor: 'bg-cyan-500/10',
+    link: 'https://npmx.dev/package/nuxt-spyglass',
+    linkType: 'npm',
+    github: 'https://github.com/Flo0806/nuxt-spyglass',
+    stars: starsOf('Flo0806/nuxt-spyglass'),
+    downloads: npmSpyglassData.value?.downloads || 0,
+    badges: [
+      { label: 'Nuxt Module', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
+      { label: 'MCP', icon: 'i-heroicons-cpu-chip', bg: 'bg-cyan-500/10', border: 'border-cyan-500/20', text: 'text-cyan-400' },
+      { label: 'DevTools', icon: 'i-heroicons-wrench-screwdriver', bg: 'bg-zinc-500/10', border: 'border-zinc-500/20', text: 'text-zinc-400' },
+    ]
   },
   {
     key: 'vormVue',
@@ -125,7 +131,7 @@ const projects = computed(() => [
     link: 'https://npmx.dev/package/vorm-vue',
     linkType: 'npm',
     github: 'https://github.com/Flo0806/vorm',
-    stars: githubVorm.value?.stargazers_count || 0,
+    stars: starsOf('Flo0806/vorm'),
     downloads: npmVueData.value?.downloads || 0,
     badges: []
   },
@@ -137,7 +143,7 @@ const projects = computed(() => [
     link: 'https://npmx.dev/package/vorm-nuxt',
     linkType: 'npm',
     github: 'https://github.com/Flo0806/vorm',
-    stars: githubVorm.value?.stargazers_count || 0,
+    stars: starsOf('Flo0806/vorm'),
     downloads: npmNuxtData.value?.downloads || 0,
     badges: []
   },
@@ -150,10 +156,25 @@ const projects = computed(() => [
     link: 'https://nuxt.care',
     linkType: 'website',
     github: 'https://github.com/Flo0806/nuxt.care',
-    stars: githubNuxtCare.value?.stargazers_count || 0,
+    stars: starsOf('Flo0806/nuxt.care'),
     downloads: null,
     badges: [
       { label: 'Web App', icon: 'i-heroicons-globe-alt', bg: 'bg-green-500/10', border: 'border-green-500/20', text: 'text-green-400' },
+      { label: 'Nuxt', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
+    ]
+  },
+  {
+    key: 'nuxtathon',
+    icon: 'i-heroicons-trophy',
+    color: 'text-amber-400',
+    bgColor: 'bg-amber-500/10',
+    link: 'https://nuxtathon.live',
+    linkType: 'website',
+    github: 'https://github.com/Flo0806/nuxtathon',
+    stars: starsOf('Flo0806/nuxtathon'),
+    downloads: null,
+    badges: [
+      { label: 'Leaderboard', icon: 'i-heroicons-trophy', bg: 'bg-amber-500/10', border: 'border-amber-500/20', text: 'text-amber-400' },
       { label: 'Nuxt', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
     ]
   },
@@ -165,7 +186,7 @@ const projects = computed(() => [
     link: 'https://marketplace.visualstudio.com/items?itemName=FHSoftDev.lintmon',
     linkType: 'vscode',
     github: 'https://github.com/Flo0806/lintmon',
-    stars: githubLintmon.value?.stargazers_count || 0,
+    stars: starsOf('Flo0806/lintmon'),
     downloads: null,
     badges: [
       { label: 'VS Code Extension', icon: 'i-simple-icons-visualstudiocode', bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-blue-400' },
@@ -183,9 +204,6 @@ const projects = computed(() => [
       <div class="max-w-6xl mx-auto">
         <!-- Section Header -->
         <div
-          v-motion
-          :initial="{ opacity: 0, y: 30 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
           class="text-center mb-16"
         >
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
@@ -197,20 +215,8 @@ const projects = computed(() => [
         <!-- Projects Grid -->
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
-            v-for="(project, index) in projects"
+            v-for="project in projects"
             :key="project.key"
-            v-motion
-            :initial="{ opacity: 0, y: 40, scale: 0.95 }"
-            :visible-once="{
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              transition: {
-                duration: 500,
-                delay: index * 150
-              }
-            }"
-            :hovered="{ scale: 1.03, transition: { duration: 200 } }"
             class="group glass rounded-2xl p-6 hover:border-orange-500/50 transition-colors duration-300 flex flex-col"
           >
             <!-- Icon -->
@@ -244,9 +250,9 @@ const projects = computed(() => [
                     <UIcon name="i-heroicons-star-solid" class="w-3.5 h-3.5 text-yellow-400" />
                     <span class="text-xs font-medium text-yellow-400">{{ formatNumber(project.stars) }}</span>
                   </div>
-                  <div v-if="project.downloads > 0" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/10 border border-green-500/20">
+                  <div v-if="(project.downloads ?? 0) > 0" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-500/10 border border-green-500/20">
                     <UIcon name="i-heroicons-arrow-down-tray" class="w-3.5 h-3.5 text-green-400" />
-                    <span class="text-xs font-medium text-green-400">{{ formatNumber(project.downloads) }}</span>
+                    <span class="text-xs font-medium text-green-400">{{ formatNumber(project.downloads ?? 0) }}</span>
                   </div>
                   <div
                     v-for="badge in project.badges"
@@ -274,13 +280,13 @@ const projects = computed(() => [
                   src="/img/npmx-logo-mark.svg"
                   alt="npmx"
                   class="w-4 h-4 dark:block hidden"
-                />
+                >
                 <img
                   v-if="project.linkType === 'npm'"
                   src="/img/npmx-logo-mark-light.svg"
                   alt="npmx"
                   class="w-4 h-4 dark:hidden block"
-                />
+                >
                 <UIcon
                   v-if="project.linkType !== 'npm'"
                   :name="project.linkType === 'website' ? 'i-heroicons-globe-alt' : 'i-simple-icons-visualstudiocode'"

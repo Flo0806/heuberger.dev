@@ -11,12 +11,13 @@ interface GitHubRepo {
 const FEATURED_REPOS = [
   'jano-editor/jano',
   'Flo0806/dm-hero',
-  'flumen-dev/flumen.dev',
   'Flo0806/nuxt-freeform',
   'Flo0806/vorm',
   'Flo0806/nuxt.care',
   'Flo0806/lintmon',
-  'Flo0806/heuberger.dev',
+  'jasy-pdf/jasy',
+  'Flo0806/nuxtathon',
+  'Flo0806/nuxt-spyglass'
 ]
 
 export default defineCachedEventHandler(async () => {

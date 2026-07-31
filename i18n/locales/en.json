@@ -68,13 +68,21 @@
         "name": "jano",
         "description": "A modern terminal editor with plugin support. Familiar shortcuts, syntax highlighting, formatting, multi-cursor. 100% JavaScript, 59KB."
       },
-      "flumen": {
-        "name": "flumen",
-        "description": "Open-source GitHub dashboard for maintainers. Track issues, PRs, and activity across all your repositories in one place."
-      },
       "nuxtFreeform": {
         "name": "nuxt-freeform",
         "description": "Flexible form builder for Nuxt. Schema-based, type-safe, with built-in validation and customizable components."
+      },
+      "jasy": {
+        "name": "jasy",
+        "description": "Declarative, component-based PDF generation in TypeScript. A monorepo of CLI, jasy-pdf and an engine for ZUGFeRD, Factur-X and XRechnung."
+      },
+      "nuxtSpyglass": {
+        "name": "nuxt-spyglass",
+        "description": "Captures browser and server logs in one correlated place - and exposes them to AI agents over MCP."
+      },
+      "nuxtathon": {
+        "name": "Nuxtathon",
+        "description": "The leaderboard for the Nuxtathon - live standings for the event."
       }
     }
   },
@@ -114,7 +122,6 @@
     "repos": {
       "jano": "Modern terminal editor with plugin support",
       "dm-hero": "Campaign management for Dungeon Masters",
-      "flumen-dev": "GitHub dashboard for maintainers",
       "nuxt-freeform": "Flexible form builder for Nuxt",
       "vorm": "Type-safe form validation for Vue & Nuxt",
       "nuxt-care": "Audit tool for Nuxt modules",

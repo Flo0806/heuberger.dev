@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const { data: stats } = await useFetch('/api/github-stats')
+const { data: stats } = await useGithubStats()
 
 const getRepoKey = (name: string) => name.replace(/\./g, '-')
 </script>
@@ -8,9 +8,6 @@ const getRepoKey = (name: string) => name.replace(/\./g, '-')
 <template>
   <div
     v-if="stats"
-    v-motion
-    :initial="{ opacity: 0, y: 20 }"
-    :visible-once="{ opacity: 1, y: 0, transition: { duration: 500 } }"
     class="glass rounded-2xl p-6 max-w-4xl mx-auto"
   >
     <!-- Total Stars -->
@@ -22,7 +19,7 @@ const getRepoKey = (name: string) => name.replace(/\./g, '-')
     >
       <span class="text-zinc-500 dark:text-zinc-400 text-sm">{{ t('github.title') }}</span>
       <div class="text-2xl font-bold mt-1 group-hover:text-orange-400 transition-colors">
-        <span class="text-white">{{ stats.totalStars }}</span>
+        <span >{{ stats.totalStars }}</span>
         <span class="ml-1">{{ t('github.stars') }}</span>
       </div>
     </a>
@@ -42,7 +39,7 @@ const getRepoKey = (name: string) => name.replace(/\./g, '-')
         >
           <UIcon name="i-simple-icons-github" class="w-4 h-4 text-zinc-400 group-hover:text-orange-400 transition-colors" />
           <span class="text-sm font-medium text-zinc-300 group-hover:text-white transition-colors">{{ repo.name }}</span>
-          <span class="text-sm text-zinc-500">{{ repo.stars }}</span>
+          <span class="text-sm text-zinc-300 font-bold">{{ repo.stars }}</span>
           <UIcon name="i-heroicons-star-solid" class="w-3.5 h-3.5 text-yellow-500" />
         </a>
       </UTooltip>
