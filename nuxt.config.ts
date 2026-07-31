@@ -5,7 +5,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/content',
-    '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/test-utils',
     '@nuxt/ui',
@@ -13,14 +12,6 @@ export default defineNuxtConfig({
   ],
 
   css: ['~/assets/css/main.css'],
-
-  nitro: {
-    // entry.css is ~245 KB and was shipped raw: Nitro does not compress public
-    // assets unless told to, and the build wrote no .gz/.br alongside them.
-    // A render-blocking quarter-megabyte stylesheet is what made the finished
-    // styling arrive seconds after the markup.
-    compressPublicAssets: { gzip: true, brotli: true }
-  },
 
   ui: {
     // `accent` as its own alias, so Ember has to be requested explicitly via
@@ -50,6 +41,12 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    // entry.css is ~245 KB and was shipped raw: Nitro does not compress public
+    // assets unless told to, and the build wrote no .gz/.br alongside them.
+    // A render-blocking quarter-megabyte stylesheet is what made the finished
+    // styling arrive seconds after the markup.
+    compressPublicAssets: { gzip: true, brotli: true },
+
     storage: {
       data: {
         driver: 'fsLite',
