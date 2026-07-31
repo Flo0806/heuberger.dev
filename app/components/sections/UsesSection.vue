@@ -39,6 +39,7 @@ const uses: Record<CategoryKey, UseCategory> = {
       { name: 'Claude Code', description: 'AI Assistant', icon: 'i-simple-icons-anthropic', link: 'https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code' },
       { name: 'GitHub Copilot', description: 'AI Pair Programming', icon: 'i-simple-icons-githubcopilot', link: 'https://marketplace.visualstudio.com/items?itemName=GitHub.copilot' },
       { name: 'Volar', description: 'Vue Language Support', icon: 'i-simple-icons-vuedotjs', link: 'https://marketplace.visualstudio.com/items?itemName=Vue.volar' },
+      { name: 'Oxc', description: 'Linting & Formatting', icon: 'i-simple-icons-oxc', link: 'https://marketplace.visualstudio.com/items?itemName=oxc.oxc-vscode' },
       { name: 'ESLint', description: 'Linting', icon: 'i-simple-icons-eslint', link: 'https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint' },
       { name: 'Prettier', description: 'Code Formatting', icon: 'i-simple-icons-prettier', link: 'https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode' },
       { name: 'Tailwind CSS', description: 'IntelliSense', icon: 'i-simple-icons-tailwindcss', link: 'https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss' },

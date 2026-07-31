@@ -22,6 +22,7 @@ const tools = [
   { name: 'GitLab', icon: 'i-simple-icons-gitlab', color: 'text-orange-600', link: 'https://gitlab.com/' },
   { name: 'Docker', icon: 'i-simple-icons-docker', color: 'text-blue-500', link: 'https://www.docker.com/' },
   { name: 'VS Code', icon: 'i-simple-icons-visualstudiocode', color: 'text-blue-400', link: 'https://code.visualstudio.com/' },
+  { name: 'oxc', icon: 'i-simple-icons-oxc', color: 'text-cyan-300', link: 'https://oxc.rs/' },
   { name: 'Tailwind', icon: 'i-simple-icons-tailwindcss', color: 'text-cyan-400', link: 'https://tailwindcss.com/' },
   { name: 'PostgreSQL', icon: 'i-simple-icons-postgresql', color: 'text-blue-300', link: 'https://www.postgresql.org/' },
   { name: 'MongoDB', icon: 'i-simple-icons-mongodb', color: 'text-green-500', link: 'https://www.mongodb.com/' },
