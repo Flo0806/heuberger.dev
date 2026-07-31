@@ -27,11 +27,6 @@
     "vue": "^3.5.26",
     "vue-router": "^4.6.4"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3"
-    ]
-  },
   "devDependencies": {
     "oxfmt": "^0.58.0",
     "oxlint": "^1.73.0"

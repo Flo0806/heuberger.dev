@@ -6,8 +6,10 @@ WORKDIR /app
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Copy package files
-COPY package.json pnpm-lock.yaml ./
+# Copy package files. pnpm-workspace.yaml carries `allowBuilds` - without it
+# pnpm refuses to run the native build scripts (better-sqlite3, sharp, esbuild)
+# and exits with ERR_PNPM_IGNORED_BUILDS.
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 # Install dependencies
 RUN pnpm install --frozen-lockfile
