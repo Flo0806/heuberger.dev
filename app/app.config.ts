@@ -1,5 +1,13 @@
 export default defineAppConfig({
   ui: {
+    icons: {
+      // UColorModeButton shows `dark` while in dark mode and `light` while in
+      // light mode - i.e. the state you are already in. Swapped so the icon
+      // shows the state you switch TO, which is what its own aria-label
+      // ("switch to light") has been saying all along.
+      dark: 'i-lucide:sun',
+      light: 'i-lucide:moon',
+    },
     colors: {
       // Glacier traegt alles Interaktive - Buttons, Links, Focus-Ringe.
       primary: 'glacier',

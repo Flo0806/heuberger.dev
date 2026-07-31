@@ -1,29 +1,28 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t } = useI18n();
 
 defineEmits<{
-  scrollTo: [href: string]
-}>()
+  scrollTo: [href: string];
+}>();
 </script>
 
 <template>
+  <!-- Bottom padding is deliberately larger than the top: the block is
+       vertically centred, so the heavier bottom shifts the whole thing up and
+       the greeting sits higher without moving anything by hand. -->
   <section
     id="hero"
-    class="relative min-h-screen flex items-center justify-center section-padding pt-32"
+    class="relative min-h-screen flex items-center justify-center pt-24 pb-36 md:pt-28 md:pb-40"
   >
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-4xl mx-auto text-center">
         <!-- Greeting -->
-        <p
-          class="text-orange-400 text-lg md:text-xl mb-4"
-        >
+        <p class="text-orange-400 text-lg md:text-xl mb-4">
           {{ t('hero.greeting') }}
         </p>
 
         <!-- Name -->
-        <h1
-          class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4"
-        >
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
           <span class="gradient-text">{{ t('hero.name') }}</span>
         </h1>
 
@@ -35,9 +34,7 @@ defineEmits<{
         </h2>
 
         <!-- Nuxt Ecosystem Badge -->
-        <div
-          class="nuxt-badge-wrapper mb-8"
-        >
+        <div class="nuxt-badge-wrapper mb-8">
           <div class="nuxt-badge">
             <div class="nuxt-badge-glow" />
             <div class="nuxt-badge-content">
@@ -50,16 +47,12 @@ defineEmits<{
         </div>
 
         <!-- Description -->
-        <p
-          class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-10"
-        >
+        <p class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-10">
           {{ t('hero.description') }}
         </p>
 
         <!-- CTAs -->
-        <div
-          class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
-        >
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <UButton
             size="lg"
             color="primary"
@@ -83,13 +76,16 @@ defineEmits<{
         <div>
           <GitHubStats />
         </div>
+
+        <!-- Sits inside the hero so it lands above the fold on a desktop
+             viewport. On short screens the hero simply grows past 100vh,
+             which beats rendering the strip twice and hiding one copy. -->
+        <SectionsCreatorSection />
       </div>
     </div>
 
     <!-- Scroll indicator -->
-    <div
-      class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
-    >
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
       <UIcon name="i-heroicons-chevron-down" class="w-6 h-6 text-zinc-600 dark:text-zinc-500" />
     </div>
   </section>

@@ -14,7 +14,7 @@
     "name": "Florian Heuberger",
     "title": "Senior Fullstack Developer",
     "subtitle": "Nuxt Ecosystem Member",
-    "description": "Ich entwickle moderne Webanwendungen mit Vue, Nuxt und TypeScript. Leidenschaftlich für Clean Code, Performance und großartige User Experience.",
+    "description": "Ich entwickle moderne Webanwendungen mit Vue, Nuxt und TypeScript. Leidenschaftlich für Clean Code, Performance, großartige User Experience und Sarkasmus 😈.",
     "cta": {
       "projects": "Meine Projekte",
       "contact": "Kontakt aufnehmen"
@@ -168,5 +168,26 @@
     "description": "Senior Fullstack Developer & Nuxt Ecosystem Member. Ich baue jasy für ZUGFeRD- und XRechnung-konforme PDFs, das Nuxtathon-Leaderboard und Nuxt-Module.",
     "keywords": "Nuxt, Nuxt Module, Nuxt Ecosystem, Vue.js, TypeScript, Fullstack Developer, ZUGFeRD, XRechnung, Factur-X, EN 16931, E-Rechnung, jasy, jasy-pdf, Nuxtathon, nuxt-spyglass, vorm-vue, Florian Heuberger",
     "imageAlt": "Florian Heuberger - Senior Fullstack Developer und Nuxt Ecosystem Member"
+  },
+  "creator": {
+    "title": "Creator of",
+    "items": {
+      "jasy": {
+        "name": "jasy",
+        "claim": "PDF-Library in 100 % TypeScript – XRechnung und ZUGFeRD out of the box"
+      },
+      "dmHero": {
+        "name": "DM Hero",
+        "claim": "DAS Game-Master-Management für deine Tischrunden"
+      },
+      "jano": {
+        "name": "jano",
+        "claim": "DER Terminal-Editor – plugin-fähig, schnell, ohne Ballast"
+      },
+      "nuxtCare": {
+        "name": "nuxt.care",
+        "claim": "Audit-Tool für Nuxt-Module – Gesundheit, Abhängigkeiten, Best Practices"
+      }
+    }
   }
 }
