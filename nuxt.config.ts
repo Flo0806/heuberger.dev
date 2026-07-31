@@ -3,13 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: [
-    '@nuxt/content',
-    '@nuxt/image',
-    '@nuxt/test-utils',
-    '@nuxt/ui',
-    '@nuxtjs/i18n'
-  ],
+  modules: ['@nuxt/content', '@nuxt/image', '@nuxt/test-utils', '@nuxt/ui', '@nuxtjs/i18n'],
 
   css: ['~/assets/css/main.css'],
 
@@ -17,14 +11,14 @@ export default defineNuxtConfig({
     // `accent` as its own alias, so Ember has to be requested explicitly via
     // color="accent" instead of showing up everywhere by default.
     theme: {
-      colors: ['primary', 'secondary', 'accent', 'success', 'info', 'warning', 'error']
-    }
+      colors: ['primary', 'secondary', 'accent', 'success', 'info', 'warning', 'error'],
+    },
   },
 
   i18n: {
     locales: [
       { code: 'de', language: 'de-DE', file: 'de.json', name: 'Deutsch' },
-      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' }
+      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
     ],
     defaultLocale: 'de',
     langDir: '../i18n/locales',
@@ -32,12 +26,12 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_locale',
-      alwaysRedirect: false
-    }
+      alwaysRedirect: false,
+    },
   },
 
   runtimeConfig: {
-    githubToken: ''
+    githubToken: '',
   },
 
   nitro: {
@@ -50,23 +44,21 @@ export default defineNuxtConfig({
     storage: {
       data: {
         driver: 'fsLite',
-        base: './.data/counter'
-      }
-    }
+        base: './.data/counter',
+      },
+    },
   },
 
   app: {
     head: {
-      title: 'Florian Heuberger - Senior Fullstack Developer',
+      // Title and description come from useSiteSeo(), which drives them
+      // through i18n. Leaving copies here would emit them twice.
       meta: [
-        { name: 'description', content: 'Senior Fullstack Developer & Nuxt Ecosystem Member' },
         { name: 'theme-color', content: '#f6f8fa', media: '(prefers-color-scheme: light)' },
-        { name: 'theme-color', content: '#0e141b', media: '(prefers-color-scheme: dark)' }
+        { name: 'theme-color', content: '#0e141b', media: '(prefers-color-scheme: dark)' },
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      ]
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
-    pageTransition: { name: 'page', mode: 'out-in' }
-  }
-})
+    pageTransition: { name: 'page', mode: 'out-in' },
+  },
+});

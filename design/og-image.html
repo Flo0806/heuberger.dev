@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink-950: #0e141b;
+    --ink-900: #161c24;
+    --ink-300: #c0cad5;
+    --ink-400: #8b97a6;
+    --glacier-200: #b7dbf1;
+    --glacier-300: #87c2e6;
+    --glacier-400: #52a4d6;
+    --glacier-500: #2f86be;
+    --ember: #f97316;
+    --nuxt: #00dc82;
+  }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: var(--ink-900);
+    font-family: 'Noto Sans', 'DejaVu Sans', system-ui, sans-serif;
+    color: #edf1f5;
+    position: relative;
+  }
+
+  /* Same ambient stack as the site: colour fields, 118deg stripes, dot grid. */
+  .ambient {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(38rem 32rem at 14% 10%, rgb(47 134 190 / 0.42), transparent 62%),
+      radial-gradient(30rem 26rem at 84% 24%, rgb(135 194 230 / 0.2), transparent 60%),
+      radial-gradient(34rem 30rem at 68% 88%, rgb(249 115 22 / 0.13), transparent 60%),
+      radial-gradient(26rem 24rem at 38% 62%, rgb(47 134 190 / 0.26), transparent 62%),
+      repeating-linear-gradient(118deg, rgb(135 194 230 / 0.06) 0 60px, transparent 60px 150px),
+      radial-gradient(rgb(135 194 230 / 0.1) 1px, transparent 1px);
+    background-size: auto, auto, auto, auto, auto, 26px 26px;
+  }
+
+  .frame {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 0 76px;
+  }
+
+  .left { flex: 1; min-width: 0; }
+
+  .eyebrow {
+    font-size: 22px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--glacier-300);
+    opacity: 0.85;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: 82px;
+    /* Needs headroom for the descender: background-clip:text clips to the
+       line box, so a tight leading cuts the "g" of Heuberger clean off. */
+    line-height: 1.14;
+    padding-bottom: 6px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, var(--glacier-200) 0%, var(--glacier-300) 45%, var(--glacier-500) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 14px;
+  }
+
+  /* The one warm stroke in a cold headline - Ember, used exactly once. */
+  .role {
+    position: relative;
+    display: inline-block;
+    font-size: 34px;
+    font-weight: 300;
+    color: var(--ink-300);
+    padding-bottom: 12px;
+    margin-bottom: 34px;
+  }
+  .role::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, rgb(249 115 22 / 0) 0%, var(--ember) 16%, var(--ember) 84%, rgb(249 115 22 / 0) 100%);
+  }
+
+  .badges { display: flex; gap: 12px; align-items: center; white-space: nowrap; }
+
+  /* Liquid-glass pill: tinted body, top gloss, bright rim. */
+  .pill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 12px 19px;
+    border-radius: 999px;
+    font-size: 19px;
+    font-weight: 600;
+    background-color: rgb(148 178 202 / 0.09);
+    border: 1px solid rgb(135 194 230 / 0.16);
+    box-shadow:
+      inset 0 0 40px -14px rgb(255 255 255 / 0.28),
+      0 18px 44px -20px rgb(0 0 0 / 0.75);
+    overflow: hidden;
+  }
+  .pill::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(158deg, rgb(255 255 255 / 0.2) 0%, rgb(255 255 255 / 0) 36%);
+  }
+  .pill span { position: relative; }
+  .dot { width: 11px; height: 11px; border-radius: 50%; position: relative; }
+
+  .right { flex-shrink: 0; position: relative; }
+
+  .photo {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgb(135 194 230 / 0.28);
+    box-shadow:
+      0 0 0 14px rgb(47 134 190 / 0.07),
+      0 30px 70px -25px rgb(0 0 0 / 0.85);
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .glow {
+    position: absolute;
+    inset: -40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(47 134 190 / 0.4) 0%, transparent 68%);
+    filter: blur(38px);
+    z-index: -1;
+  }
+
+  .domain {
+    position: absolute;
+    left: 76px;
+    bottom: 46px;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .domain .dev { color: var(--nuxt); }
+</style>
+</head>
+<body>
+  <div class="ambient"></div>
+
+  <div class="frame">
+    <div class="left">
+      <div class="eyebrow">Nuxt Ecosystem Member</div>
+      <h1>Florian<br>Heuberger</h1>
+      <div class="role">Senior Fullstack Developer</div>
+      <div class="badges">
+        <div class="pill"><span class="dot" style="background:#00dc82"></span><span>Vue &amp; Nuxt</span></div>
+        <div class="pill"><span class="dot" style="background:#52a4d6"></span><span>TypeScript</span></div>
+        <div class="pill"><span class="dot" style="background:#f97316"></span><span>ZUGFeRD &amp; XRechnung</span></div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="glow"></div>
+      <div class="photo"><img src="profile.jpeg" alt=""></div>
+    </div>
+  </div>
+
+  <div class="domain">heuberger<span class="dev">.dev</span></div>
+</body>
+</html>

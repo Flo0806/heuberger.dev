@@ -11,18 +11,22 @@ export default defineAppConfig({
       // Semantik bewusst weg vom Orange-Bereich, damit sie nicht mit Ember konkurriert.
       success: 'emerald',
       warning: 'yellow',
-      error: 'rose'
-    }
+      error: 'rose',
+    },
   },
   // Site metadata
   site: {
     name: 'Florian Heuberger',
     title: 'Senior Fullstack Developer',
     description: 'Senior Fullstack Developer & Nuxt Ecosystem Member',
+    // Absolute base for canonical and og:image - social crawlers reject
+    // relative image paths, so this has to be a real origin.
+    url: 'https://heuberger.dev',
+    ogImage: '/img/og-image.jpg',
     socials: {
       github: 'https://github.com/Flo0806',
-      linkedin: 'https://www.linkedin.com/in/florian-heuberger-93700b166/'
+      linkedin: 'https://www.linkedin.com/in/florian-heuberger-93700b166/',
     },
-    email: 'f.heuberger@gmx.net'
-  }
-})
+    email: 'f.heuberger@gmx.net',
+  },
+});

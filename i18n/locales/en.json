@@ -162,5 +162,11 @@
       "trainerDesc": "1 Apprentice"
     },
     "cta": "Visit DADG"
+  },
+  "seo": {
+    "title": "Florian Heuberger - Nuxt & Vue Developer, ZUGFeRD/XRechnung",
+    "description": "Senior Fullstack Developer and Nuxt Ecosystem Member. I build jasy for ZUGFeRD and XRechnung compliant PDFs, the Nuxtathon leaderboard and Nuxt modules.",
+    "keywords": "Nuxt, Nuxt module, Nuxt ecosystem, Vue.js, TypeScript, fullstack developer, ZUGFeRD, XRechnung, Factur-X, EN 16931, e-invoicing, jasy, jasy-pdf, Nuxtathon, nuxt-spyglass, vorm-vue, Florian Heuberger",
+    "imageAlt": "Florian Heuberger - Senior Fullstack Developer and Nuxt Ecosystem Member"
   }
 }
