@@ -19,9 +19,6 @@ const socials = [
       <div class="max-w-3xl mx-auto text-center">
         <!-- Section Header -->
         <div
-          v-motion
-          :initial="{ opacity: 0, y: 30 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
           class="mb-12"
         >
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
@@ -33,9 +30,6 @@ const socials = [
 
         <!-- Email Button -->
         <div
-          v-motion
-          :initial="{ opacity: 0, scale: 0.9 }"
-          :visible-once="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 200, delay: 200 } }"
           class="mb-12"
         >
           <a
@@ -54,19 +48,12 @@ const socials = [
         </div>
 
         <!-- Social Links -->
-        <div
-          v-motion
-          :initial="{ opacity: 0 }"
-          :visible-once="{ opacity: 1, transition: { duration: 400, delay: 400 } }"
-        >
+        <div>
           <p class="text-sm text-zinc-600 dark:text-zinc-500 mb-4">{{ t('contact.socials') }}</p>
           <div class="flex items-center justify-center gap-4">
             <a
-              v-for="(social, index) in socials"
+              v-for="social in socials"
               :key="social.name"
-              v-motion
-              :initial="{ opacity: 0, y: 20 }"
-              :visible-once="{ opacity: 1, y: 0, transition: { duration: 300, delay: 500 + index * 100 } }"
               :href="social.url"
               target="_blank"
               rel="noopener noreferrer"

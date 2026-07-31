@@ -8,8 +8,10 @@ const hardware = {
   ],
   workstation: [
     { name: 'Intel Core i5-13400', specs: '16 Threads', icon: 'i-heroicons-cpu-chip' },
-    { name: '32GB DDR5 RAM', specs: 'System Memory', icon: 'i-heroicons-circle-stack' },
-    { name: 'MEDION Erazer', specs: 'Desktop PC', icon: 'i-heroicons-computer-desktop' }
+    { name: '64GB DDR5 RAM', specs: 'System Memory', icon: 'i-heroicons-circle-stack' },
+    { name: 'MEDION Erazer', specs: 'Desktop PC', icon: 'i-heroicons-computer-desktop' },
+    { name: 'Ubuntu 26.04', specs: 'Operating System', icon: 'i-heroicons-heart' },
+
   ],
   displays: [
     { name: 'Samsung Odyssey G9', specs: '49" Ultrawide', icon: 'i-heroicons-tv' },
@@ -17,6 +19,7 @@ const hardware = {
   ],
   peripherals: [
     { name: 'Keychron Q1 QMK', specs: 'Mechanical Keyboard', icon: 'i-heroicons-command-line' },
+    { name: 'Logitech MX Master 3S', specs: 'Mouse', icon: 'i-heroicons-cursor-arrow-rays' },
     { name: 'Logitech C922', specs: 'HD Webcam', icon: 'i-heroicons-video-camera' },
     { name: 'Logitech Astro A50 5th Gen', specs: 'Wireless Headset', icon: 'i-heroicons-speaker-wave' }
   ],
@@ -38,9 +41,6 @@ const categories = ['servers', 'workstation', 'displays', 'peripherals', 'mobile
       <div class="max-w-6xl mx-auto">
         <!-- Section Header -->
         <div
-          v-motion
-          :initial="{ opacity: 0, y: 30 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
           class="text-center mb-16"
         >
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
@@ -52,11 +52,8 @@ const categories = ['servers', 'workstation', 'displays', 'peripherals', 'mobile
         <!-- Hardware Categories -->
         <div class="space-y-8">
           <div
-            v-for="(category, catIndex) in categories"
+            v-for="category in categories"
             :key="category"
-            v-motion
-            :initial="{ opacity: 0, x: -30 }"
-            :visible-once="{ opacity: 1, x: 0, transition: { duration: 500, delay: catIndex * 100 } }"
           >
             <h3 class="text-lg font-semibold text-zinc-700 dark:text-zinc-300 mb-4 flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-orange-500" />
@@ -65,12 +62,8 @@ const categories = ['servers', 'workstation', 'displays', 'peripherals', 'mobile
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div
-                v-for="(item, itemIndex) in hardware[category]"
+                v-for="item in hardware[category]"
                 :key="item.name"
-                v-motion
-                :initial="{ opacity: 0, scale: 0.95 }"
-                :visible-once="{ opacity: 1, scale: 1, transition: { duration: 300, delay: catIndex * 100 + itemIndex * 50 } }"
-                :hovered="{ scale: 1.03, transition: { duration: 150 } }"
                 class="glass rounded-xl p-4 flex items-center gap-4 hover:border-orange-500/50 transition-colors duration-300"
               >
                 <div class="w-12 h-12 rounded-lg bg-zinc-800/50 flex items-center justify-center shrink-0">

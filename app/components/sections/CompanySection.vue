@@ -18,9 +18,6 @@ const services = [
       <div class="max-w-5xl mx-auto">
         <!-- Main Card -->
         <div
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 700 } }"
           class="glass rounded-3xl p-8 md:p-12 relative overflow-hidden"
         >
           <!-- Background Accent -->
@@ -30,9 +27,6 @@ const services = [
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               <!-- Logo Side -->
               <div
-                v-motion
-                :initial="{ opacity: 0, scale: 0.8 }"
-                :visible-once="{ opacity: 1, scale: 1, transition: { type: 'spring', delay: 200 } }"
                 class="shrink-0"
               >
                 <a
@@ -57,25 +51,16 @@ const services = [
               <!-- Content Side -->
               <div class="flex-1 text-center lg:text-left">
                 <p
-                  v-motion
-                  :initial="{ opacity: 0 }"
-                  :visible-once="{ opacity: 1, transition: { delay: 300 } }"
                   class="text-orange-400 text-sm font-medium mb-2"
                 >
                   {{ t('company.label') }}
                 </p>
                 <h2
-                  v-motion
-                  :initial="{ opacity: 0, y: 20 }"
-                  :visible-once="{ opacity: 1, y: 0, transition: { delay: 400 } }"
                   class="text-2xl md:text-3xl font-bold mb-4"
                 >
                   <span class="gradient-text">{{ t('company.title') }}</span>
                 </h2>
                 <p
-                  v-motion
-                  :initial="{ opacity: 0 }"
-                  :visible-once="{ opacity: 1, transition: { delay: 500 } }"
                   class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6"
                 >
                   {{ t('company.description') }}
@@ -83,9 +68,6 @@ const services = [
 
                 <!-- Services -->
                 <div
-                  v-motion
-                  :initial="{ opacity: 0, y: 10 }"
-                  :visible-once="{ opacity: 1, y: 0, transition: { delay: 600 } }"
                   class="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
                 >
                   <div
@@ -100,9 +82,6 @@ const services = [
 
                 <!-- CTA -->
                 <a
-                  v-motion
-                  :initial="{ opacity: 0 }"
-                  :visible-once="{ opacity: 1, transition: { delay: 700 } }"
                   href="https://fh-softdev.de"
                   target="_blank"
                   rel="noopener noreferrer"

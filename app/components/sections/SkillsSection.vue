@@ -29,7 +29,7 @@ const tools = [
   { name: 'InfluxDB', icon: 'i-simple-icons-influxdb', color: 'text-purple-400', link: 'https://www.influxdata.com/' },
   { name: 'RabbitMQ', icon: 'i-simple-icons-rabbitmq', color: 'text-orange-500', link: 'https://www.rabbitmq.com/' },
   { name: 'Postman', icon: 'i-simple-icons-postman', color: 'text-orange-500', link: 'https://www.postman.com/' },
-  { name: 'MobaXterm', icon: 'i-heroicons-command-line', color: 'text-cyan-400', link: 'https://mobaxterm.mobatek.net/' },
+  { name: 'Nuxt Spyglass', icon: 'i-heroicons-magnifying-glass', color: 'text-cyan-400', link: 'https://spyglass.fh-softdev.de' },
   { name: 'Linux', icon: 'i-simple-icons-linux', color: 'text-yellow-500', link: 'https://www.linux.org/' },
   { name: 'Windows', icon: 'i-simple-icons-windows', color: 'text-blue-400', link: 'https://www.microsoft.com/windows' },
   { name: 'macOS', icon: 'i-simple-icons-apple', color: 'text-zinc-300', link: 'https://www.apple.com/macos/' }
@@ -46,9 +46,6 @@ const tools = [
       <div class="max-w-6xl mx-auto">
         <!-- Section Header -->
         <div
-          v-motion
-          :initial="{ opacity: 0, y: 30 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
           class="text-center mb-16"
         >
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
@@ -60,20 +57,14 @@ const tools = [
         <!-- Primary Skills -->
         <div class="mb-12">
           <h3
-            v-motion
-            :initial="{ opacity: 0 }"
-            :visible-once="{ opacity: 1, transition: { duration: 400 } }"
             class="text-lg font-semibold text-zinc-700 dark:text-zinc-300 mb-6 text-center"
           >
             {{ t('skills.primary') }}
           </h3>
           <div class="flex flex-wrap justify-center gap-4">
             <a
-              v-for="(skill, index) in primarySkills"
+              v-for="skill in primarySkills"
               :key="skill.name"
-              v-motion
-              :initial="{ opacity: 0, scale: 0.8 }"
-              :visible-once="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, delay: index * 100 } }"
               :href="skill.link"
               target="_blank"
               rel="noopener noreferrer"
@@ -88,20 +79,14 @@ const tools = [
         <!-- Secondary Skills -->
         <div class="mb-12">
           <h3
-            v-motion
-            :initial="{ opacity: 0 }"
-            :visible-once="{ opacity: 1, transition: { duration: 400, delay: 300 } }"
             class="text-lg font-semibold text-zinc-700 dark:text-zinc-300 mb-6 text-center"
           >
             {{ t('skills.secondary') }}
           </h3>
           <div class="flex flex-wrap justify-center gap-4">
             <a
-              v-for="(skill, index) in secondarySkills"
+              v-for="skill in secondarySkills"
               :key="skill.name"
-              v-motion
-              :initial="{ opacity: 0, x: -20 }"
-              :visible-once="{ opacity: 1, x: 0, transition: { duration: 400, delay: 400 + index * 80 } }"
               :href="skill.link"
               target="_blank"
               rel="noopener noreferrer"
@@ -116,20 +101,14 @@ const tools = [
         <!-- Tools -->
         <div>
           <h3
-            v-motion
-            :initial="{ opacity: 0 }"
-            :visible-once="{ opacity: 1, transition: { duration: 400, delay: 500 } }"
             class="text-lg font-semibold text-zinc-700 dark:text-zinc-300 mb-6 text-center"
           >
             {{ t('skills.tools') }}
           </h3>
           <div class="flex flex-wrap justify-center gap-3">
             <a
-              v-for="(tool, index) in tools"
+              v-for="tool in tools"
               :key="tool.name"
-              v-motion
-              :initial="{ opacity: 0, y: 15 }"
-              :visible-once="{ opacity: 1, y: 0, transition: { duration: 300, delay: 600 + index * 50 } }"
               :href="tool.link"
               target="_blank"
               rel="noopener noreferrer"

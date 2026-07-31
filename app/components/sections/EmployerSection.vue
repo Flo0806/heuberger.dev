@@ -16,9 +16,6 @@ const roles = [
       <div class="max-w-5xl mx-auto">
         <!-- Main Card -->
         <div
-          v-motion
-          :initial="{ opacity: 0, y: 40 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 700 } }"
           class="glass rounded-3xl p-8 md:p-12 relative overflow-hidden"
         >
           <!-- Background Accent -->
@@ -29,9 +26,6 @@ const roles = [
             <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               <!-- Logo Side -->
               <div
-                v-motion
-                :initial="{ opacity: 0, scale: 0.8 }"
-                :visible-once="{ opacity: 1, scale: 1, transition: { type: 'spring', delay: 200 } }"
                 class="shrink-0"
               >
                 <a
@@ -53,33 +47,21 @@ const roles = [
               <!-- Content Side -->
               <div class="flex-1 text-center lg:text-left">
                 <p
-                  v-motion
-                  :initial="{ opacity: 0 }"
-                  :visible-once="{ opacity: 1, transition: { delay: 300 } }"
                   class="text-sky-400 text-sm font-medium mb-2"
                 >
                   {{ t('employer.label') }}
                 </p>
                 <h2
-                  v-motion
-                  :initial="{ opacity: 0, y: 20 }"
-                  :visible-once="{ opacity: 1, y: 0, transition: { delay: 400 } }"
                   class="text-2xl md:text-3xl font-bold mb-2"
                 >
                   <span class="text-transparent bg-clip-text bg-linear-to-r from-sky-400 to-blue-500">{{ t('employer.title') }}</span>
                 </h2>
                 <p
-                  v-motion
-                  :initial="{ opacity: 0 }"
-                  :visible-once="{ opacity: 1, transition: { delay: 450 } }"
                   class="text-sm text-zinc-600 dark:text-zinc-500 mb-3"
                 >
                   {{ t('employer.fullName') }}
                 </p>
                 <p
-                  v-motion
-                  :initial="{ opacity: 0 }"
-                  :visible-once="{ opacity: 1, transition: { delay: 500 } }"
                   class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6"
                 >
                   {{ t('employer.description') }}
@@ -87,9 +69,6 @@ const roles = [
 
                 <!-- Roles -->
                 <div
-                  v-motion
-                  :initial="{ opacity: 0, y: 10 }"
-                  :visible-once="{ opacity: 1, y: 0, transition: { delay: 600 } }"
                   class="flex flex-wrap justify-center lg:justify-start gap-4 mb-6"
                 >
                   <div
@@ -109,9 +88,6 @@ const roles = [
 
                 <!-- CTA -->
                 <a
-                  v-motion
-                  :initial="{ opacity: 0 }"
-                  :visible-once="{ opacity: 1, transition: { delay: 700 } }"
                   href="https://dadg.de"
                   target="_blank"
                   rel="noopener noreferrer"

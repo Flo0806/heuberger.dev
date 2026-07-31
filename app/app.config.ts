@@ -1,8 +1,17 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: 'orange',
-      neutral: 'zinc'
+      // Glacier traegt alles Interaktive - Buttons, Links, Focus-Ringe.
+      primary: 'glacier',
+      // Ember ist Signal, kein Grundton. Nur ueber color="accent" abrufbar.
+      accent: 'orange',
+      secondary: 'glacier',
+      neutral: 'ink',
+      info: 'glacier',
+      // Semantik bewusst weg vom Orange-Bereich, damit sie nicht mit Ember konkurriert.
+      success: 'emerald',
+      warning: 'yellow',
+      error: 'rose'
     }
   },
   // Site metadata

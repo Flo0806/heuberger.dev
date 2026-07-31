@@ -28,7 +28,7 @@ const uses: Record<CategoryKey, UseCategory> = {
   fonts: {
     icon: 'i-heroicons-language',
     items: [
-      { name: 'Cascadia Code NF', description: 'Primary Font', icon: 'i-heroicons-code-bracket', link: 'https://github.com/microsoft/cascadia-code' },
+      { name: 'Dank Mono', description: 'Primary Font', icon: 'i-heroicons-code-bracket', link: 'https://philpl.gumroad.com/l/dank-mono' },
       { name: 'Monaspace Neon', description: 'Alternative Font', icon: 'i-heroicons-sparkles', link: 'https://monaspace.githubnext.com/' },
       { name: 'Font Ligatures', description: 'Enabled', icon: 'i-heroicons-link' }
     ]
@@ -60,7 +60,7 @@ const uses: Record<CategoryKey, UseCategory> = {
     items: [
       { name: 'Docker', description: 'Containerization', icon: 'i-simple-icons-docker', link: 'https://www.docker.com/' },
       { name: 'Postman', description: 'API Testing', icon: 'i-simple-icons-postman', link: 'https://www.postman.com/' },
-      { name: 'MobaXterm', description: 'SSH Client', icon: 'i-heroicons-server', link: 'https://mobaxterm.mobatek.net/' },
+      { name: 'Nuxt Spyglass', description: 'BE + FE Logger for Nuxt', icon: 'i-heroicons-magnifying-glass', link: 'https://spyglass.fh-softdev.de', highlight: true },
       { name: 'Zen Browser', description: 'Primary Browser', icon: 'i-heroicons-globe-alt', link: 'https://zen-browser.app/' },
       { name: 'Claude Code', description: 'AI Coding Agent', icon: 'i-simple-icons-anthropic', link: 'https://claude.ai/code' }
     ]
@@ -79,9 +79,6 @@ const categories: CategoryKey[] = ['editor', 'fonts', 'extensions', 'terminal', 
       <div class="max-w-6xl mx-auto">
         <!-- Section Header -->
         <div
-          v-motion
-          :initial="{ opacity: 0, y: 30 }"
-          :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
           class="text-center mb-16"
         >
           <h2 class="text-4xl md:text-5xl font-bold mb-4">
@@ -93,11 +90,8 @@ const categories: CategoryKey[] = ['editor', 'fonts', 'extensions', 'terminal', 
         <!-- Uses Categories -->
         <div class="grid md:grid-cols-2 gap-8">
           <div
-            v-for="(category, catIndex) in categories"
+            v-for="category in categories"
             :key="category"
-            v-motion
-            :initial="{ opacity: 0, y: 40 }"
-            :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, delay: catIndex * 150 } }"
             class="glass rounded-2xl p-6"
           >
             <h3 class="text-lg font-semibold text-zinc-800 dark:text-zinc-200 mb-6 flex items-center gap-3">
