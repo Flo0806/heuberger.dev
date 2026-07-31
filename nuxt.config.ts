@@ -9,11 +9,26 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/test-utils',
     '@nuxt/ui',
-    '@nuxtjs/i18n',
-    '@vueuse/motion/nuxt'
+    '@nuxtjs/i18n'
   ],
 
   css: ['~/assets/css/main.css'],
+
+  nitro: {
+    // entry.css is ~245 KB and was shipped raw: Nitro does not compress public
+    // assets unless told to, and the build wrote no .gz/.br alongside them.
+    // A render-blocking quarter-megabyte stylesheet is what made the finished
+    // styling arrive seconds after the markup.
+    compressPublicAssets: { gzip: true, brotli: true }
+  },
+
+  ui: {
+    // `accent` as its own alias, so Ember has to be requested explicitly via
+    // color="accent" instead of showing up everywhere by default.
+    theme: {
+      colors: ['primary', 'secondary', 'accent', 'success', 'info', 'warning', 'error']
+    }
+  },
 
   i18n: {
     locales: [
@@ -48,7 +63,8 @@ export default defineNuxtConfig({
       title: 'Florian Heuberger - Senior Fullstack Developer',
       meta: [
         { name: 'description', content: 'Senior Fullstack Developer & Nuxt Ecosystem Member' },
-        { name: 'theme-color', content: '#f97316' }
+        { name: 'theme-color', content: '#f6f8fa', media: '(prefers-color-scheme: light)' },
+        { name: 'theme-color', content: '#0e141b', media: '(prefers-color-scheme: dark)' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
