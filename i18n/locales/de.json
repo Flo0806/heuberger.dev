@@ -187,6 +187,10 @@
       "nuxtCare": {
         "name": "nuxt.care",
         "claim": "Audit-Tool für Nuxt-Module – Gesundheit, Abhängigkeiten, Best Practices"
+      },
+      "nuxtathon": {
+        "name": "Nuxtathon",
+        "claim": "Das Leaderboard zum Nuxtathon - die Live-Rangliste zum Event."
       }
     }
   }

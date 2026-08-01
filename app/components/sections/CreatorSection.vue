@@ -17,6 +17,7 @@ const creations = [
   { key: 'dmHero', href: 'https://dm-hero.com', rotate: '1.2deg' },
   { key: 'jano', href: 'https://janoeditor.dev', rotate: '-0.9deg' },
   { key: 'nuxtCare', href: 'https://nuxt.care', rotate: '1.5deg' },
+  { key: 'nuxtathon', href: 'https://nuxtathon.live', rotate: '0-75deg' },
 ];
 
 /** Gap between two impacts. Short enough to read as one burst. */
