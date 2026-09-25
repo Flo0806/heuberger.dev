@@ -16,6 +16,17 @@ const SAFETY_NET_MS = 2500
 
 const IN_CLASS = 'card-in'
 
+/**
+ * Released just *before* a card reaches the viewport, not after.
+ *
+ * IntersectionObserver measures the transformed box, and the hidden state
+ * pushes every card 30px down (see main.css). A negative bottom margin adds to
+ * that offset: with -8% on a 900px viewport the two together left a ~100px
+ * dead band where a card was plainly on screen and still counted as outside,
+ * so stopping the scroll there left it blank.
+ */
+const ROOT_MARGIN = '0px 0px 10% 0px'
+
 /** Sideways scatter before settling, in px — assembling, not thrown in. */
 const SCATTER_X = 14
 /** Tilt before settling, in degrees. Beyond ~3 the text visibly shears. */
@@ -35,6 +46,7 @@ const seeded = (index: number, salt: number) => {
 export function useCardReveal() {
   let observer: IntersectionObserver | undefined
   let safetyNet: ReturnType<typeof setTimeout> | undefined
+  let stopScrollWatch: (() => void) | undefined
 
   onMounted(() => {
     const cards = Array.from(
@@ -50,38 +62,73 @@ export function useCardReveal() {
       card.style.setProperty('--card-delay', `${Math.round(seeded(index, 3) * JITTER_MS)}ms`)
     })
 
-    const showAll = () => cards.forEach(card => card.classList.add(IN_CLASS))
+    const reveal = (card: HTMLElement) => {
+      card.classList.add(IN_CLASS)
+      observer?.unobserve(card)
+    }
+
+    const pending = () => cards.filter(card => !card.classList.contains(IN_CLASS))
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      showAll()
+      cards.forEach(reveal)
       return
     }
 
     observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue
-          entry.target.classList.add(IN_CLASS)
-          observer?.unobserve(entry.target)
+          if (entry.isIntersecting) reveal(entry.target as HTMLElement)
         }
       },
-      // threshold 0 so a card fires the moment any sliver of it is in frame;
-      // the bottom inset just holds it back from starting flush at the edge.
-      { rootMargin: '0px 0px -8% 0px', threshold: 0 }
+      { rootMargin: ROOT_MARGIN, threshold: 0 }
     )
 
     cards.forEach(card => observer?.observe(card))
 
+    /**
+     * Second line of defence: anything on screen once a scroll settles gets
+     * shown, whether or not the observer agreed. A card left blank in front of
+     * the reader is a bug; revealing one a moment early is not. Detaches itself
+     * as soon as every card is out, so it costs nothing for the rest of the visit.
+     */
+    let frame = 0
+    const onScroll = () => {
+      if (frame) return
+      frame = requestAnimationFrame(() => {
+        frame = 0
+        const waiting = pending()
+        if (!waiting.length) {
+          stopScrollWatch?.()
+          return
+        }
+        waiting
+          .filter((card) => {
+            const rect = card.getBoundingClientRect()
+            return rect.top < window.innerHeight && rect.bottom > 0
+          })
+          .forEach(reveal)
+      })
+    }
+
+    stopScrollWatch = () => {
+      window.removeEventListener('scroll', onScroll)
+      if (frame) cancelAnimationFrame(frame)
+      frame = 0
+      stopScrollWatch = undefined
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+
     safetyNet = setTimeout(() => {
-      cards
-        .filter(card => !card.classList.contains(IN_CLASS)
-          && card.getBoundingClientRect().top < window.innerHeight)
-        .forEach(card => card.classList.add(IN_CLASS))
+      pending()
+        .filter(card => card.getBoundingClientRect().top < window.innerHeight)
+        .forEach(reveal)
     }, SAFETY_NET_MS)
   })
 
   onBeforeUnmount(() => {
     observer?.disconnect()
+    stopScrollWatch?.()
     if (safetyNet) clearTimeout(safetyNet)
   })
 }
