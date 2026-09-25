@@ -32,6 +32,10 @@ const npmSpyglassData = useLazyFetch<{ downloads: number }>(
   'https://api.npmjs.org/downloads/point/last-month/nuxt-spyglass',
   { key: 'npm-spyglass', server: false, default: () => ({ downloads: 0 }) }
 ).data
+const npmPigeonData = useLazyFetch<{ downloads: number }>(
+  'https://api.npmjs.org/downloads/point/last-month/nuxt-pigeon',
+  { key: 'npm-pigeon', server: false, default: () => ({ downloads: 0 }) }
+).data
 // The monorepo publishes five scoped packages; @jasy/pdf is the flagship and
 // stands in for the project's reach on the card.
 const npmJasyData = useLazyFetch<{ downloads: number }>(
@@ -92,6 +96,22 @@ const projects = computed(() => [
       { label: 'ZUGFeRD / XRechnung', icon: 'i-heroicons-document-check', bg: 'bg-rose-500/10', border: 'border-rose-500/20', text: 'text-rose-400' },
       { label: 'CLI', icon: 'i-heroicons-command-line', bg: 'bg-zinc-500/10', border: 'border-zinc-500/20', text: 'text-zinc-400' },
       { label: 'TypeScript', icon: 'i-simple-icons-typescript', bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-blue-400' },
+    ]
+  },
+    {
+    key: 'nuxtPigeon',
+    icon: 'i-heroicons-paper-airplane',
+    color: 'text-sky-400',
+    bgColor: 'bg-sky-500/10',
+    link: 'https://npmx.dev/package/nuxt-pigeon',
+    linkType: 'npm',
+    github: 'https://github.com/Flo0806/nuxt-pigeon',
+    stars: starsOf('Flo0806/nuxt-pigeon'),
+    downloads: npmPigeonData.value?.downloads || 0,
+    badges: [
+      { label: 'Nuxt Module', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
+      { label: 'Messaging', icon: 'i-heroicons-chat-bubble-left-right', bg: 'bg-sky-500/10', border: 'border-sky-500/20', text: 'text-sky-400' },
+      { label: 'Webhooks', icon: 'i-heroicons-bolt', bg: 'bg-zinc-500/10', border: 'border-zinc-500/20', text: 'text-zinc-400' },
     ]
   },
   {
@@ -163,6 +183,22 @@ const projects = computed(() => [
       { label: 'Nuxt', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
     ]
   },
+    {
+    key: 'floCode',
+    icon: 'i-heroicons-swatch',
+    color: 'text-indigo-400',
+    bgColor: 'bg-indigo-500/10',
+    link: 'https://marketplace.visualstudio.com/items?itemName=FHSoftDev.flo-code',
+    linkType: 'vscode',
+    github: 'https://github.com/Flo0806/flo-code',
+    stars: null,
+    downloads: null,
+    badges: [
+      { label: 'VS Code Theme', icon: 'i-simple-icons-visualstudiocode', bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-blue-400' },
+      { label: 'Dark', icon: 'i-heroicons-moon', bg: 'bg-indigo-500/10', border: 'border-indigo-500/20', text: 'text-indigo-400' },
+      { label: 'Dank Mono', icon: 'i-heroicons-code-bracket', bg: 'bg-zinc-500/10', border: 'border-zinc-500/20', text: 'text-zinc-400' },
+    ]
+  },
   {
     key: 'nuxtathon',
     icon: 'i-heroicons-trophy',
@@ -177,21 +213,7 @@ const projects = computed(() => [
       { label: 'Leaderboard', icon: 'i-heroicons-trophy', bg: 'bg-amber-500/10', border: 'border-amber-500/20', text: 'text-amber-400' },
       { label: 'Nuxt', icon: 'i-simple-icons-nuxtdotjs', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400' },
     ]
-  },
-  {
-    key: 'lintmon',
-    icon: 'i-simple-icons-visualstudiocode',
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-500/10',
-    link: 'https://marketplace.visualstudio.com/items?itemName=FHSoftDev.lintmon',
-    linkType: 'vscode',
-    github: 'https://github.com/Flo0806/lintmon',
-    stars: starsOf('Flo0806/lintmon'),
-    downloads: null,
-    badges: [
-      { label: 'VS Code Extension', icon: 'i-simple-icons-visualstudiocode', bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-blue-400' },
-    ]
-  }
+    }
 ])
 </script>
 

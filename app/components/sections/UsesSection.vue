@@ -21,6 +21,7 @@ const uses: Record<CategoryKey, UseCategory> = {
     icon: 'i-simple-icons-visualstudiocode',
     items: [
       { name: 'VS Code', description: 'Primary Editor', icon: 'i-simple-icons-visualstudiocode', link: 'https://code.visualstudio.com/' },
+      { name: 'flo-code', description: 'My Color Theme (dark)', icon: 'i-heroicons-swatch', link: 'https://marketplace.visualstudio.com/items?itemName=FHSoftDev.flo-code', highlight: true },
       { name: 'Palenight Theme', description: 'Color Theme', icon: 'i-heroicons-swatch', link: 'https://marketplace.visualstudio.com/items?itemName=whizkydee.material-palenight-theme' },
       { name: 'Material Icon Theme', description: 'File Icons', icon: 'i-heroicons-folder', link: 'https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme' }
     ]

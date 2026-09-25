@@ -56,10 +56,6 @@
         "name": "vorm-nuxt",
         "description": "Nuxt module for vorm-vue with auto-import and optimized integration."
       },
-      "lintmon": {
-        "name": "lintmon",
-        "description": "VS Code Extension for real-time linting monitoring and visualization."
-      },
       "nuxtCare": {
         "name": "nuxt.care",
         "description": "Audit tool for Nuxt modules. Analyze module health, dependencies, and best practices with a simple web interface."
@@ -83,6 +79,14 @@
       "nuxtathon": {
         "name": "Nuxtathon",
         "description": "The leaderboard for the Nuxtathon - live standings for the event."
+      },
+      "nuxtPigeon": {
+        "name": "nuxt-pigeon",
+        "description": "Send and receive messages - Telegram, Discord, Slack, ntfy, Mastodon, Bluesky and any webhook, whether the service speaks webhooks, polling or streams."
+      },
+      "floCode": {
+        "name": "flo-code",
+        "description": "My VS Code theme. Dark only, inspired by Palenight Operator and tuned for Dank Mono."
       }
     }
   },
@@ -125,8 +129,11 @@
       "nuxt-freeform": "Flexible form builder for Nuxt",
       "vorm": "Type-safe form validation for Vue & Nuxt",
       "nuxt-care": "Audit tool for Nuxt modules",
-      "lintmon": "VS Code lint monitoring extension",
-      "heuberger-dev": "My personal portfolio website"
+      "heuberger-dev": "My personal portfolio website",
+      "nuxt-pigeon": "Messaging across Telegram, Discord, Slack and webhooks",
+      "jasy": "PDF generation in TypeScript - ZUGFeRD, Factur-X, XRechnung",
+      "nuxt-spyglass": "Browser and server logs correlated, exposed to AI agents over MCP",
+      "nuxtathon": "Live leaderboard of the Nuxt community hackathon"
     }
   },
   "footer": {

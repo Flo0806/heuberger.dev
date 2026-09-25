@@ -318,10 +318,7 @@ export const cvEn: CvData = {
         { name: 'Flutter / Dart' },
         { name: 'HMI (C# / VisiWin)' },
         { name: 'IoT & OEE monitoring' },
-        {
-          name: 'VS Code extensions',
-          href: 'https://marketplace.visualstudio.com/items?itemName=FHSoftDev.lintmon',
-        },
+        { name: 'VS Code extensions' },
       ],
     },
     {

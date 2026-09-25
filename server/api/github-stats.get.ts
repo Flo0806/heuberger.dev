@@ -14,10 +14,10 @@ const FEATURED_REPOS = [
   'Flo0806/nuxt-freeform',
   'Flo0806/vorm',
   'Flo0806/nuxt.care',
-  'Flo0806/lintmon',
   'jasy-pdf/jasy',
   'Flo0806/nuxtathon',
-  'Flo0806/nuxt-spyglass'
+  'Flo0806/nuxt-spyglass',
+  'Flo0806/nuxt-pigeon'
 ]
 
 export default defineCachedEventHandler(async () => {
