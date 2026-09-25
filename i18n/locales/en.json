@@ -138,7 +138,8 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "builtWith": "Built with"
+    "builtWith": "Built with",
+    "machineCv": "Résumé for AI (cv.md)"
   },
   "cookies": {
     "title": "Cookies & Privacy",
@@ -226,7 +227,8 @@
     },
     "seo": {
       "title": "Résumé - Florian Heuberger, Senior Fullstack Developer (Vue, Nuxt, TypeScript)",
-      "description": "Résumé of Florian Heuberger: Senior Fullstack Developer, Nuxt ecosystem member, Nuxtathon champion 2026, team lead and trainer. Career changer with a master craftsman certificate and 17 years of leadership experience."
+      "description": "Résumé of Florian Heuberger: Senior Fullstack Developer, Nuxt ecosystem member, Nuxtathon champion 2026, team lead and trainer. Career changer with a master craftsman certificate and 17 years of leadership experience.",
+      "imageAlt": "Florian Heuberger’s résumé as a sheet of paper: Nuxtathon win, 20+ packages, team lead, 150+ machines monitored, 350 staff."
     },
     "reason": "Why the move:",
     "machineLabel": "For screening tools:"

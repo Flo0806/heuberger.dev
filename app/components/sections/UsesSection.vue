@@ -22,7 +22,7 @@ const uses: Record<CategoryKey, UseCategory> = {
     items: [
       { name: 'VS Code', description: 'Primary Editor', icon: 'i-simple-icons-visualstudiocode', link: 'https://code.visualstudio.com/' },
       { name: 'flo-code', description: 'My Color Theme (dark)', icon: 'i-heroicons-swatch', link: 'https://marketplace.visualstudio.com/items?itemName=FHSoftDev.flo-code', highlight: true },
-      { name: 'Palenight Theme', description: 'Color Theme', icon: 'i-heroicons-swatch', link: 'https://marketplace.visualstudio.com/items?itemName=whizkydee.material-palenight-theme' },
+      
       { name: 'Material Icon Theme', description: 'File Icons', icon: 'i-heroicons-folder', link: 'https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme' }
     ]
   },
@@ -44,7 +44,7 @@ const uses: Record<CategoryKey, UseCategory> = {
       { name: 'ESLint', description: 'Linting', icon: 'i-simple-icons-eslint', link: 'https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint' },
       { name: 'Prettier', description: 'Code Formatting', icon: 'i-simple-icons-prettier', link: 'https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode' },
       { name: 'Tailwind CSS', description: 'IntelliSense', icon: 'i-simple-icons-tailwindcss', link: 'https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss' },
-      { name: 'lintmon', description: 'Lint Monitoring (by me)', icon: 'i-heroicons-eye', link: 'https://marketplace.visualstudio.com/items?itemName=FHSoftDev.lintmon', highlight: true }
+      
     ]
   },
   terminal: {

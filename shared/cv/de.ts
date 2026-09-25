@@ -1,9 +1,8 @@
 import type { CvData } from './types';
 
 /**
- * German CV. Bullets prefixed with "[TODO]" are placeholders that still need
- * the real project facts - they are visible on purpose so nothing invented
- * ships by accident.
+ * German CV. A bullet prefixed with "[TODO]" renders red on the page - use it
+ * for anything not yet verified, so nothing invented ships unnoticed.
  */
 export const cvDe: CvData = {
   locale: 'de',
@@ -17,7 +16,7 @@ export const cvDe: CvData = {
     'Kein Informatikstudium. Programmieren war für mich nie ein Beruf, sondern eine Berufung – heute ist es beides.',
   ],
   location: 'Oberpfalz, Bayern. Remote und hybrid.',
-  availability: 'Festanstellung bei DADG · offen für Open-Source-Kooperationen',
+  availability: 'Angestellt bei DADG, offen für Open-Source-Kooperationen.',
   links: [
     { label: 'GitHub', href: 'https://github.com/Flo0806', icon: 'i-simple-icons-github' },
     {
@@ -93,18 +92,7 @@ export const cvDe: CvData = {
   entries: [
     {
       track: 'tech',
-      from: '2026-07',
-      to: '2026-07',
-      role: 'Nuxtathon #1 Champion',
-      org: 'Nuxt Community Hackathon',
-      orgHref: 'https://nuxtathon.live',
-      summary: '66 Core-Issues in 48 Stunden geschlossen. Platz 1 von 34.',
-      tags: ['Nuxt Core', 'Open Source'],
-    },
-    {
-      track: 'tech',
-      // TODO: exaktes Startdatum bei DADG eintragen
-      from: '2025-07',
+      from: '2025-05',
       to: null,
       role: 'Senior Fullstack Developer · Team Lead · Ausbilder',
       org: 'DADG - Die Auto und Dienstleistungsgesellschaft mbH',
@@ -135,8 +123,7 @@ export const cvDe: CvData = {
     {
       track: 'tech',
       from: '2025-01',
-      // TODO: Enddatum bei Hammermeister eintragen
-      to: '2025-06',
+      to: '2025-04',
       role: 'Fullstack Developer · HMI / Visualisierung',
       org: 'Hammermeister manufacturing & solutions GmbH',
       summary:
@@ -151,7 +138,6 @@ export const cvDe: CvData = {
     },
     {
       track: 'tech',
-      // TODO: Zeitraum prüfen - im Original überschneidet sich Kiefel (ab 12/2020) mit Globus (bis 11/2022)
       from: '2022-12',
       to: '2024-12',
       role: 'Fullstack Software Developer',

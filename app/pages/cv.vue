@@ -15,6 +15,10 @@ const appConfig = useAppConfig();
 // by client navigation would stay hidden without a fresh pass here.
 useCardReveal();
 
+// Its own card: the site-wide image says who I am, this one shows the figures.
+// Rendered from tools/og-cv.html - see the comment there before changing it.
+const ogImage = computed(() => new URL('/img/og-cv.jpg', appConfig.site.url).href);
+
 useSeoMeta({
   title: () => t('cv.seo.title'),
   description: () => t('cv.seo.description'),
@@ -23,6 +27,13 @@ useSeoMeta({
   twitterTitle: () => t('cv.seo.title'),
   twitterDescription: () => t('cv.seo.description'),
   ogType: 'profile',
+  ogImage: () => ogImage.value,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageType: 'image/jpeg',
+  ogImageAlt: () => t('cv.seo.imageAlt'),
+  twitterImage: () => ogImage.value,
+  twitterImageAlt: () => t('cv.seo.imageAlt'),
 });
 
 const current = computed(() =>

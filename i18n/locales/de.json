@@ -138,7 +138,8 @@
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
-    "builtWith": "Gebaut mit"
+    "builtWith": "Gebaut mit",
+    "machineCv": "Lebenslauf für KI (cv.md)"
   },
   "cookies": {
     "title": "Cookies & Datenschutz",
@@ -226,7 +227,8 @@
     },
     "seo": {
       "title": "Lebenslauf - Florian Heuberger, Senior Fullstack Developer (Vue, Nuxt, TypeScript)",
-      "description": "Lebenslauf von Florian Heuberger: Senior Fullstack Developer, Nuxt Ecosystem Member, Nuxtathon Champion 2026, Team Lead und Ausbilder. Quereinsteiger mit Meisterbrief und 17 Jahren Führungserfahrung."
+      "description": "Lebenslauf von Florian Heuberger: Senior Fullstack Developer, Nuxt Ecosystem Member, Nuxtathon Champion 2026, Team Lead und Ausbilder. Quereinsteiger mit Meisterbrief und 17 Jahren Führungserfahrung.",
+      "imageAlt": "Lebenslauf von Florian Heuberger als Blatt Papier: Nuxtathon-Sieg, 20+ Packages, Team-Lead, 150+ überwachte Maschinen, 350 Mitarbeiter."
     },
     "reason": "Warum der Wechsel:",
     "machineLabel": "Für Screening-Tools:"

@@ -13,7 +13,7 @@ export const cvEn: CvData = {
     'No computer science degree. Programming was never a job to me, it was a calling – today it is both.',
   ],
   location: 'Upper Palatinate, Bavaria. Remote and hybrid.',
-  availability: 'Employed at DADG · open to open-source collaboration',
+  availability: 'Employed at DADG, open to open-source collaboration.',
   links: [
     { label: 'GitHub', href: 'https://github.com/Flo0806', icon: 'i-simple-icons-github' },
     {
@@ -89,18 +89,7 @@ export const cvEn: CvData = {
   entries: [
     {
       track: 'tech',
-      from: '2026-07',
-      to: '2026-07',
-      role: 'Nuxtathon #1 Champion',
-      org: 'Nuxt Community Hackathon',
-      orgHref: 'https://nuxtathon.live',
-      summary: '66 core issues closed in 48 hours. 1st of 34.',
-      tags: ['Nuxt Core', 'Open Source'],
-    },
-    {
-      track: 'tech',
-      // TODO: exact start date at DADG
-      from: '2025-07',
+      from: '2025-05',
       to: null,
       role: 'Senior Fullstack Developer · Team Lead · Trainer',
       org: 'DADG - Die Auto und Dienstleistungsgesellschaft mbH',
@@ -131,8 +120,7 @@ export const cvEn: CvData = {
     {
       track: 'tech',
       from: '2025-01',
-      // TODO: end date at Hammermeister
-      to: '2025-06',
+      to: '2025-04',
       role: 'Fullstack Developer · HMI / Visualisation',
       org: 'Hammermeister manufacturing & solutions GmbH',
       summary:
@@ -147,7 +135,6 @@ export const cvEn: CvData = {
     },
     {
       track: 'tech',
-      // TODO: verify period - the original overlaps Kiefel (from 12/2020) with Globus (until 11/2022)
       from: '2022-12',
       to: '2024-12',
       role: 'Fullstack Software Developer',

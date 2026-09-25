@@ -1,2 +1,9 @@
-User-Agent: *
+User-agent: *
+Allow: /
+
+# The visit counter increments per request; crawlers would only inflate it.
 Disallow: /api/counter
+
+# Machine-readable CV, for anything that would rather read Markdown than a
+# rendered page: https://heuberger.dev/llms.txt
+Sitemap: https://heuberger.dev/sitemap.xml

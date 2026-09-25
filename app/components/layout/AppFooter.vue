@@ -24,6 +24,22 @@ const currentYear = new Date().getFullYear()
           <UIcon name="i-heroicons-heart-solid" class="w-4 h-4 text-red-500" />
         </div>
 
+                <!-- Résumé, in both the form people read and the one crawlers do -->
+        <nav class="flex items-center gap-4 text-sm">
+          <NuxtLink
+            to="/cv"
+            class="text-zinc-600 dark:text-zinc-500 hover:text-orange-400 transition-colors"
+          >
+            {{ t('nav.cv') }}
+          </NuxtLink>
+          <a
+            href="/cv.md"
+            class="text-zinc-600 dark:text-zinc-500 hover:text-orange-400 transition-colors"
+          >
+            {{ t('footer.machineCv') }}
+          </a>
+        </nav>
+
         <!-- Copyright & Social Links -->
         <div class="flex flex-col md:flex-row items-center justify-between w-full gap-4">
           <div class="text-sm text-zinc-600 dark:text-zinc-500">
