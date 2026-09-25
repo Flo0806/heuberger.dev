@@ -552,3 +552,125 @@ html {
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+/* ==========================================================================
+   Print - the /cv page as a PDF
+   ==========================================================================
+   Ctrl+P on /cv must yield something an applicant-tracking parser can read:
+   one column, black on white, real text, no glass, no motion. Everything
+   decorative is dropped rather than restyled. */
+@media print {
+  @page {
+    margin: 14mm 12mm;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 11pt;
+  }
+
+  header,
+  footer,
+  .ambient,
+  .code-ghost,
+  .cookie-banner {
+    display: none !important;
+  }
+
+  main {
+    position: static !important;
+  }
+
+  .section-padding {
+    padding-top: 0 !important;
+    padding-bottom: 0.9rem !important;
+  }
+
+  .container {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  /* Reveal state and the liquid filter are both meaningless on paper. */
+  main section .glass,
+  main section .glass.card-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .glass {
+    background: #fff !important;
+    border: 1px solid #d4d4d8 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    break-inside: avoid;
+  }
+
+  .glass::before,
+  .glass::after {
+    display: none !important;
+  }
+
+  .gradient-text {
+    background: none !important;
+    color: #111 !important;
+    -webkit-text-fill-color: #111;
+  }
+
+  /* Timeline: a plain single column with the lane badge back on, since
+     left/right is the only thing that told the lanes apart. */
+  .cv-timeline {
+    grid-template-columns: 2rem 1fr !important;
+    gap: 0.6rem !important;
+  }
+
+  .cv-timeline > li > * {
+    grid-column: auto !important;
+    text-align: left !important;
+  }
+
+  .cv-timeline > li > div {
+    grid-column: 1 !important;
+    display: flex !important;
+  }
+
+  /* Empty-lane placeholders would take the spine column. */
+  .cv-timeline > li > div:empty {
+    display: none !important;
+  }
+
+  .cv-timeline > li > article {
+    grid-column: 2 !important;
+  }
+
+  .cv-timeline .md\:hidden {
+    display: flex !important;
+  }
+
+  .cv-timeline .md\:justify-end {
+    justify-content: flex-start !important;
+  }
+
+  .cv-bullet-tech {
+    padding-left: 1rem !important;
+    padding-right: 0 !important;
+  }
+
+  .cv-bullet-tech::before {
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}

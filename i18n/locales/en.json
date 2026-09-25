@@ -154,7 +154,7 @@
     "label": "Currently at",
     "title": "DADG",
     "fullName": "Die Auto und Dienstleistungsgesellschaft mbH",
-    "description": "As a Senior Developer at DADG, I'm not only responsible for technical implementation but also for nurturing the next generation of developers.",
+    "description": "As a Senior Fullstack Developer at DADG, I'm not only responsible for technical implementation but also for nurturing the next generation of developers.",
     "roles": {
       "leader": "Team Lead",
       "leaderDesc": "4 Junior Developers",
@@ -193,5 +193,35 @@
         "claim": "The leaderboard for the Nuxtathon - live standings for the event."
       }
     }
+  },
+  "cv": {
+    "eyebrow": "Résumé",
+    "present": "present",
+    "print": "Save as PDF",
+    "machine": "For AI & ATS: /cv.md",
+    "backHome": "Back to home",
+    "sections": {
+      "summary": "In 30 seconds",
+      "facts": "Proof over claims",
+      "timeline": "Two careers, one story",
+      "timelineSubtitle": "Software on the left, craft and leadership on the right. From 2020 both run in parallel – until software becomes the job.",
+      "tech": "Software",
+      "craft": "Craft & Leadership",
+      "projects": "Open Source & Projects",
+      "projectsSubtitle": "Public, in use, verifiable - every project is a link.",
+      "skills": "Skills",
+      "skillsSubtitle": "What I work with – or have worked with.",
+      "education": "Education & Certificates",
+      "languages": "Languages",
+      "keywords": "Keywords",
+      "principles": "How I work",
+      "principlesSubtitle": "With AI, not by AI."
+    },
+    "seo": {
+      "title": "Résumé - Florian Heuberger, Senior Fullstack Developer (Vue, Nuxt, TypeScript)",
+      "description": "Résumé of Florian Heuberger: Senior Fullstack Developer, Nuxt ecosystem member, Nuxtathon champion 2026, team lead and trainer. Career changer with a master craftsman certificate and 17 years of leadership experience."
+    },
+    "reason": "Why the move:",
+    "machineLabel": "For screening tools:"
   }
 }

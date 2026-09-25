@@ -28,7 +28,7 @@ const accept = () => {
   >
     <div
       v-if="isVisible"
-      class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md z-50"
+      class="cookie-banner fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md z-50"
     >
       <div class="glass rounded-2xl p-5 shadow-xl border border-zinc-700/50 dark:border-zinc-700/50">
         <div class="flex items-start gap-4">

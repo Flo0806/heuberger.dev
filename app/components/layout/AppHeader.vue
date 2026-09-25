@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
+const route = useRoute()
 
 const emit = defineEmits<{
   toggleLocale: []
@@ -14,6 +15,7 @@ const navItems = computed(() => [
   { key: 'projects', href: '#projects' },
   { key: 'uses', href: '#uses' },
   { key: 'hardware', href: '#hardware' },
+  { key: 'cv', href: '/cv' },
   { key: 'contact', href: '#contact' }
 ])
 
@@ -32,6 +34,16 @@ const handleScroll = () => {
 
 const scrollTo = (href: string) => {
   isMobileMenuOpen.value = false
+  // Route links, and section anchors while on another page: let the router
+  // take it, the target section is not in the DOM here.
+  if (!href.startsWith('#')) {
+    navigateTo(href)
+    return
+  }
+  if (route.path !== '/') {
+    navigateTo({ path: '/', hash: href })
+    return
+  }
   const el = document.querySelector(href)
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' })

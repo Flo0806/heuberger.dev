@@ -154,7 +154,7 @@
     "label": "Aktuell bei",
     "title": "DADG",
     "fullName": "Die Auto und Dienstleistungsgesellschaft mbH",
-    "description": "Als Senior Developer bei DADG bin ich nicht nur für die technische Umsetzung zuständig, sondern auch für die Förderung der nächsten Generation.",
+    "description": "Als Senior Fullstack Developer bei DADG bin ich nicht nur für die technische Umsetzung zuständig, sondern auch für die Förderung der nächsten Generation.",
     "roles": {
       "leader": "Team Lead",
       "leaderDesc": "4 Junior Developers",
@@ -193,5 +193,35 @@
         "claim": "Das Leaderboard zum Nuxtathon - die Live-Rangliste zum Event."
       }
     }
+  },
+  "cv": {
+    "eyebrow": "Lebenslauf",
+    "present": "heute",
+    "print": "Als PDF speichern",
+    "machine": "Für KI & ATS: /cv.md",
+    "backHome": "Zur Startseite",
+    "sections": {
+      "summary": "In 30 Sekunden",
+      "facts": "Belege statt Behauptungen",
+      "timeline": "Zwei Laufbahnen, eine Geschichte",
+      "timelineSubtitle": "Links die Software, rechts Handwerk und Führung. Ab 2020 laufen beide parallel – bis die Software zum Beruf wird.",
+      "tech": "Software",
+      "craft": "Handwerk & Führung",
+      "projects": "Open Source & Projekte",
+      "projectsSubtitle": "Öffentlich, benutzt, nachprüfbar - jedes Projekt ist ein Link.",
+      "skills": "Kompetenzen",
+      "skillsSubtitle": "Damit arbeite ich – oder habe damit gearbeitet.",
+      "education": "Ausbildung & Zertifikate",
+      "languages": "Sprachen",
+      "keywords": "Stichworte",
+      "principles": "Wie ich arbeite",
+      "principlesSubtitle": "Mit KI, nicht durch KI."
+    },
+    "seo": {
+      "title": "Lebenslauf - Florian Heuberger, Senior Fullstack Developer (Vue, Nuxt, TypeScript)",
+      "description": "Lebenslauf von Florian Heuberger: Senior Fullstack Developer, Nuxt Ecosystem Member, Nuxtathon Champion 2026, Team Lead und Ausbilder. Quereinsteiger mit Meisterbrief und 17 Jahren Führungserfahrung."
+    },
+    "reason": "Warum der Wechsel:",
+    "machineLabel": "Für Screening-Tools:"
   }
 }

@@ -35,6 +35,6 @@ export default defineAppConfig({
       github: 'https://github.com/Flo0806',
       linkedin: 'https://www.linkedin.com/in/florian-heuberger-93700b166/',
     },
-    email: 'f.heuberger@gmx.net',
+    email: 'fh@flogersoft.de',
   },
 });
